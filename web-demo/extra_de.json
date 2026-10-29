@@ -1,0 +1,17 @@
+{
+ "Ethical conduct": "Ethisches Verhalten",
+ "Volunteering track record & willingness": "Ehrenamts-Bilanz & -Bereitschaft",
+ "Mission & CSR match": "Passung zu Mission & CSR",
+ "Field-of-work synergy": "Synergie der Tätigkeitsfelder",
+ "Regional rootedness": "Regionale Verwurzelung",
+ "Philanthropy track record": "Spenden- und Förderhistorie",
+ "Financial capacity": "Finanzielle Leistungsfähigkeit",
+ "Timing & trigger signals": "Zeitpunkt & Auslöser",
+ "Reputation gate": "Reputationsprüfung",
+ "Reviewer": "Reviewer",
+ "pass/fail": "bestanden/nicht bestanden",
+ "flags + approach angle": "Hinweise + Ansprache",
+ "Final = Gate × Σ(weight_i × score_i × confidence_i)": "Endwert = Gate × Σ(Gewicht_i × Score_i × Konfidenz_i)",
+ "Lead priority = Final × capacity multiplier + Gate × 0.75 if A2 ≥ 6 and A8 ≥ 6": "Lead-Priorität = Endwert × Kapazitätsfaktor + Gate × 0,75, wenn A2 ≥ 6 und A8 ≥ 6",
+ "Existing Caritas partners scored with the same model (Caritas_Partner_Scoring.xlsx, gate-passed, n=83).": "Bestehende Caritas-Partner, mit demselben Modell bewertet (Caritas_Partner_Scoring.xlsx, Gate bestanden, n=83)."
+}

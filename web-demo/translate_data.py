@@ -22,7 +22,7 @@ CACHE = HERE / "translations_de.json"
 OUT = HERE / "data_de.js"
 BATCH = 60
 # Identifiers, names, places and values the pages match on stay as they are.
-SKIP_KEYS = {"id", "pid", "name", "website", "source_urls", "url", "town", "landkreis", "tier_code", "confidence",
+SKIP_KEYS = {"id", "pid", "website", "source_urls", "url", "town", "landkreis", "tier_code", "confidence",
              "scope", "position", "matched_areas", "csr_themes", "agent", "method", "lat", "lng"}
 
 
@@ -32,16 +32,16 @@ def load_data() -> list:
     return json.loads(m.group(1))
 
 
-def collect(node, key=None, out=None):
+def collect(node, key=None, out=None, depth=0):
     out = set() if out is None else out
-    if key in SKIP_KEYS:
+    if key in SKIP_KEYS or (key == "name" and depth == 1):
         return out
     if isinstance(node, dict):
         for k, v in node.items():
-            collect(v, k, out)
+            collect(v, k, out, depth + 1)
     elif isinstance(node, list):
         for v in node:
-            collect(v, key, out)
+            collect(v, key, out, depth + 1)
     elif isinstance(node, str) and len(node) > 3 and re.search(r"[A-Za-z]{3}", node) and not re.match(r"https?://", node):
         out.add(node)
     return out

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="color-scheme" content="light" />
+<meta name="color-scheme" content="light dark" />
+<script src="theme.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caire — Company profile</title>
 <meta name="description" content="Caire company profile: lead priority, agent scoring breakdown and evidence for Caritas Würzburg outreach." />
@@ -11,6 +12,7 @@
 <style>
 :root{--bg:#ffffff;--bg2:#f5f5f5;--card:#ffffff;--text:#1e1e1e;--soft:#5a5a5a;--accent:#cc201e;--accent-h:#a81a18;--accent-soft:#cc201e14;--border:#e6e6e6;--shadow:0 10px 30px -18px #1e1e1e33;--on-accent:#fff;
   --tier-a:#2e9e4f;--tier-b:#e5b400;--tier-c:#d63a2f;--tier-x:#141414;--bar:#e9e3d8;}
+:root[data-theme="dark"]{--bg:#141414;--bg2:#1b1b1b;--card:#1e1e1e;--text:#f2f2f2;--soft:#b5b5b5;--accent:#ff5450;--accent-h:#ff7b77;--accent-soft:#ff545024;--border:#333333;--shadow:0 10px 30px -18px #000000cc;--on-accent:#141414;--tier-a:#4cc271;--tier-b:#f2c94c;--tier-c:#ff6b5e;--tier-x:#000;--bar:#2b2b2b;}
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px}
 body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -158,15 +160,16 @@ const DATA = (typeof CAIRE_COMPANIES !== 'undefined') ? CAIRE_COMPANIES : [];
 const META = (typeof CAIRE_META !== 'undefined') ? CAIRE_META : {};
 /* German view: swap English data strings for their CAIRE_DE translation (data_de.js); untranslated text stays English. */
 const DE_DICT = (typeof CAIRE_DE !== 'undefined') ? CAIRE_DE : {};
-const DE_SKIP = new Set(['id','pid','name','website','source_urls','url','town','landkreis','tier_code','confidence','scope','position','matched_areas','csr_themes','agent','method']);
+const DE_SKIP = new Set(['id','pid','website','source_urls','url','town','landkreis','tier_code','confidence','scope','position','matched_areas','csr_themes','agent','method']);
 const DE_CACHE = new WeakMap();
-function localize(v, key){
-  if(DE_SKIP.has(key)) return v;
+// A company's own "name" (depth 1) stays as is; names deeper down (agent names, drivers) are translated.
+function localize(v, key, depth=0){
+  if(DE_SKIP.has(key) || (key==='name' && depth===1)) return v;
   if(typeof v === 'string') return DE_DICT[v] || v;
-  if(Array.isArray(v)) return v.map(x=>localize(x, key));
+  if(Array.isArray(v)) return v.map(x=>localize(x, key, depth+1));
   if(v && typeof v === 'object'){
     if(DE_CACHE.has(v)) return DE_CACHE.get(v);
-    const o = {}; for(const k in v) o[k] = localize(v[k], k);
+    const o = {}; for(const k in v) o[k] = localize(v[k], k, depth+1);
     DE_CACHE.set(v, o); return o;
   }
   return v;
@@ -288,7 +291,8 @@ function render(){
   ].join('');
 
   const i = BY_RANK.indexOf(c), prev = BY_RANK[i-1], next = BY_RANK[i+1];
-  const m = META.model || {};
+  const LM = LANG==='de' ? localize(META) : META;
+  const m = LM.model || {};
 
   root.innerHTML = `
     <div class="head">
@@ -302,7 +306,7 @@ function render(){
       <div>
         <div class="card">
           <div class="score-hero">
-            <div><div class="big">${esc(num(s.lead_priority))}<small> /10</small></div><div style="font-size:.8rem;color:var(--soft)">${t('lead')}</div></div>
+            <div><div class="big">${esc(num(s.lead_priority))}</div><div style="font-size:.8rem;color:var(--soft)">${t('lead')}</div></div>
             <div><span class="tier ${tc}">${esc(c.tier||tc)}</span>
               ${s.percentile_vs_existing_partners!=null ? `<div style="font-size:.88rem;margin-top:.4rem">${esc(t('pct')(s.percentile_vs_existing_partners))}</div>` : ''}</div>
           </div>
@@ -331,7 +335,7 @@ function render(){
 
     <div class="foot">
       <b>${t('how')}:</b> ${m.formula_final ? `<code>${esc(m.formula_final)}</code>` : ''}${m.formula_lead_priority ? ` · <code>${esc(m.formula_lead_priority)}</code>` : ''}
-      ${META.calibration && META.calibration.basis ? `<br>${esc(META.calibration.basis)}` : ''}
+      ${LM.calibration && LM.calibration.basis ? `<br>${esc(LM.calibration.basis)}` : ''}
       <br>${c.position==='district' ? t('approx_district') : t('approx')}
     </div>`;
 }

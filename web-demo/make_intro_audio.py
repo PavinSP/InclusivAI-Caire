@@ -5,7 +5,7 @@
 
 The clips are generated once and committed, like the quiz audio in Teach-It-To-Grandma, so the static
 GitHub Pages site can play them without an API key in the browser. Re-run after changing a script below.
-ELEVENLABS_VOICE_ID overrides the voice (default: George, a warm narrator).
+ELEVENLABS_VOICE_ID overrides the voice (default: Sarah, soft and soothing); speed 0.8 keeps it slow and calm.
 """
 
 import json
@@ -16,13 +16,14 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 ENDPOINT = "https://api.elevenlabs.io/v1/text-to-speech/"
-DEFAULT_VOICE_ID = "JBFqnCBsd6RMkjVDRZzb"
+# Sarah: a soft, soothing female premade voice (premade voices work with a text-to-speech-only key).
+DEFAULT_VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
 # Multilingual, so one voice reads both versions.
 MODEL_ID = "eleven_multilingual_v2"
 
 SCRIPTS = {
-    "en": "Welcome to Caire! Do you want to find companies that share Caritas' values and love to give back? Then explore the map!",
-    "de": "Willkommen bei Caire! Möchten Sie Unternehmen finden, die die Werte der Caritas teilen und gerne etwas zurückgeben? Dann entdecken Sie die Karte!",
+    "en": "Welcome to Caire. ... Would you like to find companies that share Caritas' values, and love to give back? ... Then, explore the map.",
+    "de": "Willkommen bei Caire. ... Möchten Sie Unternehmen finden, die die Werte der Caritas teilen, und gerne etwas zurückgeben? ... Dann entdecken Sie die Karte.",
 }
 
 
@@ -38,7 +39,7 @@ def speak(text: str, key: str, voice: str) -> bytes:
     req = urllib.request.Request(
         ENDPOINT + voice + "?output_format=mp3_44100_128",
         data=json.dumps({"text": text, "model_id": MODEL_ID,
-                         "voice_settings": {"stability": 0.3, "similarity_boost": 0.8, "style": 0.7, "use_speaker_boost": True}}).encode("utf-8"),
+                         "voice_settings": {"stability": 0.75, "similarity_boost": 0.75, "style": 0.15, "speed": 0.8, "use_speaker_boost": True}}).encode("utf-8"),
         headers={"xi-api-key": key, "Content-Type": "application/json", "Accept": "audio/mpeg"},
     )
     with urllib.request.urlopen(req, timeout=60) as resp:

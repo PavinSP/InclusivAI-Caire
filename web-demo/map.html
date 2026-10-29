@@ -4,6 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caire</title>
+<meta name="color-scheme" content="light dark" />
+<script src="theme.js"></script>
 <link rel="icon" type="image/png" href="logo.png" />
 <meta name="description" content="Caire — Caritas Würzburg partner-discovery demo: a Mainfranken map of corporate CSR fit for fundraising outreach." />
 <link rel="stylesheet" href="leaflet-inline.css" />
@@ -22,6 +24,23 @@
   --shadow:0 1px 2px rgba(28,35,33,.06), 0 8px 24px -12px rgba(28,35,33,.18);
   font-size:16px;
 }
+/* ---------- Dark theme ---------- */
+:root[data-theme="dark"]{
+  --ink:#f2f2f2; --ink-soft:#b5b5b5; --paper:#141414; --panel:#1e1e1e;
+  --line:#333333; --line-soft:#2a2a2a;
+  --terracotta:#ff5450; --terracotta-soft:#3a1d1c;
+  --moss:#6fbf86; --moss-soft:#1f2c23;
+  --gold:#e0b84a; --gold-soft:#2e2813;
+  --rust-low:#ff7b77;
+  --tier-a:#4cc271; --tier-b:#f2c94c; --tier-c:#ff6b5e; --tier-x:#000000;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+}
+:root[data-theme="dark"] #map{background:#191919;}
+:root[data-theme="dark"] .leaflet-control-zoom a{background:#242424 !important; color:#f2f2f2 !important; border-bottom-color:#3a3a3a !important;}
+:root[data-theme="dark"] .leaflet-control-zoom a:hover{background:#2e2e2e !important;}
+:root[data-theme="dark"] .district-label-text{color:#ff7b77; text-shadow:0 1px 0 rgba(0,0,0,.9), 0 0 5px rgba(0,0,0,.9);}
+:root[data-theme="dark"] .town-label{color:#cfcfcf !important; text-shadow:0 1px 0 rgba(0,0,0,.9), 0 0 4px rgba(0,0,0,.9);}
+:root[data-theme="dark"] .caire-dot{border-color:rgba(20,20,20,.95); box-shadow:0 1px 4px rgba(0,0,0,.7);}
 *{box-sizing:border-box;}
 html,body{height:100%;margin:0;}
 body{
@@ -113,6 +132,7 @@ header{
 }
 .active-chip button{border:0; background:none; color:inherit; cursor:pointer; font-size:14px; line-height:1; padding:2px;}
 .clear-all{font-size:12px; color:var(--ink-soft); background:none; border:0; cursor:pointer; text-decoration:underline; font-family:inherit;}
+.filter-toggle[hidden]{display:none;}
 .filters-extra{display:none;}
 .filters-extra.open{display:block;}
 
@@ -312,11 +332,11 @@ header{
     <div class="filters">
       <div class="filter-row">
         <span class="filter-label" id="t-landkreis">District</span>
-        <button class="filter-toggle" id="t-more" onclick="toggleExtra()">More filters</button>
+        <button class="filter-toggle" id="t-more" onclick="toggleExtra()" hidden>More filters</button>
       </div>
       <div class="select-wrap"><select id="filter-landkreis"></select></div>
 
-      <div class="filters-extra" id="filters-extra">
+      <div class="filters-extra open" id="filters-extra">
         <div class="filter-row" style="margin-top:12px;"><span class="filter-label" id="t-confidence">Evidence confidence</span></div>
         <div class="chip-grid" id="chips-confidence"></div>
 
@@ -342,7 +362,7 @@ header{
 
   <div class="map-wrap">
     <div id="map"></div>
-    <div class="scope-switch" id="scope-switch"><button data-s="mainfranken" id="sw-main"></button><button data-s="all" id="sw-all"></button></div>
+    <div class="scope-switch" id="scope-switch"><button data-s="all" id="sw-all"></button><button data-s="mainfranken" id="sw-main"></button></div>
     <div class="legend" id="legend">
       <div id="t-legend-title" style="font-weight:600; color:var(--ink); margin-bottom:7px;">Map key</div>
       <div class="legend-row"><span class="legend-sw" style="background:#444444; border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.3);"></span><span id="t-leg-dot">One company</span></div>
@@ -435,21 +455,22 @@ function t(k){ return STR[LANG][k]; }
 /* ============== State ============== */
 /* German view: swap English data strings for their CAIRE_DE translation (data_de.js); untranslated text stays English. */
 const DE_DICT = (typeof CAIRE_DE !== 'undefined') ? CAIRE_DE : {};
-const DE_SKIP = new Set(['id','pid','name','website','source_urls','url','town','landkreis','tier_code','confidence','scope','position','matched_areas','csr_themes','agent','method']);
+const DE_SKIP = new Set(['id','pid','website','source_urls','url','town','landkreis','tier_code','confidence','scope','position','matched_areas','csr_themes','agent','method']);
 const DE_CACHE = new WeakMap();
-function localize(v, key){
-  if(DE_SKIP.has(key)) return v;
+// A company's own "name" (depth 1) stays as is; names deeper down (agent names, drivers) are translated.
+function localize(v, key, depth=0){
+  if(DE_SKIP.has(key) || (key==='name' && depth===1)) return v;
   if(typeof v === 'string') return DE_DICT[v] || v;
-  if(Array.isArray(v)) return v.map(x=>localize(x, key));
+  if(Array.isArray(v)) return v.map(x=>localize(x, key, depth+1));
   if(v && typeof v === 'object'){
     if(DE_CACHE.has(v)) return DE_CACHE.get(v);
-    const o = {}; for(const k in v) o[k] = localize(v[k], k);
+    const o = {}; for(const k in v) o[k] = localize(v[k], k, depth+1);
     DE_CACHE.set(v, o); return o;
   }
   return v;
 }
 const ALL_RECORDS = (typeof CAIRE_COMPANIES !== 'undefined') ? CAIRE_COMPANIES : [];
-let SCOPE = 'mainfranken';            // 'mainfranken' (default) or 'all' (whole diocese)
+let SCOPE = 'all';                    // 'all' = Lower Franconia (default, whole diocese) or 'mainfranken'
 let ALL = [], AREA_LIST = [], LANDKREIS_LIST = [];
 function computeScope(){
   ALL = ALL_RECORDS.filter(c=> SCOPE==='all' || c.scope==='mainfranken').map(c=> LANG==='de' ? localize(c) : c);
@@ -469,10 +490,9 @@ const map = L.map('map', {
 /* No raster basemap: the region is drawn as clean filled districts on a beige
    ground, so nothing outside the area of focus competes with the data. */
 
-const TINTS = [
-  "#f0d5a8", "#e9c893", "#f2dcb6", "#e3bc84", "#eed0a0",
-  "#f4e2c2", "#e7c38c", "#f0d9ae", "#e9cb9b"
-];
+const TINTS_LIGHT = ["#f0d5a8", "#e9c893", "#f2dcb6", "#e3bc84", "#eed0a0", "#f4e2c2", "#e7c38c", "#f0d9ae", "#e9cb9b"];
+const TINTS_DARK  = ["#2f2a24", "#2a2621", "#34302a", "#292520", "#312c26", "#2d2923", "#35302a", "#2b2722", "#302b25"];
+const isDark = () => document.documentElement.getAttribute('data-theme') === 'dark';
 
 let districtLayer = null;
 let townLabelLayer = null;
@@ -484,13 +504,16 @@ function currentBoundaryWeight(){
 }
 function districtStyleFor(feature){
   return {
-    color:'#9c3326',          // deep boundary
+    color: isDark() ? '#d9534a' : '#9c3326',   // deep boundary
     weight: currentBoundaryWeight(),
     opacity:0.95,
-    fillColor: TINTS[(feature.properties.tintIndex || 0) % TINTS.length],
+    fillColor: (isDark() ? TINTS_DARK : TINTS_LIGHT)[(feature.properties.tintIndex || 0) % TINTS_LIGHT.length],
     fillOpacity:0.92
   };
 }
+
+/* Re-draw the districts when the theme flips (they are coloured in JS). */
+document.addEventListener('themechange', ()=>{ if(typeof GEO !== 'undefined' && GEO && typeof buildRegion === 'function') buildRegion(); });
 
 /* Map labels show just the place name: drop 'Landkreis' and '(Stadt)'. */
 function placeName(n){ return String(n).replace(/^Landkreis\s+/,'').replace(/\s*\(Stadt\)$/,''); }
@@ -975,7 +998,6 @@ function setLang(l){
   document.getElementById('sw-all').textContent = t('sw_all');
   document.getElementById('search-input').placeholder = t('search_ph');
   document.getElementById('t-landkreis').textContent = t('landkreis');
-  document.getElementById('t-more').textContent = document.getElementById('filters-extra').classList.contains('open') ? t('less') : t('more');
   document.getElementById('t-confidence').textContent = t('confidence');
   document.getElementById('t-minscore').textContent = t('minscore');
   document.getElementById('t-themes').textContent = t('themes');
@@ -1008,7 +1030,7 @@ if(initialLang()==='de') setLang('de'); else applyFilters();
 updateScopePill();
 document.getElementById('sw-main').textContent = t('sw_main');
 document.getElementById('sw-all').textContent = t('sw_all');
-document.getElementById('sw-main').classList.add('on');
+document.getElementById('sw-all').classList.add('on');
 window.addEventListener('resize', ()=> map.invalidateSize());
 </script>
 </body>

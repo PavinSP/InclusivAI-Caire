@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="color-scheme" content="light" />
+<meta name="color-scheme" content="light dark" />
+<script src="theme.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caire — Caritas Würzburg partner intelligence</title>
 <meta name="description" content="Caire helps Caritas Würzburg discover corporate partners in Mainfranken whose CSR values fit." />
@@ -21,6 +22,7 @@ nav .container{display:flex;align-items:center;gap:1.5rem;height:64px}
 .brand img{height:38px;width:auto}
 nav .links{margin-left:auto;display:flex;gap:1.5rem;align-items:center}
 nav .links a{color:var(--soft);text-decoration:none;font-size:.9rem;font-weight:500}
+:root[data-theme="dark"]{--bg:#141414;--bg2:#1b1b1b;--card:#1e1e1e;--text:#f2f2f2;--soft:#b5b5b5;--accent:#ff5450;--accent-h:#ff7b77;--accent-soft:#ff545024;--border:#333333;--shadow:0 10px 30px -18px #000000cc;--on-accent:#141414;}
 nav .links a:hover{color:var(--accent)}
 .lang{display:flex;border:1px solid var(--border);border-radius:999px;overflow:hidden}
 .lang button{border:0;background:none;color:var(--soft);font:600 .8rem Inter,sans-serif;padding:.3rem .7rem;cursor:pointer}
@@ -37,6 +39,7 @@ nav .links a.btn{color:var(--on-accent);padding:.45rem 1rem}
 .btn-s{color:var(--accent)}.btn-s:hover{background:var(--accent-soft);transform:scale(1.03)}
 .logo-wrap{display:flex;justify-content:center}
 .logo-wrap img{width:min(380px,80vw);animation:reveal 1s cubic-bezier(.22,1,.36,1) both}
+.red{color:var(--accent)}
 button.btn{font:inherit;cursor:pointer;background:none}
 #explore.pulse{animation:pulse 1.2s ease-in-out 3}
 @keyframes pulse{50%{transform:scale(1.08);box-shadow:0 0 0 8px var(--accent-soft)}}
@@ -66,7 +69,7 @@ footer{padding:2rem 0;color:var(--soft);font-size:.85rem;text-align:center;borde
   <div class="hero">
     <div>
       <p class="greeting" data-i18n="greeting">&gt; Hi, we are Caire</p>
-      <h1 data-i18n="title">Partner intelligence for Caritas Würzburg</h1>
+      <h1 data-i18n-html="title">Partner intelligence for <span class="red">Caritas</span> Würzburg</h1>
       <p class="sub" data-i18n="sub">Find companies in Mainfranken whose values fit.</p>
       <div class="actions"><a class="btn btn-p map-link" id="explore" href="map.html" data-i18n="explore">Explore the map</a><button class="btn btn-s" id="intro-btn" hidden></button></div>
     </div>
@@ -77,9 +80,9 @@ footer{padding:2rem 0;color:var(--soft);font-size:.85rem;text-align:center;borde
 <footer data-i18n="footer">Caire · Caritas Würzburg hackathon demo</footer>
 <script>
 const STR = {
-  en:{greeting:'> Hi, we are Caire', title:'Partner intelligence for Caritas Würzburg', sub:'Find companies in Mainfranken whose values fit.',
+  en:{greeting:'> Hi, we are Caire', title:'Partner intelligence for <span class="red">Caritas</span> Würzburg', sub:'Find companies in Mainfranken whose values fit.',
       open:'Open map', explore:'Explore the map', footer:'Caire · Caritas Würzburg hackathon demo', play:'▶ Meet Caire', pause:'❚❚ Pause'},
-  de:{greeting:'> Hallo, wir sind Caire', title:'Partnersuche für die Caritas Würzburg', sub:'Unternehmen in Mainfranken finden, deren Werte passen.',
+  de:{greeting:'> Hallo, wir sind Caire', title:'Partnersuche für die <span class="red">Caritas</span> Würzburg', sub:'Unternehmen in Mainfranken finden, deren Werte passen.',
       open:'Karte öffnen', explore:'Zur Karte', footer:'Caire · Hackathon-Demo für die Caritas Würzburg', play:'▶ Caire kennenlernen', pause:'❚❚ Pause'}
 };
 // Language: ?lang= wins, else the last choice on any Caire page (stored per browser).
@@ -92,6 +95,7 @@ function setLang(l){
   try{ localStorage.setItem('caire-lang', l); }catch(e){}
   document.documentElement.lang = l;
   document.querySelectorAll('[data-i18n]').forEach(el=> el.textContent = STR[l][el.dataset.i18n]);
+  document.querySelectorAll('[data-i18n-html]').forEach(el=> el.innerHTML = STR[l][el.dataset.i18nHtml]);
   document.querySelectorAll('.map-link').forEach(a=> a.href = 'map.html?lang=' + l);
   document.querySelectorAll('.lang button').forEach(b=> b.classList.toggle('on', b.dataset.l===l));
   loadIntro(l);

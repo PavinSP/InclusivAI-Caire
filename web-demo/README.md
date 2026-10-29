@@ -4,8 +4,8 @@ Static site. Open `index.html` through any static server (e.g. `python3 -m http.
 Pages: `index.html` (logo splash) -> `home.html` (landing) -> `map.html` (Leaflet map) -> `company.html?id=<slug>` (one page per company).
 Data source of truth: `caritas_prospects_scored_Harsha.json` (scored prospects, 10-agent model), turned into `data.js` by
 `node prepare_scored_data.js [path to json]` (default path: two folders up). `prepare_data.py` is the older companies.json heuristic.
-Switch between **Mainfranken** (default, 9 areas) and the **Lower Franconia** (whole diocese; adds Aschaffenburg and Miltenberg).
-Per `config/mainfranken_scope.json` the default scope excludes those two; confirm with Caritas before showing the wider view.
+Opens on **Lower Franconia** (whole diocese, incl. Aschaffenburg and Miltenberg); switch to **Mainfranken** (9 areas) with the toggle.
+Per `config/mainfranken_scope.json` Mainfranken excludes those two; confirm with Caritas which view is the right default.
 
 ## Rebuild the data
 1. `python3 build_boundaries.py <path to isellsoap/deutschlandGeoJSON clone>` -> district + outline GeoJSON
