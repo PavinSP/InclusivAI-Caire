@@ -96,7 +96,7 @@ Each agent receives an input object like this:
       "confidence": "high"
     }
   ],
-  "caritas_values": "Contents of values.md",
+  "caritas_values": "Contents of config/values.md",
   "region_config": "Contents of config/mainfranken_scope.json"
 }
 ```

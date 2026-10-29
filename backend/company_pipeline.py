@@ -91,7 +91,7 @@ def load_json(path: Path) -> Any:
 
 
 def load_context() -> tuple[str, dict[str, Any]]:
-    values = (ROOT / "values.md").read_text(encoding="utf-8")
+    values = (ROOT / "config" / "values.md").read_text(encoding="utf-8")
     scope = load_json(ROOT / "config" / "mainfranken_scope.json")
     return values, scope
 

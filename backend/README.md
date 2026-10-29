@@ -21,7 +21,7 @@ Never place the real key in frontend code, JSON files, Git, or browser requests.
 python backend/company_pipeline.py "WIKA Alexander Wiegand" --output company_research/results/wika.json
 ```
 
-## HTTP endpoint for the future search bar
+## HTTP server (website + endpoints)
 
 Start the local backend:
 
@@ -53,3 +53,10 @@ The response includes:
 - The Gemini Google Search result is used for public research; the model must not be treated as an infallible scraper.
 - Add retries, request-rate limits, persistence, authentication, and structured logging before deployment.
 - Validate all sources and manually review new companies before publishing them on the map.
+
+## Endpoints and caches
+
+- `GET /` serves `web-demo/`, so the site and the API share one origin.
+- `POST /research` `{"company_name": "..."}` researches and scores a new company; results are cached in `company_research/results/`.
+- `POST /guide` `{"id": "<company id>", "lang": "en|de"}` returns the animated guide's summary and a voice clip; cached in `company_research/guide/`.
+- Both cache folders are git-ignored. The static site uses pre-generated summaries from `web-demo/build_guide_static.py` instead.

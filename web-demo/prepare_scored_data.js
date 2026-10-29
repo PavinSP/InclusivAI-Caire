@@ -1,7 +1,6 @@
 /* Turn the scored prospect list (caritas_prospects_scored_Harsha.json) into
    data.js for the Caire map and company pages. This file is the source of
-   truth for the demo; prepare_data.py (old companies.json heuristic) is kept
-   only for reference.
+   truth for the demo; the older companies.json heuristic was removed.
 
        node prepare_scored_data.js [path/to/caritas_prospects_scored_Harsha.json]
 

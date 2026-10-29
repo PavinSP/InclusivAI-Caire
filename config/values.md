@@ -1,6 +1,6 @@
 # Caire Values Ground Truth
 
-This file is the compact, machine-readable interpretation of `Caritas_Werte.pdf` for the Caire corporate-partner matcher. The detailed source interpretation is in `04_Caritas_Values_Summary.md`.
+This file is the compact, machine-readable interpretation of `docs/challenge/Caritas_Werte.pdf` for the Caire corporate-partner matcher. The detailed source interpretation is in `docs/challenge/values_summary.md`.
 
 ## Organization
 
