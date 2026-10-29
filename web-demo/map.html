@@ -11,9 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1c2321; --ink-soft:#4a5550; --paper:#faf8f4; --panel:#ffffff;
-  --line:#e4e0d6; --line-soft:#ede9df;
-  --terracotta:#c0623f; --terracotta-soft:#f3e3da;
+  --ink:#1e1e1e; --ink-soft:#5a5a5a; --paper:#ffffff; --panel:#ffffff;
+  --line:#e6e6e6; --line-soft:#f0f0f0;
+  --terracotta:#cc201e; --terracotta-soft:#fbe8e7;
   --moss:#5c7a5e; --moss-soft:#e4ebe1;
   --gold:#b98a33; --gold-soft:#f3e8d2;
   --rust-low:#b5533a;
@@ -21,17 +21,6 @@
   --radius:14px; --radius-sm:9px;
   --shadow:0 1px 2px rgba(28,35,33,.06), 0 8px 24px -12px rgba(28,35,33,.18);
   font-size:16px;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --ink:#f2efe8; --ink-soft:#b9c0ba; --paper:#15181a; --panel:#1d2124;
-    --line:#2b3033; --line-soft:#262a2d;
-    --terracotta:#e08a63; --terracotta-soft:#33231d;
-    --moss:#8fb292; --moss-soft:#1f2920;
-    --gold:#d7ac5f; --gold-soft:#2e2619;
-    --rust-low:#d9735a;
-    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
-  }
 }
 *{box-sizing:border-box;}
 html,body{height:100%;margin:0;}
@@ -170,14 +159,14 @@ header{
 
 /* ---------- Leaflet marker look ---------- */
 .caire-dot{
-  width:14px; height:14px; border-radius:50%; background:#2d7fc1;
+  width:14px; height:14px; border-radius:50%; background:#444444;
   border:2px solid rgba(255,255,255,.95); box-shadow:0 1px 4px rgba(40,30,20,.45);
   transition:transform .12s ease;
 }
 .leaflet-marker-icon:hover .caire-dot{transform:scale(1.35);}
-.marker-cluster-caire{ background:rgba(45,127,193,.25); border-radius:50%; }
+.marker-cluster-caire{ background:rgba(68,68,68,.2); border-radius:50%; }
 .marker-cluster-caire div{
-  background:#2d7fc1; color:#fff; border-radius:50%;
+  background:#444444; color:#fff; border-radius:50%;
   display:flex; align-items:center; justify-content:center; font-weight:700;
   font-family:'Fraunces',serif; border:2px solid rgba(255,255,255,.9);
   box-shadow:0 2px 6px rgba(40,30,20,.35);
@@ -196,7 +185,7 @@ header{
 .district-label{background:none !important; border:none !important; pointer-events:none;}
 .district-label-text{
   position:absolute; transform:translate(-50%,-50%); white-space:nowrap;
-  color:#8c2419; font-weight:700; font-size:11.5px; letter-spacing:.02em;
+  color:#cc201e; font-weight:700; font-size:11.5px; letter-spacing:.02em;
   font-family:'Fraunces',Georgia,serif;
   text-shadow:0 1px 0 rgba(255,250,238,.95), 0 0 5px rgba(255,250,238,.95);
 }
@@ -216,7 +205,7 @@ header{
   border:0; background:none; padding:6px 13px; border-radius:999px; cursor:pointer; color:var(--ink-soft);
   font:inherit; font-weight:600;
 }
-.scope-switch button.on{background:#8c2419; color:#fff;}
+.scope-switch button.on{background:#cc201e; color:#fff;}
 .legend{
   position:absolute; left:14px; bottom:16px; z-index:20; background:var(--panel); border:1px solid var(--line);
   border-radius:12px; padding:10px 13px; box-shadow:var(--shadow); font-size:11.5px; color:var(--ink-soft);
@@ -356,9 +345,9 @@ header{
     <div class="scope-switch" id="scope-switch"><button data-s="mainfranken" id="sw-main"></button><button data-s="all" id="sw-all"></button></div>
     <div class="legend" id="legend">
       <div id="t-legend-title" style="font-weight:600; color:var(--ink); margin-bottom:7px;">Map key</div>
-      <div class="legend-row"><span class="legend-sw" style="background:#2d7fc1; border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.3);"></span><span id="t-leg-dot">One company</span></div>
-      <div class="legend-row"><span class="legend-sw" style="background:#2d7fc1; width:17px; height:17px; border:2px solid #fff; color:#fff; font-size:8px; display:flex; align-items:center; justify-content:center; font-weight:700;">9</span><span id="t-leg-cluster">Companies in that area</span></div>
-      <div class="legend-row"><span class="legend-sw" style="background:#8c2419; width:16px; height:3px; border-radius:1px;"></span><span id="t-leg-bound">District boundary</span></div>
+      <div class="legend-row"><span class="legend-sw" style="background:#444444; border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.3);"></span><span id="t-leg-dot">One company</span></div>
+      <div class="legend-row"><span class="legend-sw" style="background:#444444; width:17px; height:17px; border:2px solid #fff; color:#fff; font-size:8px; display:flex; align-items:center; justify-content:center; font-weight:700;">9</span><span id="t-leg-cluster">Companies in that area</span></div>
+      <div class="legend-row"><span class="legend-sw" style="background:#cc201e; width:16px; height:3px; border-radius:1px;"></span><span id="t-leg-bound">District boundary</span></div>
     </div>
     <div class="attrib-note" id="t-attrib">Boundaries: GeoBasis-DE / BKG</div>
   </div>
@@ -548,7 +537,7 @@ function buildRegion(){
 
   // Outer boundary: heaviest line, drawn on top.
   outlineLayer = L.geoJSON(outlineGeo, {
-    style:{ color:'#8c2419', weight:3.4, fill:false, opacity:1, lineJoin:'round' },
+    style:{ color:'#cc201e', weight:3.4, fill:false, opacity:1, lineJoin:'round' },
     interactive:false
   }).addTo(map);
 
