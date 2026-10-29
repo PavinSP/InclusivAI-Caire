@@ -2,7 +2,7 @@
 
 Static page: Leaflet map of companies researched in `company_research/companies.json`.
 Open `index.html` through any static server (e.g. `python3 -m http.server` in this folder).
-Switch between **Mainfranken** (default, 9 areas) and the **whole diocese** (adds Aschaffenburg and Miltenberg).
+Switch between **Mainfranken** (default, 9 areas) and the **Lower Franconia** (whole diocese; adds Aschaffenburg and Miltenberg).
 Per `config/mainfranken_scope.json` the default scope excludes those two; confirm with Caritas before showing the wider view.
 
 ## Rebuild the data

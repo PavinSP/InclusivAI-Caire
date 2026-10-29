@@ -374,8 +374,8 @@ header{
 const STR = {
   en: {
     tagline:"Caritas Würzburg partner intelligence", methodology:"How scoring works →",
-    scope:(n,k,s)=>s==='all' ? `Showing <b>${n}</b> companies in the <b>whole diocese</b> · ${k} administrative areas` : `Showing <b>${n}</b> companies in <b>Mainfranken</b> · ${k} administrative areas`,
-    sw_main:'Mainfranken', sw_all:'Whole diocese',
+    scope:(n,k,s)=>s==='all' ? `Showing <b>${n}</b> companies in <b>Lower Franconia</b> · ${k} administrative areas` : `Showing <b>${n}</b> companies in <b>Mainfranken</b> · ${k} administrative areas`,
+    sw_main:'Mainfranken', sw_all:'Lower Franconia',
     search_ph:"Search company, town, sector, CSR topic…",
     landkreis:"District", more:"More filters", less:"Fewer filters",
     confidence:"Evidence confidence", minscore:"Minimum fit score", themes:"Caritas activity match",
@@ -399,8 +399,8 @@ const STR = {
   },
   de: {
     tagline:"Caritas Würzburg Partnerintelligenz", methodology:"Wie die Bewertung funktioniert →",
-    scope:(n,k,s)=>s==='all' ? `<b>${n}</b> Unternehmen im <b>gesamten Bistum</b> · ${k} Verwaltungsgebiete` : `<b>${n}</b> Unternehmen in <b>Mainfranken</b> · ${k} Verwaltungsgebiete`,
-    sw_main:'Mainfranken', sw_all:'Gesamtes Bistum',
+    scope:(n,k,s)=>s==='all' ? `<b>${n}</b> Unternehmen in <b>Unterfranken</b> · ${k} Verwaltungsgebiete` : `<b>${n}</b> Unternehmen in <b>Mainfranken</b> · ${k} Verwaltungsgebiete`,
+    sw_main:'Mainfranken', sw_all:'Unterfranken',
     search_ph:"Unternehmen, Ort, Branche, CSR-Thema suchen…",
     landkreis:"Landkreis", more:"Weitere Filter", less:"Weniger Filter",
     confidence:"Beleglage", minscore:"Mindest-Fit-Score", themes:"Caritas-Tätigkeitsbereich",
@@ -471,6 +471,8 @@ function districtStyleFor(feature){
   };
 }
 
+/* Map labels show just the place name: drop 'Landkreis' and '(Stadt)'. */
+function placeName(n){ return String(n).replace(/^Landkreis\s+/,'').replace(/\s*\(Stadt\)$/,''); }
 let GEO = null, labelLayer = null, outlineLayer = null;
 
 function buildRegion(){
@@ -493,7 +495,7 @@ function buildRegion(){
       pane:'districtLabelPane', interactive:false, keyboard:false,
       icon: L.divIcon({
         className:'district-label' + (isCity ? ' city-label' : ''),
-        html:`<span class="district-label-text">${esc(f.properties.name)}</span>`,
+        html:`<span class="district-label-text">${esc(placeName(f.properties.name))}</span>`,
         iconSize:[0,0]
       })
     });
