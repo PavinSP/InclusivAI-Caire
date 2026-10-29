@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Caire — Company profile</title>
+<meta name="description" content="Caire company profile: lead priority, agent scoring breakdown and evidence for Caritas Würzburg outreach." />
+<link rel="icon" type="image/jpeg" href="logo.jpeg" />
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f4ef;--bg2:#efeae1;--card:#fdfbf8;--text:#232028;--soft:#5c5866;--accent:#c0392f;--accent-h:#a32b23;--accent-soft:#c0392f17;--border:#e2dcd1;--shadow:0 10px 30px -18px #3c302038;--on-accent:#fff;
+  --tier-a:#5c7a5e;--tier-b:#b98a33;--tier-c:#8a8590;--tier-x:#c0392f;--bar:#e9e3d8;}
+@media(prefers-color-scheme:dark){:root{--bg:#120f0f;--bg2:#1c1717;--card:#1d1818;--text:#f2ebe9;--soft:#b3a4a1;--accent:#ff7a6b;--accent-h:#ff9585;--accent-soft:#ff7a6b24;--border:#352c2c;--shadow:0 10px 30px -18px #000000bf;--on-accent:#120f0f;
+  --tier-a:#8fb292;--tier-b:#d7ac5f;--tier-c:#9a939f;--tier-x:#ff7a6b;--bar:#2b2424;}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:Montserrat,Inter,sans-serif;line-height:1.3}
+a{color:var(--accent)}
+.container{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+nav .container{display:flex;align-items:center;gap:1rem;height:62px}
+.brand{display:flex;align-items:center;background:#fff;border-radius:999px;padding:3px 12px;border:1px solid var(--border)}
+.brand img{height:28px;display:block}
+nav .links{margin-left:auto;display:flex;gap:1.1rem;align-items:center}
+nav .links a{color:var(--soft);text-decoration:none;font-size:.88rem;font-weight:500;white-space:nowrap}
+nav .links a:hover{color:var(--accent)}
+.lang{display:flex;border:1px solid var(--border);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:transparent;padding:4px 11px;font:600 .78rem Inter,sans-serif;color:var(--soft);cursor:pointer}
+.lang button.on{background:var(--text);color:var(--bg)}
+@media(max-width:560px){nav .links .hide-sm{display:none}}
+main{padding:2.25rem 0 3rem}
+.eyebrow{font-family:'Fira Code',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-size:.75rem;display:block;margin-bottom:.4rem}
+.head h1{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;letter-spacing:-.02em;overflow-wrap:anywhere}
+.head .sector{color:var(--soft);font-size:1.02rem;margin:.3rem 0 .9rem}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem}
+.fact{font-size:.8rem;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:.25rem .75rem;color:var(--soft);overflow-wrap:anywhere}
+.fact b{color:var(--text);font-weight:600}
+.grid2{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1.25rem;margin-top:1.75rem}
+@media(max-width:860px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.35rem 1.4rem;box-shadow:var(--shadow);min-width:0}
+.card+.card{margin-top:1.25rem}
+.card h2{font-size:1.08rem;font-weight:700;margin-bottom:.8rem}
+.score-hero{display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap}
+.big{font-family:Montserrat;font-weight:800;font-size:3.4rem;line-height:1;color:var(--accent)}
+.big small{font-size:1.1rem;color:var(--soft);font-weight:600}
+.tier{display:inline-block;padding:.3rem .8rem;border-radius:999px;font-weight:700;font-size:.85rem;color:#fff}
+@media(prefers-color-scheme:dark){.tier{color:#120f0f}}
+.tier.A{background:var(--tier-a)}.tier.B{background:var(--tier-b)}.tier.C{background:var(--tier-c)}.tier.X{background:var(--tier-x)}
+.lead{font-size:1.02rem;margin-top:1rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem;margin-top:1.1rem}
+.stat{background:var(--bg2);border-radius:10px;padding:.6rem .75rem}
+.stat b{display:block;font-family:Montserrat;font-size:1.15rem}
+.stat span{font-size:.75rem;color:var(--soft)}
+.gate{margin-top:1rem;font-size:.88rem;padding:.6rem .8rem;border-radius:10px;border:1px solid var(--border)}
+.gate.pass b{color:var(--tier-a)}.gate.fail{border-color:var(--tier-x);background:var(--accent-soft)}.gate.fail b{color:var(--tier-x)}
+.callout{border-left:4px solid var(--accent);background:var(--accent-soft);padding:1rem 1.1rem;border-radius:0 12px 12px 0}
+.callout .when{margin-top:.5rem;font-size:.85rem;color:var(--soft)}
+.agent{padding:.8rem 0;border-top:1px solid var(--border)}
+.agent:first-of-type{border-top:0;padding-top:0}
+.agent-top{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.agent-id{font-family:'Fira Code',monospace;font-size:.75rem;color:var(--accent)}
+.agent-name{font-weight:600;font-size:.95rem}
+.method{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--border);border-radius:999px;padding:.05rem .5rem;color:var(--soft)}
+.method.reviewed{border-color:var(--tier-a);color:var(--tier-a)}
+.agent-score{margin-left:auto;font-family:Montserrat;font-weight:700}
+.bar{height:8px;border-radius:99px;background:var(--bar);margin:.45rem 0 .35rem;overflow:hidden}
+.bar div{height:100%;background:var(--accent);border-radius:99px}
+.agent-meta{font-size:.76rem;color:var(--soft);display:flex;gap:.9rem;flex-wrap:wrap}
+.agent-why{font-size:.88rem;color:var(--soft);margin-top:.3rem}
+ul.plain{list-style:none}
+ul.plain li{position:relative;padding-left:1.1rem;font-size:.9rem;margin-bottom:.45rem;overflow-wrap:anywhere}
+ul.plain li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+ul.good li::before{background:var(--tier-a)}ul.warn li::before{background:var(--tier-b)}
+.sub-h{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);font-weight:600;margin:1rem 0 .4rem}
+.sub-h:first-child{margin-top:0}
+p.body{font-size:.92rem;color:var(--soft);overflow-wrap:anywhere}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.chip{font-size:.76rem;border:1px solid var(--border);border-radius:999px;padding:.15rem .6rem;color:var(--soft)}
+.chip.area{background:var(--accent-soft);border-color:transparent;color:var(--accent)}
+.src a{font-size:.85rem;text-decoration:none}
+.src a:hover{text-decoration:underline}
+.foot{font-size:.78rem;color:var(--soft);margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)}
+.foot code{font-family:'Fira Code',monospace;font-size:.74rem;overflow-wrap:anywhere}
+.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.6rem 1.1rem;border-radius:10px;font-weight:600;text-decoration:none;font-size:.88rem;border:1.5px solid var(--accent);color:var(--accent);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn:hover{background:var(--accent-soft)}
+.btn.p{background:var(--accent);color:var(--on-accent)}
+.empty{text-align:center;padding:5rem 0}
+.empty h1{font-size:2rem;margin-bottom:.6rem}
+.empty p{color:var(--soft);margin-bottom:1.5rem}
+</style>
+</head>
+<body>
+<nav><div class="container">
+  <a class="brand" id="nav-home" href="home.html" aria-label="Caire home"><img src="logo.jpeg" alt="Caire logo"></a>
+  <div class="links">
+    <a id="nav-map" href="map.html"></a>
+    <a id="nav-home2" class="hide-sm" href="home.html"></a>
+    <div class="lang"><button data-l="de">DE</button><button data-l="en">EN</button></div>
+  </div>
+</div></nav>
+<main class="container" id="root"></main>
+
+<script src="data.js"></script>
+<script>
+const STR = {
+  en: {
+    back:'← Back to map', home:'Home', profile:'Company profile', rank:(r,n)=>`#${r} of ${n}`,
+    lead:'Lead priority', final:'Final score', potential:'Potential if confirmed', gap:'Confidence gap',
+    pct:n=>`Beats ${n}% of current Caritas partners`, pctl:'vs existing partners',
+    cap:'Capacity multiplier', bonus:'Volunteer + trigger bonus',
+    gate_pass:'Reputation gate passed', gate_fail:'Reputation gate failed',
+    approach:'Suggested approach', when:'Best time to approach',
+    agents:'Agent breakdown', conf:'confidence', weight:'weight', contrib:'contribution',
+    reviewed:'reviewed', rule:'rule',
+    why:'Why this score', strengths:'Strengths', drivers:'Top drivers', weak:'Weak spots', gaps:'Data gaps',
+    lost:'pts lost', why_not:'Why not higher', reason:'Score reasoning', verify:'Verify next', flags:'Reviewer flags',
+    csr:'CSR & engagement', themes:'CSR themes', areas:'Matched Caritas activity areas', foundation:'Foundation',
+    prev:'Previous engagement', church:'Church link', network:'Caritas network link',
+    facilities:n=>`${n} Caritas facilities in the same town`,
+    contact:'Contact & sources', website:'Website', contact_l:'Contact', sources:'Sources', notes:'Research notes',
+    src_conf:'Source confidence', high:'High', medium:'Medium', low:'Low',
+    employees:'Employees', size:'Size', presence:'Presence',
+    how:'How this score works', approx:'Map position is approximate (town level), not an exact address.',
+    approx_district:'Only the district is known; the map position is the district centre.',
+    prevc:'← Previous', nextc:'Next →',
+    nf_title:'Company not found', nf_body:'This link does not match any company in the dataset.', nf_btn:'Back to the map',
+  },
+  de: {
+    back:'← Zurück zur Karte', home:'Start', profile:'Unternehmensprofil', rank:(r,n)=>`#${r} von ${n}`,
+    lead:'Lead-Priorität', final:'Endwert', potential:'Potenzial bei Bestätigung', gap:'Konfidenzlücke',
+    pct:n=>`Besser als ${n}% der aktuellen Caritas-Partner`, pctl:'ggü. bestehenden Partnern',
+    cap:'Kapazitätsfaktor', bonus:'Ehrenamt- + Anlass-Bonus',
+    gate_pass:'Reputationsprüfung bestanden', gate_fail:'Reputationsprüfung nicht bestanden',
+    approach:'Empfohlener Ansatz', when:'Bester Zeitpunkt',
+    agents:'Bewertung je Agent', conf:'Konfidenz', weight:'Gewicht', contrib:'Beitrag',
+    reviewed:'geprüft', rule:'Regel',
+    why:'Warum diese Bewertung', strengths:'Stärken', drivers:'Wichtigste Treiber', weak:'Schwachstellen', gaps:'Datenlücken',
+    lost:'Pkt. verloren', why_not:'Warum nicht höher', reason:'Begründung', verify:'Als Nächstes prüfen', flags:'Hinweise des Reviewers',
+    csr:'CSR & Engagement', themes:'CSR-Themen', areas:'Passende Caritas-Tätigkeitsbereiche', foundation:'Stiftung',
+    prev:'Bisheriges Engagement', church:'Kirchenbezug', network:'Bezug zum Caritas-Netzwerk',
+    facilities:n=>`${n} Caritas-Einrichtungen im selben Ort`,
+    contact:'Kontakt & Quellen', website:'Website', contact_l:'Kontakt', sources:'Quellen', notes:'Recherchenotizen',
+    src_conf:'Beleglage', high:'Hoch', medium:'Mittel', low:'Niedrig',
+    employees:'Mitarbeitende', size:'Größe', presence:'Präsenz',
+    how:'So funktioniert die Bewertung', approx:'Die Kartenposition ist ungefähr (Ortsebene), keine genaue Adresse.',
+    approx_district:'Nur der Landkreis ist bekannt; die Kartenposition ist die Kreismitte.',
+    prevc:'← Vorheriges', nextc:'Nächstes →',
+    nf_title:'Unternehmen nicht gefunden', nf_body:'Dieser Link passt zu keinem Unternehmen im Datensatz.', nf_btn:'Zurück zur Karte',
+  }
+};
+const params = new URLSearchParams(location.search);
+let LANG = params.get('lang') === 'de' ? 'de' : 'en';
+const t = k => STR[LANG][k];
+const DATA = (typeof CAIRE_COMPANIES !== 'undefined') ? CAIRE_COMPANIES : [];
+const META = (typeof CAIRE_META !== 'undefined') ? CAIRE_META : {};
+const BY_RANK = [...DATA].sort((a,b)=>(a.rank??1e9)-(b.rank??1e9));
+
+function esc(s){
+  if(s===undefined||s===null) return '';
+  return String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+const has = v => v!==null && v!==undefined && v!=='' && !(Array.isArray(v) && !v.length);
+const num = (v,d=1) => (typeof v==='number') ? v.toFixed(d).replace(/\.0+$/,'') : '–';
+const host = u => { try{ return new URL(u).hostname.replace(/^www\./,''); }catch(e){ return u; } };
+const safeUrl = u => /^https?:\/\//i.test(String(u||'')) ? u : null;
+const langQ = () => LANG==='de' ? '&lang=de' : '';
+const pageUrl = id => `company.html?id=${encodeURIComponent(id)}${langQ()}`;
+const ul = (items, cls='') => `<ul class="plain ${cls}">${items.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+const sub = (title, html) => html ? `<div class="sub-h">${esc(title)}</div>${html}` : '';
+// Explanation items are either strings or {agent, name, why, contribution|lost_points|score}.
+function itemText(x, kind){
+  if(typeof x === 'string') return esc(x);
+  const extra = kind==='gap' && x.lost_points!=null ? ` <span class="chip">−${num(x.lost_points,2)} ${t('lost')}</span>`
+    : kind==='driver' && x.contribution!=null ? ` <span class="chip">+${num(x.contribution,2)}</span>`
+    : x.score!=null ? ` <span class="chip">${esc(x.score)}/10</span>` : '';
+  return `<b>${esc(x.name||x.agent||'')}</b>${x.why ? ': '+esc(x.why) : ''}${extra}`;
+}
+
+function syncChrome(){
+  document.documentElement.lang = LANG;
+  document.getElementById('nav-map').textContent = t('back');
+  document.getElementById('nav-home2').textContent = t('home');
+  const q = LANG==='de' ? '?lang=de' : '';
+  document.getElementById('nav-map').href = 'map.html' + q;
+  document.getElementById('nav-home').href = 'home.html' + q;
+  document.getElementById('nav-home2').href = 'home.html' + q;
+  document.querySelectorAll('.lang button').forEach(b=> b.classList.toggle('on', b.dataset.l===LANG));
+}
+
+function render(){
+  syncChrome();
+  const root = document.getElementById('root');
+  const c = DATA.find(x=>x.id===params.get('id'));
+  if(!c){
+    document.title = 'Caire — ' + t('nf_title');
+    root.innerHTML = `<div class="empty"><span class="eyebrow">404</span><h1>${t('nf_title')}</h1><p>${t('nf_body')}</p><a class="btn p" href="map.html${LANG==='de'?'?lang=de':''}">${t('nf_btn')}</a></div>`;
+    return;
+  }
+  document.title = `${c.name} — Caire`;
+  const s = c.scores||{}, e = c.explanation||{}, g = c.gate||{}, a = c.agents||{};
+  const tc = ['A','B','C','X'].includes(c.tier_code) ? c.tier_code : 'C';
+  const web = safeUrl(c.website);
+
+  const facts = [
+    c.town ? `<span class="fact"><b>${esc(c.town)}</b>${c.landkreis && c.landkreis!==c.town ? ' · '+esc(c.landkreis) : ''}</span>` : '',
+    has(c.presence) ? `<span class="fact">${t('presence')}: <b>${esc(c.presence)}</b></span>` : '',
+    has(c.size_class) ? `<span class="fact">${t('size')}: <b>${esc(c.size_class)}</b></span>` : '',
+    has(c.employees) ? `<span class="fact">${t('employees')}: <b>${esc(c.employees)}</b></span>` : '',
+    web ? `<span class="fact"><a href="${esc(web)}" target="_blank" rel="noopener">${esc(host(web))} ↗</a></span>` : '',
+    c.rank!=null ? `<span class="fact"><b>${esc(t('rank')(c.rank, DATA.length))}</b></span>` : '',
+  ].join('');
+
+  const stats = [
+    [num(s.final_score,2), t('final')],
+    [num(s.potential_score_if_confirmed,2), t('potential')],
+    [num(s.confidence_gap,2), t('gap')],
+    [s.percentile_vs_existing_partners!=null ? s.percentile_vs_existing_partners+'%' : '–', t('pctl')],
+    [s.capacity_multiplier!=null ? '×'+num(s.capacity_multiplier,2) : '–', t('cap')],
+    [s.volunteer_trigger_bonus ? '+'+num(s.volunteer_trigger_bonus,2) : '0', t('bonus')],
+  ].map(([v,l])=>`<div class="stat"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join('');
+
+  const agentIds = Object.keys(a).sort((x,y)=>parseInt(x.slice(1))-parseInt(y.slice(1)));
+  const agents = agentIds.map(id=>{
+    const ag = a[id]||{};
+    const pctw = Math.max(0, Math.min(100, (ag.score||0)*10));
+    const method = ag.method==='reviewed' ? 'reviewed' : 'rule';
+    return `<div class="agent">
+      <div class="agent-top"><span class="agent-id">${esc(id)}</span><span class="agent-name">${esc(ag.name)}</span>
+        <span class="method ${method}">${t(method)}</span><span class="agent-score">${esc(num(ag.score))}/10</span></div>
+      <div class="bar"><div style="width:${pctw}%"></div></div>
+      <div class="agent-meta"><span>${t('conf')} ${esc(num(ag.confidence,2))}</span><span>${t('weight')} ${esc(num(ag.weight,2))}</span>
+        <span>${t('contrib')} ${esc(num(ag.contribution,2))} / ${esc(num(ag.max_contribution,2))}</span></div>
+      ${ag.rationale ? `<div class="agent-why">${esc(ag.rationale)}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  const why = [
+    sub(t('strengths'), has(e.strengths) ? ul(e.strengths.map(x=>itemText(x)), 'good') : ''),
+    sub(t('drivers'), has(e.top_drivers) ? ul(e.top_drivers.map(x=>itemText(x,'driver')), 'good') : ''),
+    sub(t('weak'), has(e.weak_spots) ? ul(e.weak_spots.map(x=>itemText(x)), 'warn') : ''),
+    sub(t('gaps'), has(e.data_gaps) ? ul(e.data_gaps.map(x=>itemText(x,'gap')), 'warn') : ''),
+    sub(t('why_not'), has(e.why_not_higher) ? `<p class="body">${esc(e.why_not_higher)}</p>` : ''),
+    sub(t('reason'), has(e.score_reason) ? `<p class="body">${esc(e.score_reason)}</p>` : ''),
+  ].join('');
+
+  const side = [
+    sub(t('verify'), has(e.what_to_verify_next) ? ul(e.what_to_verify_next.map(x=>itemText(x))) : ''),
+    sub(t('flags'), has(e.reviewer_flags) ? ul(e.reviewer_flags.map(x=>itemText(x)), 'warn') : ''),
+  ].join('');
+
+  const csr = [
+    has(c.csr_summary) ? `<p class="body">${esc(c.csr_summary)}</p>` : '',
+    sub(t('themes'), has(c.csr_themes) ? `<div class="chips">${c.csr_themes.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div>` : ''),
+    sub(t('areas'), has(c.matched_areas) ? `<div class="chips">${c.matched_areas.map(x=>`<span class="chip area">${esc(x)}</span>`).join('')}</div>` : ''),
+    sub(t('foundation'), has(c.foundation) ? `<p class="body">${esc(typeof c.foundation==='string' ? c.foundation : JSON.stringify(c.foundation))}</p>` : ''),
+    sub(t('prev'), has(c.previous_engagement) ? ul(c.previous_engagement.map(x=>esc(x))) : ''),
+    sub(t('church'), has(c.church_link) ? `<p class="body">${esc(c.church_link)}</p>` : ''),
+    sub(t('network'), (has(c.caritas_network_link) || c.caritas_facilities_in_town) ?
+      `${has(c.caritas_network_link) ? `<p class="body">${esc(c.caritas_network_link)}</p>` : ''}${c.caritas_facilities_in_town ? `<p class="body"><b>${esc(t('facilities')(c.caritas_facilities_in_town))}</b></p>` : ''}` : ''),
+  ].join('');
+
+  const srcs = (c.source_urls||[]).map(u=>{ const su = safeUrl(u); return su ? `<a href="${esc(su)}" target="_blank" rel="noopener">${esc(host(su))} ↗</a>` : esc(u); });
+  const contact = [
+    sub(t('website'), web ? `<p class="body"><a href="${esc(web)}" target="_blank" rel="noopener">${esc(web)}</a></p>` : ''),
+    sub(t('contact_l'), has(c.contact) ? `<p class="body">${esc(c.contact)}</p>` : ''),
+    sub(t('src_conf'), has(c.confidence) ? `<p class="body"><b>${esc(t(c.confidence) || c.confidence)}</b></p>` : ''),
+    sub(t('sources'), srcs.length ? `<div class="src">${ul(srcs)}</div>` : ''),
+    sub(t('notes'), has(c.source_notes) ? `<p class="body">${esc(c.source_notes)}</p>` : ''),
+  ].join('');
+
+  const i = BY_RANK.indexOf(c), prev = BY_RANK[i-1], next = BY_RANK[i+1];
+  const m = META.model || {};
+
+  root.innerHTML = `
+    <div class="head">
+      <span class="eyebrow">${t('profile')}${c.pid ? ' · '+esc(c.pid) : ''}</span>
+      <h1>${esc(c.name)}</h1>
+      ${has(c.sector) ? `<p class="sector">${esc(c.sector)}</p>` : ''}
+      <div class="facts">${facts}</div>
+    </div>
+
+    <div class="grid2">
+      <div>
+        <div class="card">
+          <div class="score-hero">
+            <div><div class="big">${esc(num(s.lead_priority))}<small> /10</small></div><div style="font-size:.8rem;color:var(--soft)">${t('lead')}</div></div>
+            <div><span class="tier ${tc}">${esc(c.tier||tc)}</span>
+              ${s.percentile_vs_existing_partners!=null ? `<div style="font-size:.88rem;margin-top:.4rem">${esc(t('pct')(s.percentile_vs_existing_partners))}</div>` : ''}</div>
+          </div>
+          ${has(e.headline) ? `<p class="lead">${esc(e.headline)}</p>` : ''}
+          <div class="stats">${stats}</div>
+          <div class="gate ${g.pass===false ? 'fail' : 'pass'}"><b>${g.pass===false ? '✕ '+t('gate_fail') : '✓ '+t('gate_pass')}</b>${g.note ? ' — '+esc(g.note) : ''}</div>
+        </div>
+
+        ${has(e.approach_angle) ? `<div class="card"><h2>${t('approach')}</h2><div class="callout">${esc(e.approach_angle)}
+          ${has(e.best_time_to_approach) ? `<div class="when"><b>${t('when')}:</b> ${esc(e.best_time_to_approach)}</div>` : ''}</div></div>` : ''}
+
+        ${agents ? `<div class="card"><h2>${t('agents')}</h2>${agents}</div>` : ''}
+        ${why ? `<div class="card"><h2>${t('why')}</h2>${why}</div>` : ''}
+      </div>
+      <div>
+        ${side ? `<div class="card">${side}</div>` : ''}
+        ${csr ? `<div class="card"><h2>${t('csr')}</h2>${csr}</div>` : ''}
+        ${contact ? `<div class="card"><h2>${t('contact')}</h2>${contact}</div>` : ''}
+      </div>
+    </div>
+
+    <div class="pager">
+      ${prev ? `<a class="btn" href="${pageUrl(prev.id)}" title="${esc(prev.name)}">${t('prevc')} ${esc(prev.name)}</a>` : '<span></span>'}
+      ${next ? `<a class="btn p" href="${pageUrl(next.id)}" title="${esc(next.name)}">${esc(next.name)} ${t('nextc')}</a>` : ''}
+    </div>
+
+    <div class="foot">
+      <b>${t('how')}:</b> ${m.formula_final ? `<code>${esc(m.formula_final)}</code>` : ''}${m.formula_lead_priority ? ` · <code>${esc(m.formula_lead_priority)}</code>` : ''}
+      ${META.calibration && META.calibration.basis ? `<br>${esc(META.calibration.basis)}` : ''}
+      <br>${c.position==='district' ? t('approx_district') : t('approx')}
+    </div>`;
+}
+
+document.querySelectorAll('.lang button').forEach(b=> b.onclick = ()=>{
+  LANG = b.dataset.l;
+  if(LANG==='de') params.set('lang','de'); else params.delete('lang');
+  history.replaceState(null, '', '?' + params.toString());
+  render();
+});
+render();
+</script>
+</body>
+</html>

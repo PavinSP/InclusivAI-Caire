@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Caire</title>
+<link rel="icon" type="image/jpeg" href="logo.jpeg" />
+<meta name="description" content="Caire — Caritas Würzburg partner-discovery demo: a Mainfranken map of corporate CSR fit for fundraising outreach." />
+<link rel="stylesheet" href="leaflet-inline.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2321; --ink-soft:#4a5550; --paper:#faf8f4; --panel:#ffffff;
+  --line:#e4e0d6; --line-soft:#ede9df;
+  --terracotta:#c0623f; --terracotta-soft:#f3e3da;
+  --moss:#5c7a5e; --moss-soft:#e4ebe1;
+  --gold:#b98a33; --gold-soft:#f3e8d2;
+  --rust-low:#b5533a;
+  --radius:14px; --radius-sm:9px;
+  --shadow:0 1px 2px rgba(28,35,33,.06), 0 8px 24px -12px rgba(28,35,33,.18);
+  font-size:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#f2efe8; --ink-soft:#b9c0ba; --paper:#15181a; --panel:#1d2124;
+    --line:#2b3033; --line-soft:#262a2d;
+    --terracotta:#e08a63; --terracotta-soft:#33231d;
+    --moss:#8fb292; --moss-soft:#1f2920;
+    --gold:#d7ac5f; --gold-soft:#2e2619;
+    --rust-low:#d9735a;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+  }
+}
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;}
+body{
+  font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--paper);
+  display:flex; flex-direction:column; overflow:hidden;
+}
+.serif{font-family:'Fraunces',Georgia,serif;}
+
+/* ---------- Header ---------- */
+header{
+  display:flex; align-items:center; gap:16px; padding:12px 20px;
+  border-bottom:1px solid var(--line); background:var(--panel); flex:0 0 auto; z-index:40;
+}
+.brand{display:flex; align-items:center; gap:10px; min-width:0;}
+.brand .mark{
+  width:34px;height:34px;border-radius:9px;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--terracotta),var(--gold));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;
+  font-family:'Fraunces',serif;
+}
+.brand h1{font-size:19px;margin:0;font-weight:600;letter-spacing:.01em;}
+.brand .tag{font-size:12.5px;color:var(--ink-soft);display:none;}
+@media(min-width:720px){.brand .tag{display:block;}}
+.scope-pill{
+  margin-left:auto; display:flex; align-items:center; gap:7px;
+  font-size:12.5px; color:var(--ink-soft); background:var(--line-soft);
+  border:1px solid var(--line); padding:6px 12px; border-radius:999px; white-space:nowrap;
+}
+.scope-pill b{color:var(--ink); font-weight:600;}
+.scope-dot{width:7px;height:7px;border-radius:50%;background:var(--moss);}
+.lang-switch{display:flex; border:1px solid var(--line); border-radius:999px; overflow:hidden; flex:0 0 auto;}
+.lang-switch button{
+  border:0; background:transparent; padding:6px 13px; font-size:12.5px; font-weight:600;
+  color:var(--ink-soft); cursor:pointer; font-family:inherit;
+}
+.lang-switch button.active{background:var(--ink); color:var(--paper);}
+.meth-link{font-size:12.5px; color:var(--ink-soft); text-decoration:none; white-space:nowrap; display:none;}
+@media(min-width:900px){.meth-link{display:block;}}
+.meth-link:hover{color:var(--terracotta);}
+
+/* ---------- Layout ---------- */
+.app{flex:1 1 auto; display:flex; min-height:0;}
+.panel{
+  width:400px; flex:0 0 auto; display:flex; flex-direction:column; min-height:0;
+  border-right:1px solid var(--line); background:var(--panel); z-index:30;
+}
+.map-wrap{flex:1 1 auto; position:relative; min-width:0;}
+#map{position:absolute; inset:0; background:#f6edd9; z-index:0;} /* own stacking context so the legend sits above map panes */
+.leaflet-control-zoom a{background:#fffdf7 !important; color:#5c3a2e !important; border-bottom-color:#e0d4bb !important;}
+.leaflet-control-zoom a:hover{background:#f3e9d4 !important;}
+
+/* ---------- Search + filters ---------- */
+.search-area{padding:16px 16px 10px; border-bottom:1px solid var(--line-soft); flex:0 0 auto;}
+.search-box{position:relative;}
+.search-box svg{position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--ink-soft); pointer-events:none;}
+.search-box input{
+  width:100%; padding:11px 14px 11px 38px; border-radius:var(--radius-sm); border:1px solid var(--line);
+  background:var(--paper); color:var(--ink); font-size:14.5px; font-family:inherit;
+}
+.search-box input:focus{outline:2px solid var(--terracotta); outline-offset:1px;}
+.suggest-row{display:flex; gap:6px; flex-wrap:wrap; margin-top:9px;}
+.suggest-chip{
+  font-size:12px; padding:5px 10px; border-radius:999px; border:1px solid var(--line);
+  background:var(--paper); color:var(--ink-soft); cursor:pointer; font-family:inherit;
+}
+.suggest-chip:hover{border-color:var(--terracotta); color:var(--terracotta);}
+
+.filters{padding:12px 16px; border-bottom:1px solid var(--line-soft); flex:0 0 auto;}
+.filter-row{display:flex; align-items:center; justify-content:space-between; margin-bottom:9px;}
+.filter-row:last-child{margin-bottom:0;}
+.filter-label{font-size:12px; font-weight:600; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.04em;}
+.filter-toggle{
+  font-size:12px; color:var(--terracotta); background:none; border:0; cursor:pointer; font-family:inherit; font-weight:600;
+}
+.select-wrap select{
+  width:100%; padding:8px 10px; border-radius:var(--radius-sm); border:1px solid var(--line);
+  background:var(--paper); color:var(--ink); font-size:13.5px; font-family:inherit;
+}
+.chip-grid{display:flex; flex-wrap:wrap; gap:6px;}
+.filter-chip{
+  font-size:12px; padding:5px 10px; border-radius:999px; border:1px solid var(--line);
+  background:var(--paper); color:var(--ink-soft); cursor:pointer; font-family:inherit;
+}
+.filter-chip.on{background:var(--moss); border-color:var(--moss); color:#fff;}
+.active-chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
+.active-chip{
+  display:flex; align-items:center; gap:6px; font-size:12px; padding:4px 6px 4px 10px;
+  background:var(--terracotta-soft); color:var(--terracotta); border-radius:999px; font-weight:600;
+}
+.active-chip button{border:0; background:none; color:inherit; cursor:pointer; font-size:14px; line-height:1; padding:2px;}
+.clear-all{font-size:12px; color:var(--ink-soft); background:none; border:0; cursor:pointer; text-decoration:underline; font-family:inherit;}
+.filters-extra{display:none;}
+.filters-extra.open{display:block;}
+
+/* ---------- Results list ---------- */
+.list-head{
+  display:flex; align-items:center; justify-content:space-between; padding:11px 16px;
+  font-size:12.5px; color:var(--ink-soft); flex:0 0 auto; border-bottom:1px solid var(--line-soft);
+}
+.list-head b{color:var(--ink);}
+.results{flex:1 1 auto; overflow-y:auto; padding:8px;}
+.card{
+  padding:13px 14px; border-radius:var(--radius-sm); cursor:pointer; margin-bottom:6px;
+  border:1px solid transparent;
+}
+.card:hover{background:var(--line-soft);}
+.card.active{background:var(--terracotta-soft); border-color:var(--terracotta);}
+.card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px;}
+.card-name{font-size:14.5px; font-weight:600; line-height:1.3;}
+.card-sector{font-size:12px; color:var(--ink-soft); margin-top:2px;}
+.score-badge{
+  flex:0 0 auto; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:700; color:#fff; font-family:'Fraunces',serif;
+}
+.tier-badge{font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; color:#fff;}
+.card-meta{display:flex; align-items:center; gap:7px; margin-top:8px; font-size:12px; color:var(--ink-soft); flex-wrap:wrap;}
+.dot{width:3px;height:3px;border-radius:50%;background:var(--ink-soft); flex:0 0 auto;}
+.conf-badge{font-size:11px; font-weight:600; padding:2px 8px; border-radius:999px;}
+.conf-high{background:var(--moss-soft); color:var(--moss);}
+.conf-medium{background:var(--gold-soft); color:var(--gold);}
+.conf-low{background:var(--terracotta-soft); color:var(--rust-low);}
+.card-reco{font-size:12.5px; color:var(--ink-soft); margin-top:7px; line-height:1.45;}
+.area-tags{display:flex; gap:5px; flex-wrap:wrap; margin-top:8px;}
+.area-tag{font-size:10.5px; padding:2px 7px; border-radius:6px; background:var(--line-soft); color:var(--ink-soft); font-weight:600;}
+.empty-state{padding:40px 24px; text-align:center; color:var(--ink-soft);}
+.empty-state svg{opacity:.4; margin-bottom:10px;}
+.empty-state p{font-size:13.5px; line-height:1.5;}
+
+/* ---------- Leaflet marker look ---------- */
+.caire-dot{
+  width:14px; height:14px; border-radius:50%; background:#2d7fc1;
+  border:2px solid rgba(255,255,255,.95); box-shadow:0 1px 4px rgba(40,30,20,.45);
+  transition:transform .12s ease;
+}
+.leaflet-marker-icon:hover .caire-dot{transform:scale(1.35);}
+.marker-cluster-caire{ background:rgba(45,127,193,.25); border-radius:50%; }
+.marker-cluster-caire div{
+  background:#2d7fc1; color:#fff; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-weight:700;
+  font-family:'Fraunces',serif; border:2px solid rgba(255,255,255,.9);
+  box-shadow:0 2px 6px rgba(40,30,20,.35);
+}
+.leaflet-popup-content-wrapper{border-radius:12px; box-shadow:var(--shadow);}
+.leaflet-popup-content{margin:0; width:260px !important;}
+.popup-card{padding:13px 14px;}
+.popup-top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+.popup-name{font-size:14px; font-weight:700; line-height:1.3;}
+.popup-meta{font-size:11.5px; color:var(--ink-soft); margin-top:3px;}
+.popup-reco{font-size:12px; color:var(--ink-soft); margin-top:8px; line-height:1.45;}
+.popup-btn{
+  margin-top:10px; width:100%; padding:7px; border-radius:8px; border:0; background:var(--ink); color:var(--paper);
+  font-size:12.5px; font-weight:600; cursor:pointer; font-family:inherit;
+}
+.district-label{background:none !important; border:none !important; pointer-events:none;}
+.district-label-text{
+  position:absolute; transform:translate(-50%,-50%); white-space:nowrap;
+  color:#8c2419; font-weight:700; font-size:11.5px; letter-spacing:.02em;
+  font-family:'Fraunces',Georgia,serif;
+  text-shadow:0 1px 0 rgba(255,250,238,.95), 0 0 5px rgba(255,250,238,.95);
+}
+.zoom-low .city-label{display:none;}
+.town-label{
+  background:none !important; border:none !important; box-shadow:none !important;
+  color:#5a4636 !important; font-weight:600; font-size:10.5px; letter-spacing:.01em;
+  text-shadow:0 1px 0 rgba(255,250,238,.95), 0 0 4px rgba(255,250,238,.95);
+  pointer-events:none;
+}
+.town-label::before{display:none !important;}
+.scope-switch{
+  position:absolute; top:14px; right:14px; z-index:20; display:flex; background:var(--panel);
+  border:1px solid var(--line); border-radius:999px; padding:3px; box-shadow:var(--shadow); font-size:12px;
+}
+.scope-switch button{
+  border:0; background:none; padding:6px 13px; border-radius:999px; cursor:pointer; color:var(--ink-soft);
+  font:inherit; font-weight:600;
+}
+.scope-switch button.on{background:#8c2419; color:#fff;}
+.legend{
+  position:absolute; left:14px; bottom:16px; z-index:20; background:var(--panel); border:1px solid var(--line);
+  border-radius:12px; padding:10px 13px; box-shadow:var(--shadow); font-size:11.5px; color:var(--ink-soft);
+}
+.legend-row{display:flex; align-items:center; gap:7px; margin-top:5px;}
+.legend-row:first-child{margin-top:0;}
+.legend-sw{width:11px;height:11px;border-radius:50%; flex:0 0 auto;}
+.attrib-note{
+  position:absolute; right:14px; bottom:16px; z-index:20; font-size:10.5px; color:var(--ink-soft);
+  background:var(--panel); border:1px solid var(--line); padding:5px 9px; border-radius:8px; opacity:.85;
+}
+
+/* ---------- Detail overlay ---------- */
+.detail-backdrop{
+  position:fixed; inset:0; background:rgba(20,22,20,.4); z-index:100; display:none; backdrop-filter:blur(2px);
+}
+.detail-backdrop.open{display:block;}
+.detail-panel{
+  position:fixed; top:0; right:0; bottom:0; width:min(560px,100%); background:var(--panel); z-index:101;
+  box-shadow:-12px 0 32px -8px rgba(0,0,0,.25); transform:translateX(100%); transition:transform .28s ease;
+  display:flex; flex-direction:column;
+}
+.detail-backdrop.open .detail-panel{transform:translateX(0);}
+.detail-head{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:22px 24px 16px;
+  border-bottom:1px solid var(--line-soft); flex:0 0 auto;
+}
+.detail-close{border:0; background:var(--line-soft); width:32px;height:32px;border-radius:50%; cursor:pointer; color:var(--ink); font-size:16px; flex:0 0 auto;}
+.detail-body{flex:1 1 auto; overflow-y:auto; padding:20px 24px 40px;}
+.detail-title{font-size:22px; font-weight:600; line-height:1.25; margin:0 0 4px;}
+.detail-sub{font-size:13px; color:var(--ink-soft);}
+.score-row{display:flex; gap:14px; margin:18px 0 20px;}
+.score-tile{flex:1; border:1px solid var(--line); border-radius:12px; padding:14px; text-align:center;}
+.score-tile .big{font-size:30px; font-weight:700; font-family:'Fraunces',serif;}
+.score-tile .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-soft); margin-top:3px;}
+.section-h{font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); margin:22px 0 10px;}
+.section-h:first-of-type{margin-top:0;}
+.reco-box{background:var(--terracotta-soft); border-radius:12px; padding:14px 16px; font-size:13.5px; line-height:1.55; color:var(--ink);}
+.crit-row{display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--line-soft); font-size:13px;}
+.crit-row:last-child{border-bottom:0;}
+.crit-name{flex:1; color:var(--ink-soft);}
+.crit-bar{width:90px; height:6px; border-radius:4px; background:var(--line-soft); overflow:hidden; flex:0 0 auto;}
+.crit-bar div{height:100%; background:var(--moss); border-radius:4px;}
+.crit-val{width:30px; text-align:right; font-weight:600; font-size:12px; flex:0 0 auto;}
+.ev-item{padding:11px 0; border-bottom:1px solid var(--line-soft); font-size:13px;}
+.ev-item:last-child{border-bottom:0;}
+.ev-claim{font-weight:600; line-height:1.4;}
+.ev-excerpt{color:var(--ink-soft); font-size:12.5px; margin-top:3px; font-style:italic; line-height:1.45;}
+.ev-url{font-size:11.5px; margin-top:4px;}
+.ev-url a{color:var(--terracotta); text-decoration:none;}
+.tag-row{display:flex; flex-wrap:wrap; gap:7px;}
+.tag-pill{font-size:12px; padding:5px 11px; border-radius:999px; background:var(--moss-soft); color:var(--moss); font-weight:600;}
+.notice{font-size:12px; color:var(--ink-soft); background:var(--line-soft); border-radius:10px; padding:10px 12px; line-height:1.5; margin-top:4px;}
+.list-plain{margin:0; padding-left:18px; font-size:13px; line-height:1.6; color:var(--ink-soft);}
+.ext-link{font-size:13px; color:var(--terracotta); text-decoration:none; font-weight:600;}
+
+/* ---------- Mobile ---------- */
+.mobile-tabs{display:none;}
+@media(max-width:860px){
+  .app{flex-direction:column;}
+  .panel{width:100%; border-right:0; order:2; height:0; overflow:hidden; transition:height .2s;}
+  .panel.mobile-open{height:60vh; border-top:1px solid var(--line);}
+  .map-wrap{order:1; flex:1 1 auto;}
+  .mobile-tabs{
+    display:flex; order:3; flex:0 0 auto; border-top:1px solid var(--line); background:var(--panel);
+  }
+  .mobile-tabs button{
+    flex:1; padding:12px; border:0; background:none; font-size:13px; font-weight:600; color:var(--ink-soft);
+    font-family:inherit;
+  }
+  .mobile-tabs button.active{color:var(--terracotta); border-top:2px solid var(--terracotta);}
+  .brand .tag{display:none;}
+  .detail-panel{width:100%;}
+}
+::-webkit-scrollbar{width:9px;}
+::-webkit-scrollbar-thumb{background:var(--line); border-radius:6px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <a href="home.html" style="display:flex"><img src="logo.jpeg" alt="Caire" height="36" style="height:36px;width:auto;background:#fff;border-radius:8px;padding:2px 7px;"></a>
+    <span class="tag" id="t-tagline">Caritas Würzburg partner intelligence</span>
+  </div>
+  <div class="scope-pill"><span class="scope-dot"></span><span id="t-scope">Showing companies in <b>Mainfranken</b></span></div>
+  <a class="meth-link" href="home.html#how" id="t-methodology">How scoring works →</a>
+  <div class="lang-switch">
+    <button id="btn-de" onclick="setLang('de')">DE</button>
+    <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+  </div>
+</header>
+
+<div class="app">
+  <aside class="panel" id="panel">
+    <div class="search-area">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="search-input" type="text" placeholder="Search company, town, sector, CSR topic…" />
+      </div>
+      <div class="suggest-row" id="suggest-row"></div>
+    </div>
+
+    <div class="filters">
+      <div class="filter-row">
+        <span class="filter-label" id="t-landkreis">District</span>
+        <button class="filter-toggle" id="t-more" onclick="toggleExtra()">More filters</button>
+      </div>
+      <div class="select-wrap"><select id="filter-landkreis"></select></div>
+
+      <div class="filters-extra" id="filters-extra">
+        <div class="filter-row" style="margin-top:12px;"><span class="filter-label" id="t-confidence">Evidence confidence</span></div>
+        <div class="chip-grid" id="chips-confidence"></div>
+
+        <div class="filter-row" style="margin-top:12px;"><span class="filter-label" id="t-minscore">Minimum fit score</span></div>
+        <div class="select-wrap"><select id="filter-minscore">
+          <option value="0">Any</option><option value="2">2.0+</option><option value="3.5">3.5+ (tier B or better)</option><option value="5">5.0+ (tier A)</option>
+        </select></div>
+
+        <div class="filter-row" style="margin-top:12px;"><span class="filter-label" id="t-themes">Caritas activity match</span></div>
+        <div class="chip-grid" id="chips-area"></div>
+      </div>
+
+      <div class="active-chips" id="active-chips"></div>
+    </div>
+
+    <div class="list-head">
+      <span><b id="result-count">0</b> <span id="t-companies">companies</span></span>
+      <button class="clear-all" id="t-clearall" onclick="clearFilters()" style="display:none;">Clear all</button>
+    </div>
+
+    <div class="results" id="results"></div>
+  </aside>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div class="scope-switch" id="scope-switch"><button data-s="mainfranken" id="sw-main"></button><button data-s="all" id="sw-all"></button></div>
+    <div class="legend" id="legend">
+      <div id="t-legend-title" style="font-weight:600; color:var(--ink); margin-bottom:7px;">Map key</div>
+      <div class="legend-row"><span class="legend-sw" style="background:#2d7fc1; border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.3);"></span><span id="t-leg-dot">One company</span></div>
+      <div class="legend-row"><span class="legend-sw" style="background:#2d7fc1; width:17px; height:17px; border:2px solid #fff; color:#fff; font-size:8px; display:flex; align-items:center; justify-content:center; font-weight:700;">9</span><span id="t-leg-cluster">Companies in that area</span></div>
+      <div class="legend-row"><span class="legend-sw" style="background:#8c2419; width:16px; height:3px; border-radius:1px;"></span><span id="t-leg-bound">District boundary</span></div>
+    </div>
+    <div class="attrib-note" id="t-attrib">Boundaries: GeoBasis-DE / BKG</div>
+  </div>
+
+  <nav class="mobile-tabs">
+    <button class="active" id="tab-map" onclick="setMobileTab('map')" data-t="t-tab-map">Map</button>
+    <button id="tab-list" onclick="setMobileTab('list')" data-t="t-tab-list">List</button>
+  </nav>
+</div>
+
+<div class="detail-backdrop" id="detail-backdrop" onclick="if(event.target===this) closeDetail()">
+  <div class="detail-panel" id="detail-panel"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+<script src="data.js"></script>
+<script>
+/* ============== i18n ============== */
+const STR = {
+  en: {
+    tagline:"Caritas Würzburg partner intelligence", methodology:"How scoring works →",
+    scope:(n,k,s)=>s==='all' ? `Showing <b>${n}</b> companies in <b>Lower Franconia</b> · ${k} administrative areas` : `Showing <b>${n}</b> companies in <b>Mainfranken</b> · ${k} administrative areas`,
+    sw_main:'Mainfranken', sw_all:'Lower Franconia',
+    search_ph:"Search company, town, sector, CSR topic…",
+    landkreis:"District", more:"More filters", less:"Fewer filters",
+    confidence:"Evidence confidence", minscore:"Minimum lead priority", themes:"Caritas activity match",
+    companies:"companies", clearall:"Clear all", any:"Any district",
+    legend_title:"Map key", leg_dot:"One company", leg_cluster:"Companies in that area", leg_bound:"District boundary",
+    attrib:"Boundaries: GeoBasis-DE / BKG",
+    tab_map:"Map", tab_list:"List",
+    high:"High", medium:"Medium", low:"Low",
+    empty_title:"No companies match these filters",
+    empty_body:"Try widening the district, lowering the minimum fit score, or clearing a Caritas activity filter.",
+    view_details:"View details", fit:"Fit score", conf:"Confidence",
+    why:"Why approach this company?", why_fallback:"A synthesized recommendation will appear here once this record has been reviewed by the scoring pipeline.",
+    breakdown:"Score breakdown", evidence:"Evidence & sources", caritas_match:"Matched Caritas activity areas",
+    csr_summary:"CSR activity", prev_engagement:"Previous engagement", church_link:"Caritas / church link",
+    approx_note:"Approximate position within the town — exact addresses are not in the dataset yet.",
+    website:"Company website", last_researched:"Demo dataset", no_evidence:"No cited evidence yet for this record.",
+    unknown:"Unknown", suggestions:["Children & education in Würzburg","Elderly care partners","Tier A & B leads","High confidence only"],
+    tiers:{A:"A · approach now", B:"B · nurture", C:"C · low priority", X:"X · gate failed"},
+    crit:{activity:"Activity match", engagement:"Previous engagement", evidence:"Evidence depth", depth:"CSR structure", church:"Caritas/church link"},
+    demo_notice:"Demo scoring: a transparent placeholder heuristic over the researched dataset — not the full agent-scoring pipeline described in the project spec.",
+    close:"Close",
+  },
+  de: {
+    tagline:"Caritas Würzburg Partnerintelligenz", methodology:"Wie die Bewertung funktioniert →",
+    scope:(n,k,s)=>s==='all' ? `<b>${n}</b> Unternehmen in <b>Unterfranken</b> · ${k} Verwaltungsgebiete` : `<b>${n}</b> Unternehmen in <b>Mainfranken</b> · ${k} Verwaltungsgebiete`,
+    sw_main:'Mainfranken', sw_all:'Unterfranken',
+    search_ph:"Unternehmen, Ort, Branche, CSR-Thema suchen…",
+    landkreis:"Landkreis", more:"Weitere Filter", less:"Weniger Filter",
+    confidence:"Beleglage", minscore:"Mindest-Lead-Priorität", themes:"Caritas-Tätigkeitsbereich",
+    companies:"Unternehmen", clearall:"Alle zurücksetzen", any:"Alle Landkreise",
+    legend_title:"Kartenlegende", leg_dot:"Ein Unternehmen", leg_cluster:"Unternehmen in diesem Gebiet", leg_bound:"Landkreisgrenze",
+    attrib:"Grenzen: GeoBasis-DE / BKG",
+    tab_map:"Karte", tab_list:"Liste",
+    high:"Hoch", medium:"Mittel", low:"Niedrig",
+    empty_title:"Keine Unternehmen gefunden",
+    empty_body:"Landkreis erweitern, Mindest-Score senken oder einen Caritas-Themenfilter entfernen.",
+    view_details:"Details ansehen", fit:"Fit-Score", conf:"Beleglage",
+    why:"Warum sollte Caritas dieses Unternehmen ansprechen?", why_fallback:"Eine zusammengefasste Empfehlung erscheint hier, sobald dieser Datensatz geprüft wurde.",
+    breakdown:"Bewertungsübersicht", evidence:"Belege & Quellen", caritas_match:"Passende Caritas-Tätigkeitsbereiche",
+    csr_summary:"CSR-Aktivität", prev_engagement:"Bisheriges Engagement", church_link:"Caritas-/Kirchenbezug",
+    approx_note:"Ungefähre Position innerhalb des Ortes — genaue Adressen liegen im Datensatz noch nicht vor.",
+    website:"Unternehmenswebsite", last_researched:"Demo-Datensatz", no_evidence:"Noch keine zitierten Belege für diesen Datensatz.",
+    unknown:"Nicht bekannt", suggestions:["Kinder & Bildung in Würzburg","Partner für Altenhilfe","A- & B-Leads","Nur hohe Beleglage"],
+    tiers:{A:"A · jetzt ansprechen", B:"B · pflegen", C:"C · niedrige Priorität", X:"X · Ausschluss"},
+    crit:{activity:"Tätigkeitsabgleich", engagement:"Bisheriges Engagement", evidence:"Belegtiefe", depth:"CSR-Struktur", church:"Caritas-/Kirchenbezug"},
+    demo_notice:"Demo-Bewertung: eine transparente Platzhalter-Heuristik über die recherchierten Daten — nicht die vollständige Agenten-Bewertungs-Pipeline aus der Projektspezifikation.",
+    close:"Schließen",
+  }
+};
+let LANG = 'en';
+function t(k){ return STR[LANG][k]; }
+
+/* ============== State ============== */
+const ALL_RECORDS = (typeof CAIRE_COMPANIES !== 'undefined') ? CAIRE_COMPANIES : [];
+let SCOPE = 'mainfranken';            // 'mainfranken' (default) or 'all' (whole diocese)
+let ALL = [], AREA_LIST = [], LANDKREIS_LIST = [];
+function computeScope(){
+  ALL = ALL_RECORDS.filter(c=> SCOPE==='all' || c.scope==='mainfranken');
+  AREA_LIST = [...new Set(ALL.flatMap(c=>c.matched_areas))].sort();
+  LANDKREIS_LIST = [...new Set(ALL.map(c=>c.landkreis))].sort();
+}
+computeScope();
+
+let state = { search:"", landkreis:"", confidence:new Set(), minscore:0, areas:new Set(), activeId:null };
+
+/* ============== Map setup ============== */
+const map = L.map('map', {
+  zoomControl:true, minZoom:8, maxZoom:16, zoomSnap:0.25, zoomDelta:0.5,
+  attributionControl:false
+}).setView([50.02, 10.10], 9);
+
+/* No raster basemap: the region is drawn as clean filled districts on a beige
+   ground, so nothing outside the area of focus competes with the data. */
+
+const TINTS = [
+  "#f0d5a8", "#e9c893", "#f2dcb6", "#e3bc84", "#eed0a0",
+  "#f4e2c2", "#e7c38c", "#f0d9ae", "#e9cb9b"
+];
+
+let districtLayer = null;
+let townLabelLayer = null;
+const TOWN_LABEL_ZOOM = 10.5;
+
+function currentBoundaryWeight(){
+  const z = map.getZoom();
+  return z <= 9.5 ? 1.6 : z <= 11 ? 2.2 : z <= 12.5 ? 3 : 3.8;
+}
+function districtStyleFor(feature){
+  return {
+    color:'#9c3326',          // deep boundary
+    weight: currentBoundaryWeight(),
+    opacity:0.95,
+    fillColor: TINTS[(feature.properties.tintIndex || 0) % TINTS.length],
+    fillOpacity:0.92
+  };
+}
+
+/* Map labels show just the place name: drop 'Landkreis' and '(Stadt)'. */
+function placeName(n){ return String(n).replace(/^Landkreis\s+/,'').replace(/\s*\(Stadt\)$/,''); }
+let GEO = null, labelLayer = null, outlineLayer = null;
+
+function buildRegion(){
+  // Remove whatever the previous scope drew.
+  [districtLayer, labelLayer, outlineLayer].forEach(l=>{ if(l) map.removeLayer(l); });
+  const feats = GEO.districts.features.filter(f=> SCOPE==='all' || f.properties.scope==='mainfranken');
+  const districtGeo = { type:'FeatureCollection', features:feats };
+  const outlineGeo = SCOPE==='all' ? GEO.outlineAll : GEO.outlineMain;
+
+  // District names live in their own pane *below* the markers, so company
+  // dots and counts are never hidden behind a label.
+  if(!map.getPane('districtLabelPane')){
+    const labelPane = map.createPane('districtLabelPane');
+    labelPane.style.zIndex = 450;
+    labelPane.style.pointerEvents = 'none';
+  }
+  labelLayer = L.layerGroup(feats.map(f=>{
+    const isCity = /Städte$/.test(f.properties.key);
+    return L.marker([f.properties.labelLat, f.properties.labelLng], {
+      pane:'districtLabelPane', interactive:false, keyboard:false,
+      icon: L.divIcon({
+        className:'district-label' + (isCity ? ' city-label' : ''),
+        html:`<span class="district-label-text">${esc(placeName(f.properties.name))}</span>`,
+        iconSize:[0,0]
+      })
+    });
+  })).addTo(map);
+  districtLayer = L.geoJSON(districtGeo, {
+    style: districtStyleFor,
+    onEachFeature:(f, layer)=>{
+      layer.on('mouseover', ()=> layer.setStyle({ weight: currentBoundaryWeight()+1.2, fillOpacity:1 }));
+      layer.on('mouseout',  ()=> layer.setStyle(districtStyleFor(f)));
+      layer.on('click', ()=>{
+        const lk = f.properties.name;
+        state.landkreis = (state.landkreis === lk) ? '' : lk;
+        document.getElementById('filter-landkreis').value = state.landkreis;
+        applyFilters();
+      });
+    }
+  }).addTo(map);
+
+  // Outer boundary: heaviest line, drawn on top.
+  outlineLayer = L.geoJSON(outlineGeo, {
+    style:{ color:'#8c2419', weight:3.4, fill:false, opacity:1, lineJoin:'round' },
+    interactive:false
+  }).addTo(map);
+
+  // Fit and lock the view to the region.
+  const b = outlineLayer.getBounds();
+  map.setMinZoom(5);
+  map.setMaxBounds(null);
+  map.fitBounds(b.pad(0.02), {animate:false});
+  map.setMaxBounds(b.pad(0.08));
+  map.options.maxBoundsViscosity = 0.9;
+  map.setMinZoom(map.getZoom());
+  scaleBoundaryWeights();
+}
+
+function setScope(sc){
+  SCOPE = sc;
+  computeScope();
+  if(state.landkreis && !LANDKREIS_LIST.includes(state.landkreis)) state.landkreis = '';
+  state.areas = new Set([...state.areas].filter(a=>AREA_LIST.includes(a)));
+  document.getElementById('sw-main').classList.toggle('on', sc==='mainfranken');
+  document.getElementById('sw-all').classList.toggle('on', sc==='all');
+  if(GEO) buildRegion();
+  buildTownLabels();
+  buildFilterControls();
+  syncChipUI();
+  applyFilters();
+  updateScopePill();
+}
+function updateScopePill(){
+  document.getElementById('t-scope').innerHTML = t('scope')(ALL.length, LANDKREIS_LIST.length, SCOPE);
+}
+document.querySelectorAll('#scope-switch button').forEach(b=> b.onclick = ()=> setScope(b.dataset.s));
+
+/* Boundaries stay deep at every zoom: line weight grows as you zoom in
+   instead of the lines thinning out. */
+function scaleBoundaryWeights(){
+  if(!districtLayer) return;
+  districtLayer.setStyle({ weight: currentBoundaryWeight() });
+}
+
+/* Town labels appear only once you are zoomed into a local area. */
+function buildTownLabels(){
+  // One label per town, placed at the town centre (not at each company's
+  // spread-out position), with source notes like "(HQ)" or "(verify)" removed.
+  const towns = {};
+  ALL.forEach(c=>{
+    const lat = c.town_lat ?? c.lat, lng = c.town_lng ?? c.lng;
+    const k = `${lat.toFixed(4)},${lng.toFixed(4)}`;
+    const clean = String(c.town||'').replace(/[\(;\/,].*$/, '').trim();
+    if(!towns[k]) towns[k] = { lat, lng, names:{} };
+    towns[k].names[clean] = (towns[k].names[clean]||0) + 1;
+  });
+  Object.values(towns).forEach(t=>{
+    t.name = Object.entries(t.names).sort((a,b)=> b[1]-a[1] || a[0].length-b[0].length)[0][0];
+  });
+  if(townLabelLayer && map.hasLayer(townLabelLayer)) map.removeLayer(townLabelLayer);
+  townLabelLayer = L.layerGroup(
+    Object.values(towns).map(t=>
+      L.marker([t.lat, t.lng], {
+        opacity:0, interactive:false,
+        icon: L.divIcon({ className:'', html:'', iconSize:[0,0] })
+      }).bindTooltip(t.name, {
+        permanent:true, direction:'top', offset:[0,-6],
+        className:'town-label', opacity:1
+      })
+    )
+  );
+  syncTownLabels();
+}
+function syncTownLabels(){
+  if(!townLabelLayer) return;
+  const show = map.getZoom() >= TOWN_LABEL_ZOOM;
+  if(show && !map.hasLayer(townLabelLayer)) townLabelLayer.addTo(map);
+  if(!show && map.hasLayer(townLabelLayer)) map.removeLayer(townLabelLayer);
+}
+
+function syncZoomClasses(){
+  // Small city enclaves (Würzburg, Schweinfurt) would collide with their
+  // surrounding Landkreis labels at overview zoom, so name them once zoomed in.
+  map.getContainer().classList.toggle('zoom-low', map.getZoom() < 10.5);
+}
+map.on('zoomend', ()=>{ scaleBoundaryWeights(); syncTownLabels(); syncZoomClasses(); });
+syncZoomClasses();
+
+Promise.all([
+  fetch('unterfranken-districts.geo.json').then(r=>r.json()),
+  fetch('mainfranken-outline.geo.json').then(r=>r.json()),
+  fetch('unterfranken-outline.geo.json').then(r=>r.json())
+]).then(([districts, outlineMain, outlineAll])=>{
+  districts.features.forEach((f, idx)=>{ f.properties.tintIndex = idx; });
+  GEO = { districts, outlineMain, outlineAll };
+  buildRegion();
+}).catch(err=> console.warn('Region boundaries failed to load', err));
+
+const clusterGroup = L.markerClusterGroup({
+  maxClusterRadius:46, showCoverageOnHover:false, disableClusteringAtZoom:15,
+  iconCreateFunction: function(cluster){
+    const n = cluster.getChildCount();
+    const size = n < 10 ? 32 : n < 30 ? 40 : n < 60 ? 48 : 56;
+    const font = n < 10 ? 13 : n < 30 ? 14 : 16;
+    return L.divIcon({
+      html:`<div style="width:${size-4}px;height:${size-4}px;margin:2px;font-size:${font}px;">${n}</div>`,
+      className:'marker-cluster-caire', iconSize:[size,size]
+    });
+  }
+});
+map.addLayer(clusterGroup);
+
+/* Colours follow the scorer's tiers: A ≥ 5.0, B ≥ 3.5, C below, X gate failed. */
+function scoreColor(score){
+  if(score>=5) return getCss('--moss');
+  if(score>=3.5) return getCss('--gold');
+  return getCss('--rust-low');
+}
+function tierColor(c){
+  return {A:getCss('--moss'), B:getCss('--gold'), C:'#8a8580', X:getCss('--rust-low')}[c.tier_code] || '#8a8580';
+}
+function fmtScore(s){ return Number(s).toFixed(1); }
+function getCss(varName){ return getComputedStyle(document.documentElement).getPropertyValue(varName).trim(); }
+
+function makeIcon(c){
+  // A single company is just a blue dot — no number on the map.
+  return L.divIcon({
+    className:'', html:`<div class="caire-dot"></div>`,
+    iconSize:[14,14], iconAnchor:[7,7], popupAnchor:[0,-8]
+  });
+}
+
+let markerIndex = {};
+
+function renderMarkers(list){
+  clusterGroup.clearLayers();
+  markerIndex = {};
+  list.forEach(c=>{
+    const m = L.marker([c.lat, c.lng], { icon: makeIcon(c) });
+    m.bindPopup(buildPopup(c), { closeButton:true, maxWidth:280 });
+    m.on('click', ()=>{ highlightCard(c.id); });
+    markerIndex[c.id] = m;
+    clusterGroup.addLayer(m);
+  });
+}
+
+function buildPopup(c){
+  const d = document.createElement('div');
+  d.className = 'popup-card';
+  d.innerHTML = `
+    <div class="popup-top">
+      <div>
+        <div class="popup-name">${esc(c.name)}</div>
+        <div class="popup-meta">${esc(c.town)} · ${esc(c.sector)}</div>
+      </div>
+      <div class="score-badge" style="background:${scoreColor(c.score)};">${fmtScore(c.score)}</div>
+    </div>
+    <div style="margin-top:6px;"><span class="tier-badge" style="background:${tierColor(c)};">${esc(t('tiers')[c.tier_code]||c.tier)}</span></div>
+    <div class="popup-reco">${esc(reasonLine(c))}</div>
+    <div class="popup-reco" style="font-size:10.5px; opacity:.8; margin-top:5px;">${esc(t('approx_note'))}</div>
+    <button class="popup-btn">${t('view_details')}</button>
+  `;
+  d.querySelector('.popup-btn').addEventListener('click', ()=> openDetail(c.id));
+  return d;
+}
+
+/* One line from the scorer: the strongest driver, else the matched Caritas areas. */
+function reasonLine(c){
+  const top = c.explanation && (c.explanation.top_drivers||[])[0];
+  if(top) return `${LANG==='de' ? 'Stärkstes Signal' : 'Strongest signal'} – ${top.name}: ${top.why}`;
+  const areas = c.matched_areas.slice(0,2).join(' & ');
+  if(areas) return LANG==='de' ? `Passt zu ${areas}.` : `Fits ${areas}.`;
+  return LANG==='de' ? 'Noch wenige Belege — zur Prüfung vorgemerkt.' : 'Limited evidence so far — flagged for review.';
+}
+
+/* ============== Filtering ============== */
+function matches(c){
+  if(state.landkreis && c.landkreis !== state.landkreis) return false;
+  if(state.confidence.size && !state.confidence.has(c.confidence)) return false;
+  if(c.score < state.minscore) return false;
+  if(state.areas.size){
+    const hit = c.matched_areas.some(a=>state.areas.has(a));
+    if(!hit) return false;
+  }
+  if(state.search){
+    const s = state.search.toLowerCase();
+    const hay = [c.name, c.town, c.sector, c.landkreis, c.tier, c.foundation, ...(c.csr_themes||[]), ...(c.matched_areas||[])].join(' ').toLowerCase();
+    if(!hay.includes(s)) return false;
+  }
+  return true;
+}
+
+function applyFilters(){
+  const filtered = ALL.filter(matches).sort((a,b)=>b.score-a.score);
+  renderMarkers(filtered);
+  renderList(filtered);
+  renderActiveChips();
+  document.getElementById('result-count').textContent = filtered.length;
+}
+
+/* ============== Sidebar list ============== */
+function renderList(list){
+  const el = document.getElementById('results');
+  if(!list.length){
+    el.innerHTML = `
+      <div class="empty-state">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <div style="font-weight:600; font-size:14px; color:var(--ink); margin-bottom:5px;">${t('empty_title')}</div>
+        <p>${t('empty_body')}</p>
+      </div>`;
+    return;
+  }
+  el.innerHTML = list.map(c=>`
+    <div class="card" data-id="${c.id}" onclick="focusCompany('${c.id}')">
+      <div class="card-top">
+        <div>
+          <div class="card-name">${esc(c.name)}</div>
+          <div class="card-sector">${esc(c.town)} · ${esc(c.sector)}</div>
+        </div>
+        <div class="score-badge" style="background:${scoreColor(c.score)};">${fmtScore(c.score)}</div>
+      </div>
+      <div class="card-meta">
+        <span class="tier-badge" style="background:${tierColor(c)};">${esc(t('tiers')[c.tier_code]||c.tier)}</span>
+        <span class="conf-badge conf-${c.confidence}">${t(c.confidence)}</span>
+        <span class="dot"></span>
+        <span>${c.source_urls.length} ${c.source_urls.length===1 ? (LANG==='de'?'Quelle':'source') : (LANG==='de'?'Quellen':'sources')}</span>
+        <a href="${companyUrl(c.id)}" onclick="event.stopPropagation()" style="margin-left:auto; color:var(--terracotta); font-weight:600; text-decoration:none;">${t('view_details')} →</a>
+      </div>
+      <div class="card-reco">${esc(reasonLine(c))}</div>
+      ${c.matched_areas.length ? `<div class="area-tags">${c.matched_areas.slice(0,3).map(a=>`<span class="area-tag">${esc(a)}</span>`).join('')}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function focusCompany(id){
+  const c = ALL.find(x=>x.id===id);
+  if(!c) return;
+  map.setView([c.lat, c.lng], 13, { animate:true });
+  const m = markerIndex[id];
+  if(m){
+    clusterGroup.zoomToShowLayer(m, ()=> m.openPopup());
+  }
+  highlightCard(id);
+  if(window.innerWidth<=860) setMobileTab('map');
+}
+function highlightCard(id){
+  state.activeId = id;
+  document.querySelectorAll('.card').forEach(el=>el.classList.toggle('active', el.dataset.id===id));
+  const card = document.querySelector(`.card[data-id="${id}"]`);
+  if(card) card.scrollIntoView({block:'nearest', behavior:'smooth'});
+}
+
+/* ============== Filter controls ============== */
+function buildFilterControls(){
+  const lkSel = document.getElementById('filter-landkreis');
+  lkSel.innerHTML = `<option value="">${t('any')}</option>` + LANDKREIS_LIST.map(l=>`<option value="${esc(l)}">${esc(l)}</option>`).join('');
+  lkSel.onchange = ()=>{ state.landkreis = lkSel.value; applyFilters(); };
+
+  const confWrap = document.getElementById('chips-confidence');
+  confWrap.innerHTML = ['high','medium','low'].map(lv=>`<button class="filter-chip" data-lv="${lv}">${t(lv)}</button>`).join('');
+  confWrap.querySelectorAll('button').forEach(btn=>{
+    btn.onclick = ()=>{
+      const lv = btn.dataset.lv;
+      if(state.confidence.has(lv)) state.confidence.delete(lv); else state.confidence.add(lv);
+      btn.classList.toggle('on');
+      applyFilters();
+    };
+  });
+
+  const msSel = document.getElementById('filter-minscore');
+  msSel.onchange = ()=>{ state.minscore = parseFloat(msSel.value); applyFilters(); };
+
+  const areaWrap = document.getElementById('chips-area');
+  areaWrap.innerHTML = AREA_LIST.map(a=>`<button class="filter-chip" data-a="${esc(a)}">${esc(a)}</button>`).join('');
+  areaWrap.querySelectorAll('button').forEach(btn=>{
+    btn.onclick = ()=>{
+      const a = btn.dataset.a;
+      if(state.areas.has(a)) state.areas.delete(a); else state.areas.add(a);
+      btn.classList.toggle('on');
+      applyFilters();
+    };
+  });
+
+  const suggestWrap = document.getElementById('suggest-row');
+  renderSuggestions(suggestWrap);
+}
+function renderSuggestions(wrap){
+  const sugg = t('suggestions');
+  const handlers = [
+    ()=>{ document.getElementById('search-input').value=''; state.search=''; state.landkreis='Würzburg (Stadt)'; state.areas=new Set(['Jugend & Bildung','Kinder & Familie']); buildFilterControls(); syncChipUI(); applyFilters(); },
+    ()=>{ state.areas=new Set(['Senioren & Pflege']); buildFilterControls(); syncChipUI(); applyFilters(); },
+    ()=>{ state.minscore=3.5; document.getElementById('filter-minscore').value='3.5'; applyFilters(); },
+    ()=>{ state.confidence=new Set(['high']); buildFilterControls(); syncChipUI(); applyFilters(); },
+  ];
+  wrap.innerHTML = sugg.map((s,i)=>`<button class="suggest-chip" data-i="${i}">${esc(s)}</button>`).join('');
+  wrap.querySelectorAll('button').forEach((btn,i)=> btn.onclick = handlers[i]);
+}
+function syncChipUI(){
+  document.querySelectorAll('#chips-confidence button').forEach(b=> b.classList.toggle('on', state.confidence.has(b.dataset.lv)));
+  document.querySelectorAll('#chips-area button').forEach(b=> b.classList.toggle('on', state.areas.has(b.dataset.a)));
+  document.getElementById('filter-landkreis').value = state.landkreis;
+}
+function setSearch(v){
+  document.getElementById('search-input').value = v;
+  state.search = v;
+  applyFilters();
+}
+
+function renderActiveChips(){
+  const wrap = document.getElementById('active-chips');
+  const chips = [];
+  if(state.landkreis) chips.push({label:state.landkreis, clear:()=>{ state.landkreis=''; document.getElementById('filter-landkreis').value=''; }});
+  state.confidence.forEach(lv=> chips.push({label:t(lv), clear:()=>{ state.confidence.delete(lv); syncChipUI(); }}));
+  if(state.minscore) chips.push({label:`${state.minscore}+`, clear:()=>{ state.minscore=0; document.getElementById('filter-minscore').value='0'; }});
+  state.areas.forEach(a=> chips.push({label:a, clear:()=>{ state.areas.delete(a); syncChipUI(); }}));
+  if(state.search) chips.push({label:`"${state.search}"`, clear:()=>{ state.search=''; document.getElementById('search-input').value=''; }});
+
+  wrap.innerHTML = chips.map((c,i)=>`<span class="active-chip">${esc(c.label)}<button data-i="${i}">&times;</button></span>`).join('');
+  wrap.querySelectorAll('button').forEach((btn,i)=> btn.onclick = ()=>{ chips[i].clear(); applyFilters(); });
+  document.getElementById('t-clearall').style.display = chips.length ? 'block' : 'none';
+}
+function clearFilters(){
+  state = { search:"", landkreis:"", confidence:new Set(), minscore:0, areas:new Set(), activeId:state.activeId };
+  document.getElementById('search-input').value='';
+  document.getElementById('filter-minscore').value='0';
+  buildFilterControls();
+  applyFilters();
+}
+function toggleExtra(){
+  const el = document.getElementById('filters-extra');
+  el.classList.toggle('open');
+  document.getElementById('t-more').textContent = el.classList.contains('open') ? t('less') : t('more');
+}
+
+let searchDebounce;
+document.getElementById('search-input').addEventListener('input', (e)=>{
+  clearTimeout(searchDebounce);
+  const v = e.target.value;
+  searchDebounce = setTimeout(()=>{ state.search = v; applyFilters(); }, 220);
+});
+
+/* ============== Company page ============== */
+/* Each company has its own page (company.html) with the full scorer breakdown. */
+function companyUrl(id){ return `company.html?id=${encodeURIComponent(id)}&lang=${LANG}`; }
+function openDetail(id){ location.href = companyUrl(id); }
+function shortUrl(u){ try{ const x=new URL(u); return x.hostname.replace('www.',''); }catch(e){ return u; } }
+function closeDetail(){ document.getElementById('detail-backdrop').classList.remove('open'); }
+
+/* ============== Mobile tabs ============== */
+function setMobileTab(tab){
+  const panel = document.getElementById('panel');
+  document.getElementById('tab-map').classList.toggle('active', tab==='map');
+  document.getElementById('tab-list').classList.toggle('active', tab==='list');
+  panel.classList.toggle('mobile-open', tab==='list');
+  if(tab==='map') setTimeout(()=>map.invalidateSize(), 220);
+}
+
+/* ============== Lang ============== */
+function setLang(l){
+  LANG = l;
+  document.getElementById('btn-de').classList.toggle('active', l==='de');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.getElementById('t-tagline').textContent = t('tagline');
+  document.getElementById('t-methodology').textContent = t('methodology');
+  updateScopePill();
+  document.getElementById('sw-main').textContent = t('sw_main');
+  document.getElementById('sw-all').textContent = t('sw_all');
+  document.getElementById('search-input').placeholder = t('search_ph');
+  document.getElementById('t-landkreis').textContent = t('landkreis');
+  document.getElementById('t-more').textContent = document.getElementById('filters-extra').classList.contains('open') ? t('less') : t('more');
+  document.getElementById('t-confidence').textContent = t('confidence');
+  document.getElementById('t-minscore').textContent = t('minscore');
+  document.getElementById('t-themes').textContent = t('themes');
+  document.getElementById('t-companies').textContent = t('companies');
+  document.getElementById('t-clearall').textContent = t('clearall');
+  document.getElementById('t-legend-title').textContent = t('legend_title');
+  document.getElementById('t-leg-dot').textContent = t('leg_dot');
+  document.getElementById('t-leg-cluster').textContent = t('leg_cluster');
+  document.getElementById('t-leg-bound').textContent = t('leg_bound');
+  document.getElementById('t-attrib').textContent = t('attrib');
+  document.getElementById('tab-map').textContent = t('tab_map');
+  document.getElementById('tab-list').textContent = t('tab_list');
+  document.querySelectorAll('#chips-confidence button').forEach(b=> b.textContent = t(b.dataset.lv));
+  document.getElementById('filter-landkreis').options[0].textContent = t('any');
+  renderSuggestions(document.getElementById('suggest-row'));
+  applyFilters();
+  if(document.getElementById('detail-backdrop').classList.contains('open') && state.activeId) openDetail(state.activeId);
+}
+
+function esc(s){
+  if(s===undefined||s===null) return '';
+  return String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+/* ============== Init ============== */
+buildTownLabels();
+buildFilterControls();
+// Company pages link back with ?lang= so the language carries over.
+if(new URLSearchParams(location.search).get('lang')==='de') setLang('de'); else applyFilters();
+updateScopePill();
+document.getElementById('sw-main').textContent = t('sw_main');
+document.getElementById('sw-all').textContent = t('sw_all');
+document.getElementById('sw-main').classList.add('on');
+window.addEventListener('resize', ()=> map.invalidateSize());
+</script>
+</body>
+</html>
