@@ -30,13 +30,14 @@
         C:'ist derzeit eine geringe Passung und damit niedrige Priorität', X:'wird nicht empfohlen, weil es die Reputationsprüfung nicht bestanden hat'}
   };
   function templated(id, language){
-    var list = window.CAIRE_COMPANIES || [];
+    var list = typeof CAIRE_COMPANIES !== 'undefined' ? CAIRE_COMPANIES : [];   // top-level const in data.js, not a window property
     var c = list.filter(function(x){ return x.id === id; })[0];
     if(!c) return null;
     var tier = VERDICT.en[c.tier_code] ? c.tier_code : 'C', de = language === 'de';
     var drivers = (c.explanation && c.explanation.top_drivers) || [];
     var why = drivers[0] && drivers[0].why ? String(drivers[0].why) : '';
-    if(de && window.CAIRE_DE && window.CAIRE_DE[why]) why = window.CAIRE_DE[why];
+    var dict = typeof CAIRE_DE !== 'undefined' ? CAIRE_DE : {};
+    if(de && dict[why]) why = dict[why];
     why = why.replace(/\s+/g, ' ').trim();
     if(why.length > 150) why = why.slice(0, 150).replace(/\s+\S*$/, '') + '…';
     var out = c.name + ' ' + VERDICT[de ? 'de' : 'en'][tier] + '.';
