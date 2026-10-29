@@ -1,9 +1,23 @@
-/* Caire, the animated voice guide. LOCALHOST ONLY: on any other host (e.g. GitHub Pages) this file does nothing.
-   Pages call CaireGuide.show(companyId, lang, {autoplay}). The local backend (POST /guide) writes a two-sentence
-   summary with Gemini, says whether the company is a good fit and points to the page for details, and voices it with
-   ElevenLabs; if there is no voice clip the browser's own speech is used. */
+/* Caire, the animated voice guide. Pages call CaireGuide.show(companyId, lang, {autoplay}).
+   It says in two short sentences whether the company is a good fit and points to the page for details.
+   - On localhost the backend (POST /guide) writes the summary with Gemini and voices it with ElevenLabs.
+   - On GitHub Pages there is no backend, so it reads guide_data.json (made by build_guide_static.py): the text for every
+     company, plus a pre-recorded ElevenLabs clip for the best ones. Without a clip the browser's own speech is used. */
 (function(){
-  if(!['localhost','127.0.0.1'].includes(location.hostname)) { window.CaireGuide = {show(){}, hide(){}}; return; }
+  var LOCAL = ['localhost','127.0.0.1'].includes(location.hostname);
+  var staticData = null;
+  function loadSummary(id, language){
+    if(LOCAL){
+      return fetch('/guide', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id:id, lang:language})})
+        .then(function(r){ return r.json().then(function(j){ if(!r.ok) throw new Error(j.error||r.status); return j; }); });
+    }
+    staticData = staticData || fetch('guide_data.json').then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); });
+    return staticData.then(function(all){
+      var e = all[id] || {}, text = e[language];
+      if(!text) throw new Error('no summary');
+      return {text:text, audio:e['audio_'+language] || null};
+    });
+  }
 
   var css = document.createElement('style');
   css.textContent = `
@@ -99,14 +113,13 @@
         el.hidden = false; q('.bubble').style.display = '';
         msg.innerHTML = UI[lang()].thinking + ' <span class="dots"><span></span><span></span><span></span></span>';
         playBtn.hidden = true; el._data = null;
-        fetch('/guide', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id:id, lang:language})})
-          .then(function(r){ return r.json().then(function(j){ if(!r.ok) throw new Error(j.error||r.status); return j; }); })
+        loadSummary(id, language)
           .then(function(data){
             if(my !== token) return;
             msg.textContent = data.text; el._data = data; playBtn.hidden = false; playBtn.textContent = UI[lang()].listen;
             if(opts && opts.autoplay) speak(data).catch(function(){ /* autoplay blocked: the Listen button is there */ });
           })
-          .catch(function(){ if(my === token){ msg.textContent = UI[lang()].err; } });
+          .catch(function(){ if(my === token){ if(LOCAL) msg.textContent = UI[lang()].err; else el.hidden = true; } });
       });
     }
   };
