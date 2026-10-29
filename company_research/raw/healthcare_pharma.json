@@ -1,0 +1,678 @@
+[
+ {
+  "company_name": "Heiligenfeld Kliniken GmbH",
+  "sector": "Private psychosomatic/psychiatric clinic group",
+  "hq_city": "Bad Kissingen",
+  "lower_franconia_sites": [
+   "Bad Kissingen",
+   "Uffenheim (MFR, outside UF)"
+  ],
+  "landkreis": "Bad Kissingen",
+  "employees_estimate": "approx. 950 (group, per regional press)",
+  "revenue_estimate": null,
+  "ownership": "private (value-oriented clinic group)",
+  "website": "https://heiligenfeld.de",
+  "csr_themes": [
+   "health",
+   "regional development",
+   "volunteering"
+  ],
+  "csr_summary": "Clinic group in Bad Kissingen. Ran a Christmas donation campaign in 2020 giving 15,500 EUR to charitable projects chosen with employee involvement; part went to regional projects incl. a palliative service.",
+  "foundation": null,
+  "previous_engagement": [
+   "2020: 15,500 EUR Christmas donations to charitable projects (about 9,500 EUR to eight projects in Bad Kissingen, Schweinfurt, Rhön-Grabfeld, Würzburg regions)"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Christmas donations 2020",
+    "excerpt": "Heiligenfeld awarded 15,500 EUR to charitable projects",
+    "url": "https://www.infranken.de/lk/bad-kissingen/spenden-an-regionale-projekte-art-5133632,PRINT"
+   },
+   {
+    "claim": "Group size and profile",
+    "excerpt": "about 950 employees, clinic group in Bad Kissingen",
+    "url": "https://www.infranken.de/lk/bad-kissingen/30-jahre-heiligenfeld-klinikgruppe-ein-ganzheitlicher-festakt-art-5097449,PRINT"
+   }
+  ],
+  "source_urls": [
+   "https://www.infranken.de/lk/bad-kissingen/spenden-an-regionale-projekte-art-5133632,PRINT",
+   "https://www.infranken.de/lk/bad-kissingen/30-jahre-heiligenfeld-klinikgruppe-ein-ganzheitlicher-festakt-art-5097449,PRINT"
+  ],
+  "confidence": "medium",
+  "notes": "Private clinics; no Caritas link found. Not a direct care-service competitor (psychosomatic clinics), but partly mental-health adjacent. Strong fit: existing local donation habit."
+ },
+ {
+  "company_name": "Leopoldina-Krankenhaus der Stadt Schweinfurt GmbH",
+  "sector": "Hospital (municipal, maximum-care teaching hospital)",
+  "hq_city": "Schweinfurt",
+  "lower_franconia_sites": [
+   "Schweinfurt"
+  ],
+  "landkreis": "Schweinfurt (Stadt)",
+  "employees_estimate": "711 beds (directory)",
+  "revenue_estimate": null,
+  "ownership": "municipal GmbH (City of Schweinfurt)",
+  "website": "https://www.leopoldina.de",
+  "csr_themes": [
+   "health",
+   "children & youth"
+  ],
+  "csr_summary": "Municipal hospital with volunteer reception service and cooperation with self-help groups. No donation activity verified.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Hospital profile",
+    "excerpt": "711 beds, teaching hospital, volunteer reception service",
+    "url": "https://www.kliniken.de/krankenhaus/leopoldina-krankenhaus-schweinfurt-2201K.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.kliniken.de/krankenhaus/leopoldina-krankenhaus-schweinfurt-2201K.html"
+  ],
+  "confidence": "low",
+  "notes": "Public body; sponsoring unlikely, more of a cooperation partner. Operates palliative and social-services overlap with Caritas."
+ },
+ {
+  "company_name": "Klinikum Aschaffenburg-Alzenau gGmbH",
+  "sector": "Hospital group (public, non-profit)",
+  "hq_city": "Aschaffenburg",
+  "lower_franconia_sites": [
+   "Aschaffenburg",
+   "Alzenau",
+   "Miltenberg",
+   "Erlenbach"
+  ],
+  "landkreis": "Aschaffenburg (Stadt)",
+  "employees_estimate": "approx. 2,500 staff (press release 2025; sources vary 1,244-3,000)",
+  "revenue_estimate": null,
+  "ownership": "public gGmbH",
+  "website": "https://klinikum-ab-alz.de",
+  "csr_themes": [
+   "health",
+   "volunteering"
+  ],
+  "csr_summary": "Honoured in 2021 by the Bavarian Interior Ministry as volunteer-friendly employer (supports staff in fire services). Works agreement 2025 with extra family benefits.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Works agreement Nov 2025",
+    "excerpt": "about 2,500 staff, new benefits agreement",
+    "url": "https://klinikum-ab-alz.de/wp-content/uploads/2025/11/Presseinformation_Mehr_Flexibilitaet-volle_Tarifsicherheit.pdf"
+   }
+  ],
+  "source_urls": [
+   "https://klinikum-ab-alz.de/wp-content/uploads/2025/11/Presseinformation_Mehr_Flexibilitaet-volle_Tarifsicherheit.pdf"
+  ],
+  "confidence": "low",
+  "notes": "Public hospital; volunteering/employer angle rather than donations. Geriatric rehab offered, slight overlap with care."
+ },
+ {
+  "company_name": "Klinikum Würzburg Mitte gGmbH (Juliusspital / Missioklinik)",
+  "sector": "Hospital (non-profit, foundation-backed)",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "approx. 981-2,500 (sources conflict)",
+  "revenue_estimate": null,
+  "ownership": "gGmbH: Stiftung Juliusspital 60%, Missionsärztliches Institut 32%, Verein Kinderklinik am Mönchberg 8%",
+  "website": "https://www.kwm-klinikum.de",
+  "csr_themes": [
+   "health",
+   "children & youth"
+  ],
+  "csr_summary": "Hospital company combining Juliusspital and Missioklinik; Catholic-linked shareholder. No donation data verified.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": "Shareholder Missionsärztliches Institut Würzburg (Catholic mission-medical institute)",
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Ownership structure",
+    "excerpt": "Foundation Juliusspital 60%, Missionsärztliches Institut 32%, Kinderklinik am Mönchberg 8%",
+    "url": "https://www.kwm-klinikum.de/assets/bilder/aktuelles/Factsheet_KWM.pdf"
+   }
+  ],
+  "source_urls": [
+   "https://www.kwm-klinikum.de/assets/bilder/aktuelles/Factsheet_KWM.pdf"
+  ],
+  "confidence": "medium",
+  "notes": "Catholic-affiliated (Missionsärztliches Institut); likely existing church-network contacts, check for prior Caritas partnership before approaching."
+ },
+ {
+  "company_name": "Stiftung Juliusspital Würzburg",
+  "sector": "Foundation (hospital, care, winery, forestry)",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "public-law foundation (since 1576)",
+  "website": "https://www.juliusspital.de",
+  "csr_themes": [
+   "health",
+   "elderly care",
+   "regional development"
+  ],
+  "csr_summary": "Historic foundation; winery proceeds finance social tasks (second-largest German winery, approx. 180 ha). Holds 60% of Klinikum Würzburg Mitte.",
+  "foundation": "Stiftung Juliusspital Würzburg (is itself the foundation)",
+  "previous_engagement": [
+   "Winery proceeds fund foundation's social tasks (franken-weinland.de)"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Social financing via winery",
+    "excerpt": "proceeds from winegrowing help finance social tasks",
+    "url": "https://en.franken-weinland.de/winzer/weingut_juliusspital-32"
+   },
+   {
+    "claim": "Foundation profile",
+    "excerpt": "hospital and winery, founded 1576",
+    "url": "https://en.wikipedia.org/wiki/Stiftung_Juliusspital_W%C3%BCrzburg"
+   }
+  ],
+  "source_urls": [
+   "https://en.franken-weinland.de/winzer/weingut_juliusspital-32",
+   "https://en.wikipedia.org/wiki/Stiftung_Juliusspital_W%C3%BCrzburg"
+  ],
+  "confidence": "medium",
+  "notes": "Competitor/peer in elderly care and hospital; website URL assumed from known domain, not fetched. Possible co-operation partner rather than sponsor."
+ },
+ {
+  "company_name": "Stiftung Bürgerspital zum Heiligen Geist",
+  "sector": "Foundation (senior care, geriatric rehab, winery)",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "public-law foundation",
+  "website": "https://www.buergerspital.de",
+  "csr_themes": [
+   "elderly care",
+   "health"
+  ],
+  "csr_summary": "Foundation running seven senior care facilities and a geriatric rehabilitation centre in Würzburg.",
+  "foundation": "Stiftung Bürgerspital zum Hl. Geist (itself)",
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Care facilities",
+    "excerpt": "operates seven senior care facilities in Würzburg inner city",
+    "url": "https://www.wohnen-im-alter.de/anbieter/stiftung-burgerspital-zum-hl-geist"
+   }
+  ],
+  "source_urls": [
+   "https://www.wohnen-im-alter.de/anbieter/stiftung-burgerspital-zum-hl-geist"
+  ],
+  "confidence": "medium",
+  "notes": "Direct competitor of Caritas elderly care in Würzburg. Peer/cooperation only."
+ },
+ {
+  "company_name": "Kranken- und Altenpflege Geißler GmbH",
+  "sector": "Private nursing home operator",
+  "hq_city": "Schweinfurt",
+  "lower_franconia_sites": [
+   "Schweinfurt"
+  ],
+  "landkreis": "Schweinfurt (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "family-owned private",
+  "website": "https://pflegedienste-geissler.de",
+  "csr_themes": [
+   "elderly care"
+  ],
+  "csr_summary": "Family-run private provider with two inpatient facilities (Schweinfurt and Wismar). No CSR info found.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Company profile",
+    "excerpt": "family-run, two full inpatient facilities, Schweinfurt and Wismar",
+    "url": "https://pflegedienste-geissler.de/"
+   }
+  ],
+  "source_urls": [
+   "https://pflegedienste-geissler.de/"
+  ],
+  "confidence": "low",
+  "notes": "Competitor to Caritas care services in Schweinfurt. Low priority for matchmaking."
+ },
+ {
+  "company_name": "ASB Casa Vital GmbH",
+  "sector": "Care operator (nursing centre Versbacher Sonnenhof)",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "ASB-affiliated GmbH",
+  "website": null,
+  "csr_themes": [
+   "elderly care"
+  ],
+  "csr_summary": "Operator of Pflegezentrum Versbacher Sonnenhof per city care directory. No CSR info.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Operator listing",
+    "excerpt": "Pflegezentrum Versbacher Sonnenhof operated by ASB Casa Vital GmbH",
+    "url": "https://www.wuerzburg.de/media/www.wuerzburg.de/org/med_19863/437802_verzeichnis_-_einrichtungen_der_altenhilfe_10-2023.pdf"
+   }
+  ],
+  "source_urls": [
+   "https://www.wuerzburg.de/media/www.wuerzburg.de/org/med_19863/437802_verzeichnis_-_einrichtungen_der_altenhilfe_10-2023.pdf"
+  ],
+  "confidence": "low",
+  "notes": "Competitor of Caritas care. Website URL is an unverified guess; consider setting null."
+ },
+ {
+  "company_name": "Sanitätshaus Otto Traub (Traub Sanitätshaus GmbH)",
+  "sector": "Medical supply store / orthopaedic technology",
+  "hq_city": "Schweinfurt",
+  "lower_franconia_sites": [
+   "Schweinfurt",
+   "Hofheim"
+  ],
+  "landkreis": "Schweinfurt (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private GmbH",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "Self-described regional market leader with 11 branches in Lower Franconia, founded 1931. No CSR info.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Branch network",
+    "excerpt": "11 branches in Lower Franconia, founded 1931",
+    "url": "https://www.stepstone.de/cmp/de/sanit%c3%a4tshaus-otto-traub-gmbh-5013143/jobs"
+   }
+  ],
+  "source_urls": [
+   "https://www.stepstone.de/cmp/de/sanit%c3%a4tshaus-otto-traub-gmbh-5013143/jobs"
+  ],
+  "confidence": "low",
+  "notes": "Website field holds job-page URL only; official site not verified. Care-adjacent supplier, possible partner."
+ },
+ {
+  "company_name": "Efinger Orthopädietechnik GmbH",
+  "sector": "Orthopaedic technology / Sanitätshaus",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg",
+   "Volkach"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private GmbH",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Directory listing",
+    "excerpt": "Efinger GmbH Sanitätshaus, Brettreichstraße 11 Würzburg",
+    "url": "https://www.pflegesuche.de/sanitaetshaus/efinger-gmbh-sanitaetshaus-in-wuerzburg_1729.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.pflegesuche.de/sanitaetshaus/efinger-gmbh-sanitaetshaus-in-wuerzburg_1729.html"
+  ],
+  "confidence": "low",
+  "notes": "Care-adjacent supplier."
+ },
+ {
+  "company_name": "Orthopädietechn. Sanitätshaus Hugo Scheder GmbH & Co. KG",
+  "sector": "Orthopaedic technology / Sanitätshaus",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private KG",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Directory listing",
+    "excerpt": "Bronnbachergasse 20, Würzburg",
+    "url": "https://www.pflegesuche.de/sanitaetshaus/orthopaedietechn-sanitaetshaus-hugo-scheder-gmbh-co-kg-in-wuerzburg_1589.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.pflegesuche.de/sanitaetshaus/orthopaedietechn-sanitaetshaus-hugo-scheder-gmbh-co-kg-in-wuerzburg_1589.html"
+  ],
+  "confidence": "low",
+  "notes": "Listing dated 2014; may be outdated."
+ },
+ {
+  "company_name": "Gundermann GmbH (Sanitätshaus)",
+  "sector": "Sanitätshaus",
+  "hq_city": "Aschaffenburg",
+  "lower_franconia_sites": [
+   "Aschaffenburg"
+  ],
+  "landkreis": "Aschaffenburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private GmbH",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Search result listing",
+    "excerpt": "main Aschaffenburg provider, Cornelienstraße 50",
+    "url": "https://www.pflegesuche.de/sanitaetshaeuser_landkreis_Aschaffenburg.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.pflegesuche.de/sanitaetshaeuser_landkreis_Aschaffenburg.html"
+  ],
+  "confidence": "low",
+  "notes": "Existence per directory only."
+ },
+ {
+  "company_name": "Sanitätshaus Häusner",
+  "sector": "Sanitätshaus",
+  "hq_city": "Schweinfurt",
+  "lower_franconia_sites": [
+   "Schweinfurt"
+  ],
+  "landkreis": "Schweinfurt (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Directory listing",
+    "excerpt": "branches Schweinfurt Hafen Ost, Gesundheitspark Schweinfurt",
+    "url": "https://www.pflegesuche.de/sanitaetshaus/haeusner-winfried-sanitaetshaus-in-schweinfurt_1559.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.pflegesuche.de/sanitaetshaus/haeusner-winfried-sanitaetshaus-in-schweinfurt_1559.html"
+  ],
+  "confidence": "low",
+  "notes": "Also has a branch in Lichtenfels (outside UF)."
+ },
+ {
+  "company_name": "mhm Harzbecher Medizintechnik GmbH",
+  "sector": "Medical technology",
+  "hq_city": "Aschaffenburg",
+  "lower_franconia_sites": [
+   "Aschaffenburg"
+  ],
+  "landkreis": "Aschaffenburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private GmbH",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Business index",
+    "excerpt": "most searched manufacturing company in Aschaffenburg",
+    "url": "https://www.creditsafe.com/business-index/de-de/sector/germany/bayern/aschaffenburg/manufacturing"
+   }
+  ],
+  "source_urls": [
+   "https://www.creditsafe.com/business-index/de-de/sector/germany/bayern/aschaffenburg/manufacturing"
+  ],
+  "confidence": "low",
+  "notes": "Little verified; check size."
+ },
+ {
+  "company_name": "WKM Medizintechnik GmbH",
+  "sector": "Medical technology (sales/service)",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private GmbH",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Bioregion mention",
+    "excerpt": "listed among Würzburg medtech firms",
+    "url": "https://www.bioregion-wuerzburg.de/bioregion/forschungszentren--kliniken/index.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.bioregion-wuerzburg.de/bioregion/forschungszentren--kliniken/index.html"
+  ],
+  "confidence": "low",
+  "notes": "Size unknown."
+ },
+ {
+  "company_name": "MC Medizintechnik GmbH",
+  "sector": "Medical technology",
+  "hq_city": "Alzenau",
+  "lower_franconia_sites": [
+   "Alzenau"
+  ],
+  "landkreis": "Aschaffenburg (Landkreis)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private GmbH",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Directory listing",
+    "excerpt": "MC Medizintechnik GmbH, Alzenau",
+    "url": "https://www.11880.com/branchenbuch/alzenau-in-unterfranken/120673612B26423957/mc-medizintechnik-gmbh.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.11880.com/branchenbuch/alzenau-in-unterfranken/120673612B26423957/mc-medizintechnik-gmbh.html"
+  ],
+  "confidence": "low",
+  "notes": "Existence per directory."
+ },
+ {
+  "company_name": "ProCon Medizintechnik GmbH",
+  "sector": "Medical technology",
+  "hq_city": "Alzenau",
+  "lower_franconia_sites": [
+   "Alzenau"
+  ],
+  "landkreis": "Aschaffenburg (Landkreis)",
+  "employees_estimate": "50-99 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private GmbH",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Directory listing",
+    "excerpt": "ProCon Medizintechnik GmbH, Alzenau",
+    "url": "https://www.11880.com/branchenbuch/alzenau-in-unterfranken/120673611B102703310/procon-medizintechnik-gmbh.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.11880.com/branchenbuch/alzenau-in-unterfranken/120673611B102703310/procon-medizintechnik-gmbh.html"
+  ],
+  "confidence": "low",
+  "notes": "Size from directory."
+ },
+ {
+  "company_name": "TauroPharm GmbH",
+  "sector": "Medical products / pharma",
+  "hq_city": "Waldbüttelbrunn",
+  "lower_franconia_sites": [
+   "Waldbüttelbrunn"
+  ],
+  "landkreis": "Würzburg (Landkreis)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "private GmbH, founded 1998",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Directory listing",
+    "excerpt": "TauroPharm, Würzburg area, founded 1998",
+    "url": "https://sanoliste.de/pharma/tauropharm/"
+   }
+  ],
+  "source_urls": [
+   "https://sanoliste.de/pharma/tauropharm/"
+  ],
+  "confidence": "low",
+  "notes": "Sources conflict on exact address (Würzburg vs Waldbüttelbrunn)."
+ },
+ {
+  "company_name": "T-Curx GmbH",
+  "sector": "Biotech (CAR-T cell therapy), University of Würzburg spin-off",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "not verified",
+  "revenue_estimate": null,
+  "ownership": "startup GmbH",
+  "website": null,
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No verified CSR/donation info found; listed on basis of existence/sector only.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Mention as Würzburg spin-off",
+    "excerpt": "CAR-T cell therapy spin-off",
+    "url": "https://www.bionity.com/de/news/28926/gute-nachrichten-aus-einer-jungen-bioregion.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.bionity.com/de/news/28926/gute-nachrichten-aus-einer-jungen-bioregion.html"
+  ],
+  "confidence": "low",
+  "notes": "Early-stage; weak fit for sponsoring."
+ }
+]

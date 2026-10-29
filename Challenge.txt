@@ -1,0 +1,8 @@
+1) AI Matchmaker: Finding the Right Corporate Partners
+Our NGO, the Caritasverband für die Diözese Würzburg e. V. , is looking for philanthropy-minded companies in the Lower Franconia region of Germany that share our values and have an interest in supporting our fields of work financially.
+
+The challenge is to develop a prototype of an AI-powered tool that helps us identify and filter potential corporate partners. The tool should analyze relevant information about companies – such as their values, Corporate Social Responsibility (CSR) activities, philanthropic interests, regional ties and previous engagement – and identify those that are a particularly good fit for our NGO.
+The goal is a practical prototype that can answer one key question: Which companies should we approach – and why are they a good match for us?
+
+Challenge Video & Data
+Video: https://www.youtube.com/watch?v=xOTjKrxPtSE 

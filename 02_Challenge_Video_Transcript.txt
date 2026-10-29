@@ -1,0 +1,19 @@
+Challenge Video Transcript
+
+Good morning everybody. First of all, I send warm greetings to all the students
+participating in this challenge on behalf of our NGO, the Caritasverband für die Dürzese Würzburg.
+Thank you very much in advance for your time, your dedication, your effort and your ideas.
+So, our challenge is the following: The fundraising department of our NGO, the Caritasverband für die Dürzese Würzburg e.V.,
+is looking for philanthropy-minded companies in the lower Franconia region of Germany that share our values
+and have an interest in supporting our fields of work financially.
+The challenge is to develop a prototype of an AI-powered tool that helps us identify and filter potential corporate partners.
+The tool should analyze relevant information about companies such as their values, corporate social responsibility
+activities, CSR, philanthropic interests, regional ties and previous engagement and identify those
+that are particularly good fit for our NGO. Information about companies suitable for us should be drawn, for example,
+from their annual NCSR reports and from regional newspaper reports or any other source you can think of.
+The goal is a practical prototype that can answer one key question: Which companies should we approach and why are they a good match for us?
+The documents we will make available to you are as follows: The geographical scope first, meaning the areas in Lower Franconia where we as Caritas operate as an NGO;
+2nd our values and 3rd our areas of activity.
+So, have a great time now in your team with this challenge and we are really, really looking forward to your ideas and what you come up with.
+Thank you so much.
+Thank you so much.

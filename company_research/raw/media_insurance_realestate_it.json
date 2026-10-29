@@ -1,0 +1,276 @@
+[
+ {
+  "company_name": "Stadt- und Wohnbau GmbH Schweinfurt (SWG)",
+  "sector": "Real estate / municipal housing",
+  "hq_city": "Schweinfurt",
+  "lower_franconia_sites": [
+   "Schweinfurt"
+  ],
+  "landkreis": "Schweinfurt (Stadt)",
+  "employees_estimate": "approx. 7,000 units managed per third-party job listing (unverified); employees not stated",
+  "revenue_estimate": null,
+  "ownership": "municipal company",
+  "website": "https://www.swg-schweinfurt.de",
+  "csr_themes": [
+   "regional development",
+   "environment",
+   "poverty"
+  ],
+  "csr_summary": "Municipal housing company advertising rents below average market rent, attention to neighbourhood harmony in tenant placement, and a 2025 sustainability report. No specific donations or sponsoring found.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "Service hotline 09721 726-0 (website)",
+  "evidence": [
+   {
+    "claim": "Municipal housing company with below-market rents and sustainability report",
+    "excerpt": "kommunales Unternehmen; Mieten unter dem durchschnittlichen Marktniveau; Nachhaltigkeitsbericht 2025",
+    "url": "https://www.swg-schweinfurt.de"
+   }
+  ],
+  "source_urls": [
+   "https://www.swg-schweinfurt.de"
+  ],
+  "confidence": "medium",
+  "notes": "Possible fit: affordable housing for Caritas clients, Wohnungslosenhilfe. Sustainability report URL not located."
+ },
+ {
+  "company_name": "Stadtbau Aschaffenburg GmbH",
+  "sector": "Real estate / municipal housing",
+  "hq_city": "Aschaffenburg",
+  "lower_franconia_sites": [
+   "Aschaffenburg"
+  ],
+  "landkreis": "Aschaffenburg (Stadt)",
+  "employees_estimate": "102 employees (company website, current)",
+  "revenue_estimate": null,
+  "ownership": "municipal housing company (owner not stated on page)",
+  "website": "https://www.stadtbau-aschaffenburg.de",
+  "csr_themes": [
+   "regional development"
+  ],
+  "csr_summary": "Housing company with about 3,200 apartments; roughly one in eight Aschaffenburg residents lives in one. Balance sheet total EUR 239.9m (31.12.2024). No donation or sponsoring information found.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "info@stadtbau-ab.de; 06021 4437-0",
+  "evidence": [
+   {
+    "claim": "About 3,200 apartments, 102 staff",
+    "excerpt": "rund 3.200 Wohnungen; 102 Mitarbeitende",
+    "url": "https://www.stadtbau-aschaffenburg.de"
+   }
+  ],
+  "source_urls": [
+   "https://www.stadtbau-aschaffenburg.de"
+  ],
+  "confidence": "medium",
+  "notes": "Fit angle: housing for vulnerable groups. Check whether an existing Caritas Aschaffenburg link exists."
+ },
+ {
+  "company_name": "Stadtbau Würzburg GmbH",
+  "sector": "Real estate / municipal housing",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "approx. 130 employees (company website)",
+  "revenue_estimate": null,
+  "ownership": "municipal housing company (owner not stated on page)",
+  "website": "https://www.stadtbau-wuerzburg.de",
+  "csr_themes": [
+   "regional development"
+  ],
+  "csr_summary": "Municipal housing company housing over 11,000 residents (about 10 percent of Würzburg). No donations or sponsoring found.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "info@stadtbau-wuerzburg.de; 0931 3085-0",
+  "evidence": [
+   {
+    "claim": "Houses 11,000+ residents, about 130 staff",
+    "excerpt": "Über 11.000 Bewohnerinnen und Bewohner; rund 130 Mitarbeitenden",
+    "url": "https://www.stadtbau-wuerzburg.de"
+   }
+  ],
+  "source_urls": [
+   "https://www.stadtbau-wuerzburg.de"
+  ],
+  "confidence": "medium",
+  "notes": "Strong local fit for housing-related cooperation; existing Caritas relations unknown, not checked in depth."
+ },
+ {
+  "company_name": "Götz & Partner mbB",
+  "sector": "Tax advisory / audit / legal",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "approx. 30 (website)",
+  "revenue_estimate": null,
+  "ownership": "partnership (mbB)",
+  "website": "https://www.goetz-partner.de",
+  "csr_themes": [],
+  "csr_summary": "Tax, audit and legal firm founded 1975 in Würzburg. No CSR, donations or sponsoring found on the website.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "https://www.goetz-partner.de/kontakt",
+  "evidence": [
+   {
+    "claim": "About 30 staff, tax/audit/legal, since 1975",
+    "excerpt": "Round about 30 Teamplayer; Steuerberatung, Wirtschaftsprüfung, Rechtsberatung",
+    "url": "https://www.goetz-partner.de"
+   }
+  ],
+  "source_urls": [
+   "https://www.goetz-partner.de"
+  ],
+  "confidence": "low",
+  "notes": "No CSR evidence; listed as a contact candidate only."
+ },
+ {
+  "company_name": "Echter Verlag (Bonifatius GmbH)",
+  "sector": "Publishing (religious/regional)",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": null,
+  "revenue_estimate": null,
+  "ownership": "legal entity per footer: Bonifatius GmbH; ownership not stated",
+  "website": "https://www.echter.de",
+  "csr_themes": [
+   "culture",
+   "education"
+  ],
+  "csr_summary": "Religious and Franconian regional publisher (theology, spirituality, Würzburg diocese history series). No donation data found.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": "Catholic-oriented publishing programme; formal church ownership not verified",
+  "csr_report_url": null,
+  "contact": "via https://www.echter.de (Kontakt page)",
+  "evidence": [
+   {
+    "claim": "Religious publisher, Würzburg, imprint of Bonifatius GmbH",
+    "excerpt": "Fachverlag für religiöse Literatur; Geschichte des Bistums und Hochstifts Würzburg",
+    "url": "https://www.echter.de"
+   }
+  ],
+  "source_urls": [
+   "https://www.echter.de"
+  ],
+  "confidence": "low",
+  "notes": "Church-adjacent; formal diocesan ownership NOT verified. Check for existing Caritas/diocese relations before outreach."
+ },
+ {
+  "company_name": "Verlag Main-Echo (Main-Echo)",
+  "sector": "Regional media / newspaper",
+  "hq_city": "Aschaffenburg",
+  "lower_franconia_sites": [
+   "Aschaffenburg"
+  ],
+  "landkreis": "Aschaffenburg (Stadt)",
+  "employees_estimate": null,
+  "revenue_estimate": null,
+  "ownership": "not verified",
+  "website": "https://www.main-echo.de",
+  "csr_themes": [
+   "regional development"
+  ],
+  "csr_summary": "Regional daily newspaper for Aschaffenburg and surroundings. No reader-donation campaign found on homepage; legal entity name not verified.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "via https://www.main-echo.de",
+  "evidence": [
+   {
+    "claim": "Regional news outlet for Aschaffenburg",
+    "excerpt": "Aktuelle Nachrichten aus Aschaffenburg und Umgebung - Main-Echo",
+    "url": "https://www.main-echo.de"
+   }
+  ],
+  "source_urls": [
+   "https://www.main-echo.de"
+  ],
+  "confidence": "low",
+  "notes": "Publisher entity and CSR unverified."
+ },
+ {
+  "company_name": "Saale-Zeitung (Bad Kissingen)",
+  "sector": "Regional media / newspaper",
+  "hq_city": "Bad Kissingen",
+  "lower_franconia_sites": [
+   "Bad Kissingen"
+  ],
+  "landkreis": "Bad Kissingen",
+  "employees_estimate": "not stated",
+  "revenue_estimate": null,
+  "ownership": "publisher not verified",
+  "website": "https://www.infranken.de/lk/bad-kissingen/nur_saalezeitung",
+  "csr_themes": [
+   "poverty",
+   "regional development"
+  ],
+  "csr_summary": "Runs the annual reader donation campaign 'Weihnachtshilfe der Saale-Zeitung' for local charities (e.g. Kissinger Drogenhilfe); 2017 edition reportedly raised 39,260 EUR.",
+  "foundation": null,
+  "previous_engagement": [
+   "Annual Weihnachtshilfe donation campaign for local charities (infranken.de reports)"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "via infranken.de Saale-Zeitung",
+  "evidence": [
+   {
+    "claim": "Annual Weihnachtshilfe campaign",
+    "excerpt": "Spendenaktion der Saale-Zeitung startet zum ersten Adventswochenende",
+    "url": "https://www.infranken.de/lk/bad-kissingen/nur_saalezeitung/spendenaktion-der-saale-zeitung-startet-zum-ersten-adventswochenende-hilfe-ist-bitter-noetig-art-5592154"
+   }
+  ],
+  "source_urls": [
+   "https://www.infranken.de/lk/bad-kissingen/nur_saalezeitung/spendenaktion-der-saale-zeitung-startet-zum-ersten-adventswochenende-hilfe-ist-bitter-noetig-art-5592154"
+  ],
+  "confidence": "medium",
+  "notes": "Good fit as media partner for Caritas visibility; owner entity unverified."
+ },
+ {
+  "company_name": "Bechtle system house Würzburg (Bechtle AG)",
+  "sector": "IT services",
+  "hq_city": "Neckarsulm (Würzburg branch)",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "not stated for site",
+  "revenue_estimate": null,
+  "ownership": "listed (Bechtle AG)",
+  "website": "https://www.bechtle.com/de-en/about-bechtle/company/locations/bechtle-system-house-wuerzburg",
+  "csr_themes": [],
+  "csr_summary": "IT system house with a Würzburg location. No local donations found.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "via Bechtle location page",
+  "evidence": [
+   {
+    "claim": "Bechtle has a system house in Würzburg",
+    "excerpt": "Bechtle system house Würzburg",
+    "url": "https://www.bechtle.com/de-en/about-bechtle/company/locations/bechtle-system-house-wuerzburg"
+   }
+  ],
+  "source_urls": [
+   "https://www.bechtle.com/de-en/about-bechtle/company/locations/bechtle-system-house-wuerzburg"
+  ],
+  "confidence": "low",
+  "notes": "Branch of national group; decisions likely central."
+ }
+]

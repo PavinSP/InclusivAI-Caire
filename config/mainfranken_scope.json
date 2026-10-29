@@ -1,0 +1,28 @@
+{
+  "scope_id": "mainfranken",
+  "display_name_de": "Mainfranken",
+  "display_name_en": "Mainfranken",
+  "definition": "The Mainfranken region comprises the independent cities of Würzburg and Schweinfurt plus the districts of Bad Kissingen, Haßberge, Kitzingen, Main-Spessart, Rhön-Grabfeld, Schweinfurt, and Würzburg.",
+  "cities": [
+    "Würzburg",
+    "Schweinfurt"
+  ],
+  "districts": [
+    "Bad Kissingen",
+    "Haßberge",
+    "Kitzingen",
+    "Main-Spessart",
+    "Rhön-Grabfeld",
+    "Schweinfurt",
+    "Würzburg"
+  ],
+  "excluded_from_default_scope": [
+    "Aschaffenburg",
+    "Miltenberg"
+  ],
+  "matching_rule": "Include a company when at least one verified company site is inside one of the configured cities or districts. Do not include a company solely because its parent company or an unverified source has a wider regional presence.",
+  "data_quality_rule": "Normalize district and city variants before filtering, preserve the original value, and send ambiguous or multi-region records to human review.",
+  "source_name": "Region Mainfranken GmbH",
+  "source_url": "https://www.mainfranken.org/",
+  "last_verified": "2026-10-29"
+}

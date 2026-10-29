@@ -1,0 +1,244 @@
+﻿#,company,sector,hq_city,landkreis,research_confidence,other_church_link,website,research_slice
+1,WIKA Alexander Wiegand SE & Co. KG,"Measurement technology (pressure, temperature, level, flow instruments)",Klingenberg am Main,Landkreis Miltenberg,high,,https://www.wika.com,aschaffenburg_miltenberg
+2,DPD Deutschland GmbH,Logistics / parcel delivery,Aschaffenburg,Stadt Aschaffenburg,high,,https://www.dpd.com/de,aschaffenburg_miltenberg
+3,Linde Hydraulics GmbH & Co. KG,Mechanical engineering / hydraulic drives,Aschaffenburg,Stadt Aschaffenburg,medium,,https://www.linde-hydraulics.com,aschaffenburg_miltenberg
+4,Adler Modemärkte GmbH,Retail (fashion),Haibach,Landkreis Aschaffenburg,medium,,https://www.adler.de,aschaffenburg_miltenberg
+5,SAF-HOLLAND SE (SAF-HOLLAND GmbH),Automotive supplier (truck/trailer chassis components),Bessenbach,Landkreis Aschaffenburg,medium,,https://www.safholland.com,aschaffenburg_miltenberg
+6,Joyson Safety Systems Aschaffenburg GmbH,"Automotive supplier (airbags, steering wheels, seatbelts)",Aschaffenburg,Stadt Aschaffenburg,low,,https://www.joysonsafety.com,aschaffenburg_miltenberg
+7,Alcon Pharma GmbH (Werk Großwallstadt),Medical devices (contact lenses),Großwallstadt (site); group HQ Geneva,Landkreis Miltenberg,high,,https://www.alcon.com,aschaffenburg_miltenberg
+8,Mainsite GmbH & Co. KG (Industrie Center Obernburg),Industrial park operator / chemical-site services,Obernburg am Main,Landkreis Miltenberg,medium,,https://www.mainsite.de,aschaffenburg_miltenberg
+9,FRIPA Papierfabrik Albert Friedrich KG,Paper (tissue / hygiene paper),Miltenberg,Landkreis Miltenberg,medium,,https://www.fripa.de,aschaffenburg_miltenberg
+10,OSWALD Elektromotoren GmbH,Electrical engineering (electric motors),Miltenberg,Landkreis Miltenberg,medium,,https://www.oswald.de,aschaffenburg_miltenberg
+11,KAUP GmbH & Co. KG,Mechanical engineering (forklift attachments),Aschaffenburg,Stadt Aschaffenburg,medium,,https://www.kaup.de,aschaffenburg_miltenberg
+12,ZF Friedrichshafen AG - Standort Aschaffenburg,Automotive supplier,Friedrichshafen (site Aschaffenburg),Stadt Aschaffenburg,low,,https://www.zf.com,aschaffenburg_miltenberg
+13,International Paper (ex DS Smith Paper) - Papierfabrik Aschaffenburg,Paper / packaging (recycled containerboard),"Memphis, USA (mill in Aschaffenburg)",Stadt Aschaffenburg,low,,https://www.dssmith.com/paper/about/paper-mills/aschaffenburg-de,aschaffenburg_miltenberg
+14,BMZ Group (BMZ GmbH),Battery systems (lithium-ion),Karlstein am Main,Landkreis Aschaffenburg,medium,,https://www.bmz-group.com,aschaffenburg_miltenberg
+15,SALOMON FoodWorld GmbH,"Food production (foodservice: finger food, burgers, schnitzel)",Großostheim,Landkreis Aschaffenburg,medium,,https://www.salomon-foodworld.com,aschaffenburg_miltenberg
+16,SINGULUS TECHNOLOGIES AG,Mechanical engineering (vacuum coating / solar & semiconductor equipment),Kahl am Main,Landkreis Aschaffenburg,medium,,https://www.singulus.com,aschaffenburg_miltenberg
+17,Heinrich Kopp GmbH,"Electrical equipment (switches, sockets, installation material)",Kahl am Main,Landkreis Aschaffenburg,medium,,https://www.kopp.eu,aschaffenburg_miltenberg
+18,Hemmelrath Lackfabrik GmbH,Chemicals (automotive coatings / primers),Klingenberg am Main,Landkreis Miltenberg,low,,,aschaffenburg_miltenberg
+19,Applied Materials GmbH & Co. KG (Standort Alzenau),Semiconductor / display equipment (vacuum systems for OLED and displays),"Santa Clara, USA (site Alzenau)",Landkreis Aschaffenburg,low,,https://www.appliedmaterials.com,aschaffenburg_miltenberg
+20,Bühler Alzenau GmbH,"Mechanical engineering (optical/vacuum coating systems, Bühler Leybold Optics)","Uzwil, Switzerland (site Alzenau)",Landkreis Aschaffenburg,medium,,https://www.buhlergroup.com/global/en/locations/Germany-Alzenau.html,aschaffenburg_miltenberg
+21,Odenwald Faserplattenwerk GmbH (OWA),Building materials (mineral-wool and metal ceiling systems),Amorbach,Landkreis Miltenberg,low,,https://www.owa.de,aschaffenburg_miltenberg
+22,Framatome GmbH - Standort Karlstein,"Nuclear technology (fuel assembly components, engineering)",Paris / Erlangen (German HQ); site Karlstein am Main,Landkreis Aschaffenburg,high,,https://www.framatome.com,aschaffenburg_miltenberg
+23,CORDENKA GmbH & Co. KG,Chemical fibres (technical viscose/rayon yarn),Obernburg am Main (Industrie Center Obernburg),Landkreis Miltenberg,medium,,https://cordenka.com,aschaffenburg_miltenberg
+24,PHP Fibers GmbH,"Chemical fibres (high-tenacity polyamide/polyester yarns for airbags, seatbelts)",Obernburg am Main (Industrie Center Obernburg),Landkreis Miltenberg,medium,,,aschaffenburg_miltenberg
+25,Reis Robotics GmbH & Co. KG / KUKA (Standort Obernburg),Robotics / automation,"Obernburg am Main (parent KUKA, Augsburg)",Landkreis Miltenberg,medium,,https://www.kuka.com,aschaffenburg_miltenberg
+26,MAINMETALL Großhandelsgesellschaft mbH,"Wholesale (sanitary, heating, installation, roofing, tools)",Bürgstadt,Landkreis Miltenberg,high,,https://www.mainmetall.de,aschaffenburg_miltenberg
+27,Karosseriebau Bernhard Appelmann GmbH,Automotive services (body shop / vehicle repair),Aschaffenburg,Stadt Aschaffenburg,high,yes,https://www.kba-ab.de,aschaffenburg_miltenberg
+28,f.a.n. Frankenstolz Schlafkomfort H. Neumeyer GmbH & Co. KG,"Consumer goods (bedding, mattresses, quilts, pillows)",Mainaschaff (administration),Landkreis Aschaffenburg,medium,,https://frankenstolz.de,aschaffenburg_miltenberg
+29,Progroup AG - Standort Stockstadt (ehem. Sappi Stockstadt),"Paper (containerboard, under construction)",Landau (Pfalz) (site Stockstadt am Main),Landkreis Aschaffenburg,medium,,https://www.progroup.ag,aschaffenburg_miltenberg
+30,NUKEM Technologies Engineering Services GmbH,"Nuclear engineering services (decommissioning, waste management)",Karlstein am Main,Landkreis Aschaffenburg,low,,https://www.nukemtechnologies.de,aschaffenburg_miltenberg
+31,Eder & Heylands Brauerei GmbH & Co. KG,"Food & beverage (brewery, brand 'Schlappeseppel')",Großostheim,Landkreis Aschaffenburg,low,,http://www.eder-heylands.de,aschaffenburg_miltenberg
+32,Pollmeier Aschaffenburg GmbH & Co. KG,Wood processing (hardwood sawmill),Creuzburg (group); site Aschaffenburg,Stadt Aschaffenburg,medium,,https://www.pollmeier.com,aschaffenburg_miltenberg
+33,Gries Deco Company GmbH (DEPOT),Retail (home decoration / small furniture),Niedernberg,Landkreis Miltenberg,medium,,https://www.depot-online.com,aschaffenburg_miltenberg
+34,Solar Fabrik GmbH,Renewable energy (solar modules and components distribution),Laufach,Landkreis Aschaffenburg,medium,,https://solar-fabrik.de,aschaffenburg_miltenberg
+35,Göhler Anlagentechnik GmbH,Industrial plant engineering,Hösbach,Landkreis Aschaffenburg,low,,,aschaffenburg_miltenberg
+36,ASC Technologies AG,Software (communication recording and analytics),Hösbach,Landkreis Aschaffenburg,low,,https://www.asctechnologies.com,aschaffenburg_miltenberg
+37,Brauhaus Faust,Food & beverage (brewery),Miltenberg,Landkreis Miltenberg,low,,https://www.faust.de,aschaffenburg_miltenberg
+38,Sparkasse Schweinfurt-Haßberge,Banking (public savings bank),Schweinfurt,"Schweinfurt (Stadt); also Lkr. Schweinfurt, Haßberge",medium,,https://www.sparkasse-sw-has.de,banks_utilities_retail
+39,Sparkasse Aschaffenburg Miltenberg,Banking (public savings bank),Aschaffenburg,"Aschaffenburg (Stadt); also Lkr. Aschaffenburg, Miltenberg",high,,https://www.s-abmil.de,banks_utilities_retail
+40,Sparkasse Bad Kissingen,Banking (public savings bank),Bad Kissingen,Bad Kissingen,medium,yes,https://www.spk-kg.de,banks_utilities_retail
+41,Raiffeisenbank Main-Spessart eG,Banking (cooperative bank),Lohr am Main,Main-Spessart,high,,https://www.raiba-msp.de,banks_utilities_retail
+42,VR-Bank Bad Kissingen eG (Volksbank Raiffeisenbank Bad Kissingen eG),Banking (cooperative bank),Bad Kissingen,Bad Kissingen,medium,,https://www.die-vrbank.de,banks_utilities_retail
+43,VR-MainBank eG,Banking (cooperative bank),Gerolzhofen,Schweinfurt (Landkreis),medium,yes,https://www.vr-mb.de,banks_utilities_retail
+44,VR Bank Kitzingen eG,Banking (cooperative bank),Kitzingen,Kitzingen,medium,,https://www.vrkt.de,banks_utilities_retail
+45,Frankfurter Volksbank Rhein/Main eG – Zweigniederlassung Raiffeisen-Volksbank Aschaffenburg,Banking (cooperative bank),Frankfurt am Main (regional branch HQ Aschaffenburg),Aschaffenburg (Stadt/Lkr.); also Lkr. Miltenberg,medium,yes,https://www.frankfurter-volksbank.de/wir-sind-rhein-main/regionales/aschaffenburg.html,banks_utilities_retail
+46,Raiffeisenbank Mainschleife - Steigerwald eG,Banking (cooperative bank),Volkach,Kitzingen,medium,,https://www.raiffeisenbank-mainschleife-steigerwald.de,banks_utilities_retail
+47,Raiffeisenbank Höchberg eG,Banking (cooperative bank),Höchberg,Würzburg (Landkreis),low,,https://www.raiba-hoechberg.de,banks_utilities_retail
+48,Raiffeisenbank Bütthard-Gaukönigshofen eG,Banking (cooperative bank),Bütthard,Würzburg (Landkreis),low,,https://www.raiba-buett-gauk.de,banks_utilities_retail
+49,Raiffeisenbank Elsavatal eG,Banking (cooperative bank),Eschau,Miltenberg,low,,https://www.raiba-elsavatal.de,banks_utilities_retail
+50,"Sparda-Bank Nürnberg eG (Filialen Würzburg, Schweinfurt, Aschaffenburg)",Banking (cooperative bank),Nürnberg,Würzburg (Stadt); Schweinfurt (Stadt); Aschaffenburg (Stadt),low,,https://www.sparda-n.de,banks_utilities_retail
+51,Würzburger Versorgungs- und Verkehrs-GmbH (WVV) / Stadtwerke Würzburg AG,Utilities / energy / public transport,Würzburg,Würzburg (Stadt),medium,,https://www.wvv.de,banks_utilities_retail
+52,"Stadtwerke Aschaffenburg (Aschaffenburger Versorgungs-GmbH, AVG)",Utilities / energy / water / public transport / pools,Aschaffenburg,Aschaffenburg (Stadt),medium,,https://www.stwab.de,banks_utilities_retail
+53,EDEKA Nordbayern-Sachsen-Thüringen (EDEKA Handelsgesellschaft Nordbayern-Sachsen-Thüringen mbH),Food retail / wholesale,Rottendorf,Würzburg (Landkreis),medium,,https://verbund.edeka/nordbayern-sachsen-thueringen/,banks_utilities_retail
+54,s.Oliver Bernd Freier GmbH & Co. KG (s.Oliver Group),Fashion retail / apparel,Rottendorf,Würzburg (Landkreis),medium,,https://www.soliver.de,banks_utilities_retail
+55,Versicherungskammer Bayern,"Insurance (public insurer, Sparkassen-Finanzgruppe)",München,,low,,https://www.versicherungskammer.de,banks_utilities_retail
+56,Gasversorgung Unterfranken GmbH (gasuf),"Utilities / gas, biomethane, heating",Würzburg,Würzburg (Stadt),medium,,https://www.gasuf.de,banks_utilities_retail
+57,ÜZ Mainfranken eG,Utilities / electricity (energy cooperative),Lülsfeld,Schweinfurt (Landkreis),medium,,https://www.uez.de,banks_utilities_retail
+58,Kaufhaus Pecht (Stiftung Pecht),Retail (department store),Bad Neustadt an der Saale,Rhön-Grabfeld,medium,,,family_foundations_mittelstand
+59,Eschenbacher Privatbrauerei Wagner (Karl-Wagner-Stiftung),Brewery,Eschenbach (Eltmann),Haßberge,medium,,,family_foundations_mittelstand
+60,"Fürst zu Löwenstein (Forst, Weingut, Stiftung Kleinheubach)","Forestry, winery, estate/real estate",Kleinheubach,Miltenberg,low,,https://www.loewenstein.de,family_foundations_mittelstand
+61,Helmut Unkel GmbH & Co. KG (Helmut Unkel Stiftungen),Switchgear cabinet construction,Würzburg,Würzburg (Stadt),low,,,family_foundations_mittelstand
+62,Göbel Hochbau GmbH (Firmengruppe Göbel),Construction,Rimpar,Würzburg (Landkreis),medium,,https://www.firmengruppe-goebel.de/,family_foundations_mittelstand
+63,Gebietswinzergenossenschaft Franken / Winzergemeinschaft Franken (GWF) 'Freudentrauben',Wine cooperative,Kitzingen area,Kitzingen,low,yes,,family_foundations_mittelstand
+64,Heiligenfeld Kliniken GmbH,Private psychosomatic/psychiatric clinic group,Bad Kissingen,Bad Kissingen,medium,,https://heiligenfeld.de,healthcare_pharma
+65,Leopoldina-Krankenhaus der Stadt Schweinfurt GmbH,"Hospital (municipal, maximum-care teaching hospital)",Schweinfurt,Schweinfurt (Stadt),low,,https://www.leopoldina.de,healthcare_pharma
+66,Klinikum Aschaffenburg-Alzenau gGmbH,"Hospital group (public, non-profit)",Aschaffenburg,Aschaffenburg (Stadt),low,,https://klinikum-ab-alz.de,healthcare_pharma
+67,Klinikum Würzburg Mitte gGmbH (Juliusspital / Missioklinik),"Hospital (non-profit, foundation-backed)",Würzburg,Würzburg (Stadt),medium,yes,https://www.kwm-klinikum.de,healthcare_pharma
+68,Stiftung Juliusspital Würzburg,"Foundation (hospital, care, winery, forestry)",Würzburg,Würzburg (Stadt),medium,,https://www.juliusspital.de,healthcare_pharma
+69,Stiftung Bürgerspital zum Heiligen Geist,"Foundation (senior care, geriatric rehab, winery)",Würzburg,Würzburg (Stadt),medium,,https://www.buergerspital.de,healthcare_pharma
+70,Kranken- und Altenpflege Geißler GmbH,Private nursing home operator,Schweinfurt,Schweinfurt (Stadt),low,,https://pflegedienste-geissler.de,healthcare_pharma
+71,ASB Casa Vital GmbH,Care operator (nursing centre Versbacher Sonnenhof),Würzburg,Würzburg (Stadt),low,,,healthcare_pharma
+72,Sanitätshaus Otto Traub (Traub Sanitätshaus GmbH),Medical supply store / orthopaedic technology,Schweinfurt,Schweinfurt (Stadt),low,,,healthcare_pharma
+73,Efinger Orthopädietechnik GmbH,Orthopaedic technology / Sanitätshaus,Würzburg,Würzburg (Stadt),low,,,healthcare_pharma
+74,Orthopädietechn. Sanitätshaus Hugo Scheder GmbH & Co. KG,Orthopaedic technology / Sanitätshaus,Würzburg,Würzburg (Stadt),low,,,healthcare_pharma
+75,Gundermann GmbH (Sanitätshaus),Sanitätshaus,Aschaffenburg,Aschaffenburg (Stadt),low,,,healthcare_pharma
+76,Sanitätshaus Häusner,Sanitätshaus,Schweinfurt,Schweinfurt (Stadt),low,,,healthcare_pharma
+77,mhm Harzbecher Medizintechnik GmbH,Medical technology,Aschaffenburg,Aschaffenburg (Stadt),low,,,healthcare_pharma
+78,WKM Medizintechnik GmbH,Medical technology (sales/service),Würzburg,Würzburg (Stadt),low,,,healthcare_pharma
+79,MC Medizintechnik GmbH,Medical technology,Alzenau,Aschaffenburg (Landkreis),low,,,healthcare_pharma
+80,ProCon Medizintechnik GmbH,Medical technology,Alzenau,Aschaffenburg (Landkreis),low,,,healthcare_pharma
+81,TauroPharm GmbH,Medical products / pharma,Waldbüttelbrunn,Würzburg (Landkreis),low,,,healthcare_pharma
+82,T-Curx GmbH,"Biotech (CAR-T cell therapy), University of Würzburg spin-off",Würzburg,Würzburg (Stadt),low,,,healthcare_pharma
+83,REKA Wellpappenwerke GmbH,Packaging (corrugated cardboard),Kitzingen,Kitzingen,low,,https://www.reka-wellpappe.de,kitzingen_mainspessart_rhoen
+84,Drykorn Modevertriebs GmbH & Co. KG,Fashion,Kitzingen,Kitzingen,low,,https://drykorn.com,kitzingen_mainspessart_rhoen
+85,Kräuter Mix GmbH,"Food ingredients (herbs, spices)",Abtswind,Kitzingen,medium,,https://www.kraeuter-mix.de,kitzingen_mainspessart_rhoen
+86,Klinik Kitzinger Land,Hospital (public),Kitzingen,Kitzingen,low,,https://www.klinik-kitzinger-land.de,kitzingen_mainspessart_rhoen
+87,Rank Bauunternehmen GmbH,Construction,Kitzingen,Kitzingen,low,,,kitzingen_mainspessart_rhoen
+88,ditec Dichtungstechnik GmbH,Industrial sealing components,Kitzingen,Kitzingen,low,,,kitzingen_mainspessart_rhoen
+89,Petra Systemgastronomie KG,"Restaurant operator (McDonald's franchisee, 3 locations)",Kitzingen,Kitzingen,low,,,kitzingen_mainspessart_rhoen
+90,Hilite Germany GmbH,Automotive supplier (engine/transmission components),Marktheidenfeld,Main-Spessart,low,,,kitzingen_mainspessart_rhoen
+91,Druckhaus Mainfranken GmbH,Sheet-fed offset printing,Marktheidenfeld,Main-Spessart,low,,https://www.druckhaus-mainfranken.de,kitzingen_mainspessart_rhoen
+92,Gebhardt Bauzentrum GmbH & Co. KG,Building materials trade,Marktheidenfeld,Main-Spessart,low,,,kitzingen_mainspessart_rhoen
+93,Horst Bröstler GmbH,"Publishing services (print, layout, production)",Marktheidenfeld,Main-Spessart,low,,,kitzingen_mainspessart_rhoen
+94,Fritz Kohl GmbH & Co. KG,Wood / veneer production,Karlstadt,Main-Spessart,low,,,kitzingen_mainspessart_rhoen
+95,AH Echterstraße GmbH,Car dealership,Karlstadt,Main-Spessart,low,,,kitzingen_mainspessart_rhoen
+96,Klinikum Main-Spessart,Hospital (public),Lohr am Main,Main-Spessart,low,,https://www.klinikum-mainspessart.de,kitzingen_mainspessart_rhoen
+97,SEHO Systems GmbH,Soldering systems / machinery,Kreuzwertheim,Main-Spessart,low,,https://www.seho.de,kitzingen_mainspessart_rhoen
+98,Reich GmbH (Mellrichstadt),"Automotive parts, special ball bearings",Mellrichstadt,Rhön-Grabfeld,low,,,kitzingen_mainspessart_rhoen
+99,Weihrauch & Weihrauch Sport GmbH + Co KG,Sporting firearms (air rifles),Mellrichstadt,Rhön-Grabfeld,low,,,kitzingen_mainspessart_rhoen
+100,Gardner Denver Deutschland GmbH,Vacuum and pressure pumps,Bad Neustadt a.d. Saale,Rhön-Grabfeld,low,,,kitzingen_mainspessart_rhoen
+101,RGT Rhönland Gesundheitstechnik GmbH & Co. KG,Building / health technology,Bad Neustadt a.d. Saale,Rhön-Grabfeld,low,,,kitzingen_mainspessart_rhoen
+102,PECHT GmbH,Retail,Bad Neustadt a.d. Saale,Rhön-Grabfeld,low,,,kitzingen_mainspessart_rhoen
+103,Autohaus Kehm GmbH,Automotive retail,Bad Neustadt a.d. Saale,Rhön-Grabfeld,low,,,kitzingen_mainspessart_rhoen
+104,Ossig & Partner,Tax advisory / auditing,Bad Neustadt a.d. Saale,Rhön-Grabfeld,low,,,kitzingen_mainspessart_rhoen
+105,Firmengruppe Göbel,"Construction (Hochbau, Sanierung, Tiefbau)",Würzburg (Rimpar / Heidingsfeld),Würzburg (Stadt) / Landkreis Würzburg,medium,,https://www.firmengruppe-goebel.de/,logistics_trades_construction
+106,VS Logistics,Logistics / Spedition / warehousing,Würzburg area (Unterfranken),Würzburg,low,,https://www.vs-logistics.com/,logistics_trades_construction
+107,Spedition Grimm,Transport / Spedition,Kleinrinderfeld,Würzburg,low,,https://spedition-grimm.de/,logistics_trades_construction
+108,Leopold Michel GmbH (Michel Logistik),Logistics / Spedition / fulfilment,Dettelbach,Kitzingen,low,,https://michel-logistik.com/,logistics_trades_construction
+109,Werder Logistik,Logistics / Spedition,Würzburg area,Würzburg,low,,https://www.werder-logistik.de/,logistics_trades_construction
+110,SEMA Elektrotechnik,Electrical installation / Photovoltaic (Handwerk),Schweinfurt,Schweinfurt (Stadt),low,,https://sema-elektrotechnik.de/,logistics_trades_construction
+111,FEK Fränkische Energiekonzepte,"Energy installer (solar, storage, heat pumps, electrical)",Schweinfurt,Schweinfurt (Stadt),low,,https://fraenkische-energiekonzepte.de/,logistics_trades_construction
+112,Lurz Tiefbau GmbH,Civil engineering / sewer construction,Würzburg-Heidingsfeld,Würzburg (Stadt),low,,https://www.firmengruppe-goebel.de/,logistics_trades_construction
+113,Bauunternehmung Blank,Construction,Helmstadt,Würzburg,low,,https://www.bauunternehmung-blank.de/,logistics_trades_construction
+114,Alexander Konrad Bauunternehmen GmbH,Construction,Himmelstadt,Main-Spessart,low,,https://www.infranken.de/unternehmen/alexander-konrad-bauunternehmen-gmbh-88785,logistics_trades_construction
+115,Rüttger Bedachung,Roofing (Handwerk),Gerbrunn,Würzburg,low,,https://wob24.net/category/wuerzburg/page/31,logistics_trades_construction
+116,Krappmann & Hufnagel,Metal trading / scrap recycling,Würzburg (Hafen),Würzburg (Stadt),low,,https://www.wlw.de/de/suche/speditionen/wuerzburg,logistics_trades_construction
+117,Sunstorm PV,Photovoltaic installer (Handwerk),Ochsenfurt,Würzburg,low,,https://www.sunstorm.solar/,logistics_trades_construction
+118,Solarfritze,Heating/sanitary and solar installer,Aschaffenburg,Aschaffenburg,low,,https://solarfritze.de/,logistics_trades_construction
+119,AS-Electronics GmbH & Co. KG (SunShare),Electrical installation / PV and heat pumps,Lohr am Main,Main-Spessart,low,,https://sunshare.eu/,logistics_trades_construction
+120,BTPV Deutschland,"Electrical master business, PV / storage / heat pumps",Bad Kissingen (location page),Bad Kissingen,low,,https://btpv.de/photovoltaik/bad-kissingen,logistics_trades_construction
+121,Photovoltaik Zentrum Bayern,Photovoltaic installer,unknown,Würzburg,low,,https://photovoltaik-zentrum-bayern.de/,logistics_trades_construction
+122,Richard Köstner AG,"Wholesale (Haustechnik, Handwerk and industry supply)",Neustadt an der Aisch,Würzburg,low,,https://www.koestner.de/,logistics_trades_construction
+123,Die Hand-in-Hand-Werker GmbH (Kitzingen / Mainfranken),Handwerk network / renovation,Kitzingen,Kitzingen,low,,https://www.infranken.de/unternehmen/die-hand-in-hand-werker-gmbh-229949,logistics_trades_construction
+124,Rexel Germany GmbH & Co. KG (Niederlassung Würzburg),Electrical wholesale,Essen,Würzburg (Stadt),low,,https://www.rexel.de/,logistics_trades_construction
+125,Stadt- und Wohnbau GmbH Schweinfurt (SWG),Real estate / municipal housing,Schweinfurt,Schweinfurt (Stadt),medium,,https://www.swg-schweinfurt.de,media_insurance_realestate_it
+126,Stadtbau Aschaffenburg GmbH,Real estate / municipal housing,Aschaffenburg,Aschaffenburg (Stadt),medium,,https://www.stadtbau-aschaffenburg.de,media_insurance_realestate_it
+127,Stadtbau Würzburg GmbH,Real estate / municipal housing,Würzburg,Würzburg (Stadt),medium,,https://www.stadtbau-wuerzburg.de,media_insurance_realestate_it
+128,Götz & Partner mbB,Tax advisory / audit / legal,Würzburg,Würzburg (Stadt),low,,https://www.goetz-partner.de,media_insurance_realestate_it
+129,Echter Verlag (Bonifatius GmbH),Publishing (religious/regional),Würzburg,Würzburg (Stadt),low,yes,https://www.echter.de,media_insurance_realestate_it
+130,Verlag Main-Echo (Main-Echo),Regional media / newspaper,Aschaffenburg,Aschaffenburg (Stadt),low,,https://www.main-echo.de,media_insurance_realestate_it
+131,Saale-Zeitung (Bad Kissingen),Regional media / newspaper,Bad Kissingen,Bad Kissingen,medium,,https://www.infranken.de/lk/bad-kissingen/nur_saalezeitung,media_insurance_realestate_it
+132,Bechtle system house Würzburg (Bechtle AG),IT services,Neckarsulm (Würzburg branch),Würzburg (Stadt),low,,https://www.bechtle.com/de-en/about-bechtle/company/locations/bechtle-system-house-wuerzburg,media_insurance_realestate_it
+133,Gebr. Knauf KG (Knauf Group),"Building materials (gypsum, plasterboard, insulation)",Iphofen,Landkreis Kitzingen,high,,https://knauf.com,rural_districts
+134,Bosch Rexroth AG,Drive and control technology / mechanical engineering,Stuttgart (registered seat); main administration Lohr am Main,Landkreis Main-Spessart,medium,,https://www.boschrexroth.com,rural_districts
+135,WAREMA Renkhoff SE,Sun shading / building technology,Marktheidenfeld,Landkreis Main-Spessart,high,,https://www.warema.com,rural_districts
+136,Preh GmbH,"Automotive electronics (HMI, e-mobility)",Bad Neustadt a.d. Saale,Landkreis Rhön-Grabfeld,medium,,https://www.preh.com,rural_districts
+137,RHÖN-KLINIKUM AG,Hospitals / healthcare,Bad Neustadt a.d. Saale,Landkreis Rhön-Grabfeld,medium,,https://www.rhoen-klinikum-ag.com,rural_districts
+138,Siemens AG Elektromotorenwerk Bad Neustadt (EWN),Electrical engineering (electric motors),Munich (Siemens AG); plant in Bad Neustadt a.d. Saale,Landkreis Rhön-Grabfeld,low,,https://www.siemens.com/zh-cn/company/global-locations/germany/bad-neustadt-saale-electric-motor-plant/,rural_districts
+139,F.S. Fehrer Automotive GmbH,"Automotive supplier (seat foams, interior systems)",Kitzingen,Landkreis Kitzingen,medium,,https://www.fehrer.com,rural_districts
+140,Gerresheimer Lohr GmbH,Glass packaging (moulded glass for pharma/cosmetics),"Lohr am Main (plant); parent Gerresheimer AG, Duesseldorf",Landkreis Main-Spessart,medium,,https://www.gerresheimer.com,rural_districts
+141,Braun GmbH (Procter & Gamble) - Werk Marktheidenfeld,"Consumer goods (electric toothbrushes, Oral-B)",Kronberg im Taunus (Braun); plant Marktheidenfeld,Landkreis Main-Spessart,low,,https://de.pg.com,rural_districts
+142,Geis Gruppe (Hans Geis GmbH + Co KG),Logistics / freight forwarding,Bad Neustadt a.d. Saale,Landkreis Rhön-Grabfeld,medium,,https://geis-group.eu,rural_districts
+143,Leoni Bordnetz-Systeme GmbH,Automotive supplier (wiring systems),Kitzingen (wiring systems division HQ); Leoni AG Nuremberg,Landkreis Kitzingen,low,,https://www.leoni.com,rural_districts
+144,Franken Guss GmbH & Co. KG,Foundry / automotive supplier (iron and aluminium casting),Kitzingen,Landkreis Kitzingen,low,,,rural_districts
+145,Kurtz Ersa (Kurtz Holding GmbH & Co. Beteiligungs KG),"Mechanical engineering (electronics production equipment, moulding machines)",Kreuzwertheim,Landkreis Main-Spessart,medium,,https://kurtzersa.de,rural_districts
+146,Schneider Electric Automation GmbH (Werk Marktheidenfeld),Industrial automation / machine solutions,Marktheidenfeld (Schneiderplatz 1),Landkreis Main-Spessart,medium,,https://www.se.com/de/de/,rural_districts
+147,SCHWENK Zement GmbH & Co. KG - Werk Karlstadt,Cement / building materials,Ulm (SCHWENK); plant Karlstadt,Landkreis Main-Spessart,low,,https://www.schwenk.de/en/zementwerk/karlstadt-cement-plant/,rural_districts
+148,Nipro PharmaPackaging Germany GmbH (formerly MGlas AG),"Pharmaceutical glass packaging (pre-fillable glass syringes, vials)",Münnerstadt,Landkreis Bad Kissingen,medium,,https://www.nipro-group.com,rural_districts
+149,Hegler Plastik GmbH,Plastics (pipe systems),Oerlenbach,Landkreis Bad Kissingen,low,,https://www.hegler.de,rural_districts
+150,GKN Sinter Metals Components GmbH - Werk Bad Brückenau,Powder metallurgy / automotive components,Bad Brückenau (plant); GKN Powder Metallurgy group,Landkreis Bad Kissingen,low,,https://www.gknpm.com,rural_districts
+151,Joyson PlasTec GmbH (formerly Takata-Petri PlasTec),Automotive plastic parts,Albertshausen (Bad Kissingen),Landkreis Bad Kissingen,low,,https://www.joysonsafety.com,rural_districts
+152,Staatlicher Mineralbrunnen AG Bad Brückenau,Beverages (mineral and medicinal water),Bad Brückenau,Landkreis Bad Kissingen,low,,https://www.badbrueckenauer.de,rural_districts
+153,Pro Care Management GmbH,"Purchasing and software services for community catering (care homes, hospitals)",Bad Kissingen,Landkreis Bad Kissingen,medium,,,rural_districts
+154,FGB Fertigungsgerätebau Adolf Steinbach GmbH & Co. KG (steinbachgruppe),Special machinery / test rigs,Salz (near Bad Neustadt),Landkreis Rhön-Grabfeld,low,,,rural_districts
+155,BIONADE GmbH,Beverages (organic soft drinks),Ostheim v.d. Rhön,Landkreis Rhön-Grabfeld,medium,,https://www.bionade.de,rural_districts
+156,Lindner NORIT GmbH & Co. KG,Interior construction / building products (Lindner Group),Dettelbach,Landkreis Kitzingen,low,,,rural_districts
+157,Wiedenmann Seile GmbH,Rope manufacturing,Marktsteft,Landkreis Kitzingen,low,,,rural_districts
+158,DIVINO Nordheim Thüngersheim eG,Winery (wine cooperative),Nordheim am Main,Landkreis Kitzingen,low,,,rural_districts
+159,Fürstlich Castell'sches Domänenamt,"Winery, forestry, agriculture (princely estate)",Castell,Landkreis Kitzingen,low,,https://www.castell.de,rural_districts
+160,BSH Hausgeräte GmbH - Werk Bad Neustadt,Household appliances (vacuum cleaners),Munich (BSH); plant Bad Neustadt a.d. Saale,Landkreis Rhön-Grabfeld,low,,https://www.bsh-group.com,rural_districts
+161,Kunert-Wellpappe (Kunert Gruppe),"Packaging (corrugated board, industrial packaging)",Bad Neustadt a.d. Saale,Landkreis Rhön-Grabfeld,low,,,rural_districts
+162,Karmeliter-Brauerei,Brewery,Salz (until 2024; originally Bad Neustadt old town),Landkreis Rhön-Grabfeld,low,,,rural_districts
+163,Nikolaus SORG GmbH & Co. KG,Mechanical engineering (glass melting furnaces),Lohr am Main,Landkreis Main-Spessart,low,,https://www.sorg.de,rural_districts
+164,Walter Hunger KG,Hydraulic components,Lohr am Main,Landkreis Main-Spessart,low,,,rural_districts
+165,Schleunungdruck GmbH,Printing,Marktheidenfeld,Landkreis Main-Spessart,low,,,rural_districts
+166,GEA Brewery Systems GmbH,Brewery plant engineering,Kitzingen,Landkreis Kitzingen,low,,https://www.gea.com,rural_districts
+167,Seiler Pianofortefabrik GmbH,Musical instruments (pianos),Kitzingen,Landkreis Kitzingen,low,,https://www.seiler-pianos.de,rural_districts
+168,Düker GmbH (Eisenwerke Düker),"Foundry / pipe systems, valves, drainage",Karlstadt,Landkreis Main-Spessart,low,,https://www.dueker.de,rural_districts
+169,Lutz Fleischwaren,Food (meat products),Hammelburg,Landkreis Bad Kissingen,low,,,rural_districts
+170,ZF Friedrichshafen AG (Standort Schweinfurt),Automotive supplier (driveline & chassis technology),Friedrichshafen (site record: Schweinfurt),Stadt Schweinfurt,high,,https://www.zf.com,schweinfurt_hassberge
+171,SKF GmbH,"Industrial (rolling bearings, seals, lubrication)","Schweinfurt (German HQ; parent AB SKF, Gothenburg)",Stadt Schweinfurt,medium,,https://www.skf.com/de,schweinfurt_hassberge
+172,Bosch Rexroth AG (Standort Schweinfurt),Industrial drive & control technology,Lohr am Main (site record: Schweinfurt),Stadt Schweinfurt,medium,,https://www.boschrexroth.com,schweinfurt_hassberge
+173,Fresenius Medical Care Deutschland GmbH (Werk Schweinfurt),Medical technology (dialysis machines),Bad Homburg (site record: Schweinfurt),Stadt Schweinfurt,medium,,https://www.freseniusmedicalcare.com,schweinfurt_hassberge
+174,MLF Mercator-Leasing GmbH & Co. Finanz-KG,Financial services (equipment leasing),Schweinfurt,Stadt Schweinfurt,high,,https://www.mercator-leasing.de,schweinfurt_hassberge
+175,FIS Informationssysteme und Consulting GmbH / FIS-ASP GmbH (FIS Gruppe),"IT services (SAP consulting, data centre)",Grafenrheinfeld,Landkreis Schweinfurt,medium,,https://www.fis-gmbh.de,schweinfurt_hassberge
+176,Riedel Bau AG & Co. KG (Firmengruppe Riedel Bau),Construction,Schweinfurt,Stadt Schweinfurt,medium,,https://www.riedelbau.de,schweinfurt_hassberge
+177,Bauunternehmung Glöckle (Glöckle Holding GmbH),Construction,Schweinfurt,Stadt Schweinfurt,medium,,,schweinfurt_hassberge
+178,Schäflein AG (Schäflein Logistikgruppe),Logistics,Röthlein,Landkreis Schweinfurt,medium,yes,https://www.schaeflein.de,schweinfurt_hassberge
+179,Pabst Transport GmbH & Co. KG,Logistics / road haulage,Gochsheim,Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+180,Fränkische Rohrwerke Gebr. Kirchner GmbH & Co. KG (FRÄNKISCHE),"Plastics/metal pipes & system components (building, automotive, industry)",Königsberg i. Bay.,Landkreis Haßberge,medium,,https://www.fraenkische.com,schweinfurt_hassberge
+181,Uponor GmbH,"Building technology (plumbing, heating/cooling systems)",Haßfurt,Landkreis Haßberge,low,,https://www.uponor.com,schweinfurt_hassberge
+182,Rösler Oberflächentechnik GmbH,"Machinery (surface finishing: mass finishing, shot blasting)",Untermerzbach (Memmelsdorf),Landkreis Haßberge,low,,https://www.rosler.com,schweinfurt_hassberge
+183,Valeo Powertrain GmbH – Standort Ebern (formerly FTE automotive),"Automotive supplier (clutch/brake hydraulics, transmission actuators)",Paris (site record: Ebern),Landkreis Haßberge,medium,,https://www.valeo.com/en/ebern-valeo-power-division/,schweinfurt_hassberge
+184,DELFINGEN DE – Hassfurt GmbH,"Automotive supplier (wire-harness protection, fluid transfer)","Haßfurt (group HQ: Anteuil, France)",Landkreis Haßberge,low,,https://www.delfingen.com/de/,schweinfurt_hassberge
+185,MAINCOR Rohrsysteme GmbH & Co. KG,"Plastic pipe systems (automotive, industry, building)",Knetzgau,Landkreis Haßberge,low,,,schweinfurt_hassberge
+186,UNICOR GmbH,Machinery (corrugators for plastic pipe production),Haßfurt,Landkreis Haßberge,low,,,schweinfurt_hassberge
+187,Papierfabrik Palm GmbH & Co. KG – Werk Eltmann,Paper manufacturing (newsprint/recycled paper),Aalen (site record: Eltmann),Landkreis Haßberge,low,,https://palm.de,schweinfurt_hassberge
+188,Gelder & Sorg GmbH & Co. KG,Automotive retail (car dealership group),Haßfurt,Landkreis Haßberge,low,,,schweinfurt_hassberge
+189,HAGA Metallbau GmbH,Metal construction,Hofheim i. UFr.,Landkreis Haßberge,low,,,schweinfurt_hassberge
+190,Hans Batzner GmbH,n/a (verify sector),Ebern,Landkreis Haßberge,low,,,schweinfurt_hassberge
+191,WEISS Spindeltechnologie GmbH,Machine tool components (motor spindles),Maroldsweisach (per directory),Landkreis Haßberge,low,,,schweinfurt_hassberge
+192,allmilmö Küchen GmbH & Co. KG,Furniture (kitchens),Zeil am Main,Landkreis Haßberge,low,,,schweinfurt_hassberge
+193,Waldi Schuhfabrik GmbH,Footwear manufacturing (comfort/medical shoes),Haßfurt,Landkreis Haßberge,low,,,schweinfurt_hassberge
+194,marcapo GmbH,Marketing technology (local brand marketing portals),Ebern,Landkreis Haßberge,medium,yes,,schweinfurt_hassberge
+195,Regiolux GmbH,Lighting technology,Königsberg i. Bay.,Landkreis Haßberge,low,,,schweinfurt_hassberge
+196,ELSO Elbe GmbH & Co. KG,Mechanical engineering (drive shafts),Hofheim i. UFr.,Landkreis Haßberge,low,,,schweinfurt_hassberge
+197,UNIWELL Rohrsysteme GmbH & Co. KG,Cable protection & media line systems,Ebern,Landkreis Haßberge,low,,,schweinfurt_hassberge
+198,BAURCONSULT Architekten Ingenieure AG & Co. KG,Architecture & engineering,Haßfurt,Landkreis Haßberge,low,,,schweinfurt_hassberge
+199,LOACKER Recycling GmbH,Recycling / waste management,Wonfurt,Landkreis Haßberge,low,,,schweinfurt_hassberge
+200,KAT Kraus Automatisierungs-Technik GmbH,"Automation, test & measurement, control cabinets",Haßfurt,Landkreis Haßberge,low,,,schweinfurt_hassberge
+201,Benkert GmbH,Outdoor furniture manufacturing,Königsberg i. Bay. (Altershausen),Landkreis Haßberge,low,,,schweinfurt_hassberge
+202,Deutsche Dienstrad,Mobility services (company bike leasing),Schweinfurt,Stadt Schweinfurt,medium,,https://www.deutsche-dienstrad.de,schweinfurt_hassberge
+203,Daudert (Kaffee & Siebträgermaschinen),"Retail/wholesale (coffee, espresso machines)",Werneck,Landkreis Schweinfurt,medium,,,schweinfurt_hassberge
+204,Trips GmbH (Trips Group),"Automotive/mechanical engineering (automation, assembly systems)",Grafenrheinfeld,Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+205,InnoSenT GmbH,Electronics (radar sensors for industry & automotive),Donnersdorf,Landkreis Schweinfurt,low,,https://www.innosent.de,schweinfurt_hassberge
+206,Madinger (Madinger GmbH),Automotive/mechanical engineering,Landkreis Schweinfurt (exact town not verified),Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+207,Vintin GmbH,IT services,Schweinfurt (verify),Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+208,Carl Kühne KG – Werk Sennfeld,"Food processing (delicatessen, pickles, sauces)",Hamburg (site record: Sennfeld),Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+209,Meßmer (Ostfriesische Tee Gesellschaft) – Werk Grettstadt,Food (tea),Grettstadt site (parent HQ: Seevetal – verify),Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+210,Eichetti Confiserie (Werneck),Food (ice confectionery),Werneck,Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+211,Mainfrucht GmbH & Co. KG,Food (fruit juice concentrates),Gochsheim,Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+212,Beständig Automobile GmbH & Co. KG (Beständig Autowelt),Automotive retail,Gochsheim,Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+213,Saalfrank Qualitätswerbeartikel GmbH,Promotional products,Sennfeld,Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+214,Finstral GmbH (Gochsheim),Windows & doors (manufacturing/sales),"Gochsheim (parent: Finstral AG, Unterinn, South Tyrol)",Landkreis Schweinfurt,low,,,schweinfurt_hassberge
+215,Koenig & Bauer AG,"Mechanical engineering (printing presses, packaging & banknote printing)",Würzburg,Würzburg (kreisfreie Stadt),high,yes,https://www.koenig-bauer.com,wuerzburg
+216,EDEKA Nordbayern-Sachsen-Thüringen Stiftung & Co. KG,Food retail / wholesale (regional EDEKA cooperative group),Rottendorf,Landkreis Würzburg,medium,,https://verbund.edeka/nordbayern-sachsen-thueringen,wuerzburg
+217,FLYERALARM GmbH,Online printing / e-commerce,Würzburg,Würzburg (kreisfreie Stadt),medium,,https://www.flyeralarm.com,wuerzburg
+218,Richter+Frenzel GmbH + Co. KG,"Wholesale (sanitary, heating, building services, civil engineering supplies)",Würzburg,Würzburg (kreisfreie Stadt),low,,https://www.richter-frenzel.de,wuerzburg
+219,BDSK Handels GmbH & Co. KG (XXXLutz Deutschland),Furniture retail,Würzburg,Würzburg (kreisfreie Stadt),medium,,https://www.xxxlutz.de,wuerzburg
+220,Vogel Communications Group GmbH & Co. KG,"B2B media, publishing & communications",Würzburg,Würzburg (kreisfreie Stadt),high,,https://www.vogel.de,wuerzburg
+221,Mediengruppe Main-Post GmbH,"Media (regional daily newspaper, printing, local media)",Würzburg,Würzburg (kreisfreie Stadt),high,,https://www.mainpost.de,wuerzburg
+222,Würzburger Hofbräu GmbH,Brewery / beverages,Würzburg,Würzburg (kreisfreie Stadt),medium,yes,https://www.wuerzburger-hofbraeu.de,wuerzburg
+223,Frankonia Handels GmbH & Co. KG,"Retail (hunting, shooting sports & outdoor; multichannel)",Rottendorf,Landkreis Würzburg,medium,,https://www.frankonia.de,wuerzburg
+224,Würzburger Versicherungs-AG,Insurance,Würzburg,Würzburg (kreisfreie Stadt),high,yes,https://www.wuerzburger.com,wuerzburg
+225,Duttenhofer GmbH & Co. KG,"Wholesale / mail-order (photo, consumer electronics, IT, household appliances)",Würzburg,Würzburg (kreisfreie Stadt),medium,,https://www.duttenhofer.de,wuerzburg
+226,Abele-Optik GmbH,Retail (optician chain),Würzburg,Würzburg (kreisfreie Stadt),medium,,https://www.abele-optik.de,wuerzburg
+227,Kneipp GmbH,Consumer health & personal care products,Würzburg,Würzburg (kreisfreie Stadt),medium,yes,https://www.kneipp.com,wuerzburg
+228,Bavaria Yachtbau GmbH,Boat building (sailing yachts & motorboats),Giebelstadt,Landkreis Würzburg,low,,https://www.bavariayachts.com,wuerzburg
+229,Kauzen-Bräu GmbH & Co. KG,"Brewery & soft drinks (Kauzen, Libella)",Ochsenfurt,Landkreis Würzburg,medium,,https://www.kauzen.de,wuerzburg
+230,Herrhammer GmbH Spezialmaschinen,Special machinery (candle-making machines),Ochsenfurt,Landkreis Würzburg,low,yes,https://www.herrhammer.de,wuerzburg
+231,krick.com GmbH & Co. KG,Media / online marketing & local advertising (formerly Robert Krick Verlag),Eibelstadt,Landkreis Würzburg,medium,,https://www.krick.com,wuerzburg
+232,Pallmann GmbH,"Chemicals (wood floor finishes, adhesives & machines)",Würzburg,Würzburg (kreisfreie Stadt),low,,https://www.pallmann.net,wuerzburg
+233,MERO-TSK International GmbH & Co. KG,"Construction systems (space frames, steel-glass, airport technology, floor & exhibit systems)",Würzburg,Würzburg (kreisfreie Stadt),low,,https://mero.de,wuerzburg
+234,va-Q-tec Thermal Solutions GmbH,"Technology (vacuum insulation panels, temperature-controlled packaging)",Würzburg,Würzburg (kreisfreie Stadt),low,,https://va-q-tec.com,wuerzburg
+235,Wegmann automotive GmbH,"Automotive supplier (wheel balancing weights, TPMS service tools)",Veitshöchheim,Landkreis Würzburg,low,,https://www.wegmann-automotive.com,wuerzburg
+236,Viktor Nußbaumer Bestes für Küche und Gastlichkeit GmbH & Co. KG,"Food wholesale (food service / gastronomy, institutional catering)",Kürnach,Landkreis Würzburg,medium,,https://www.nussbaumer.de,wuerzburg
+237,Kinkele GmbH & Co. KG,"Contract manufacturing (mechanical & apparatus engineering, steel construction)",Ochsenfurt,Landkreis Würzburg,medium,,https://www.kinkele.de,wuerzburg
+238,Balthasar Höhn Bauunternehmung GmbH & Co. KG,"Construction (building, civil engineering, demolition, recycling)",Würzburg,Würzburg (kreisfreie Stadt),low,,https://hoehnbau.de,wuerzburg
+239,Beck Elektrotechnik GmbH,Electrical engineering / installation,Würzburg,Würzburg (kreisfreie Stadt),low,,https://www.team-elektro-beck.de,wuerzburg
+240,J.E. Schum GmbH & Co. KG,Wholesale (low-price and self-service retail concepts / merchandise),Würzburg,Würzburg (kreisfreie Stadt),low,,https://www.schum.de,wuerzburg
+241,Öchsner-Boote GmbH,Boat building (trailerable motor cabin boats),Kürnach,Landkreis Würzburg,low,,,wuerzburg
+242,Ebert + Jacobi GmbH & Co. KG,Pharmaceutical wholesale,Würzburg,Würzburg (kreisfreie Stadt),low,,,wuerzburg
+243,Kindermann GmbH,Optics / presentation & projection equipment manufacturer,Eibelstadt,Landkreis Würzburg,low,,,wuerzburg

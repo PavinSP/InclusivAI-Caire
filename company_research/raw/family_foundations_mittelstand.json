@@ -1,0 +1,229 @@
+[
+ {
+  "company_name": "Kaufhaus Pecht (Stiftung Pecht)",
+  "sector": "Retail (department store)",
+  "hq_city": "Bad Neustadt an der Saale",
+  "lower_franconia_sites": [
+   "Bad Neustadt an der Saale"
+  ],
+  "landkreis": "Rhön-Grabfeld",
+  "employees_estimate": "~140 (2021, four locations)",
+  "revenue_estimate": null,
+  "ownership": "family-owned; to pass to Stiftung Pecht after owners' death",
+  "website": null,
+  "csr_themes": [
+   "children & youth",
+   "regional development"
+  ],
+  "csr_summary": "Owners Franz and Heidi Pecht set up Stiftung Pecht in 2014 to secure the company's future; while they live it supports social causes such as help for needy children.",
+  "foundation": "Stiftung Pecht",
+  "previous_engagement": [
+   "Stiftung Pecht (2014, start capital 350,000 EUR, ~400,000 EUR in 2021) supports social causes, e.g. needy children"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Family foundation set up 2014 as future owner of the department store",
+    "excerpt": "Stiftung gegründet 2014 von Franz und Heidi Pecht; unterstützt soziale Zwecke, später alleinige Eigentümerin",
+    "url": "https://www.infranken.de/lk/bad-kissingen/nur_saalezeitung/eine-stiftung-als-neue-chefin-art-5186745,PRINT"
+   }
+  ],
+  "source_urls": [
+   "https://www.infranken.de/lk/bad-kissingen/nur_saalezeitung/eine-stiftung-als-neue-chefin-art-5186745,PRINT"
+  ],
+  "confidence": "medium",
+  "notes": "Source from 2021; current status and official website not verified. Good fit: foundation already gives to needy children."
+ },
+ {
+  "company_name": "Eschenbacher Privatbrauerei Wagner (Karl-Wagner-Stiftung)",
+  "sector": "Brewery",
+  "hq_city": "Eschenbach (Eltmann)",
+  "lower_franconia_sites": [
+   "Eltmann-Eschenbach"
+  ],
+  "landkreis": "Haßberge",
+  "employees_estimate": null,
+  "revenue_estimate": null,
+  "ownership": "family-owned; brewery assets placed in foundation (2014)",
+  "website": null,
+  "csr_themes": [
+   "disability inclusion",
+   "health",
+   "children & youth"
+  ],
+  "csr_summary": "Owner Karl Werner Wagner placed the brewery's assets in the Karl-Wagner-Stiftung (ceremony 23.11.2014). It supports people with disabilities and non-profits caring for them, esp. aftercare for premature babies (Harlekin-Projekt, Klinikum Bamberg).",
+  "foundation": "Karl-Wagner-Stiftung",
+  "previous_engagement": [
+   "Karl-Wagner-Stiftung (2014): support for Harlekin-Projekt premature-baby aftercare, Klinikum Bamberg"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Brewery assets flow into the Karl-Wagner-Stiftung",
+    "excerpt": "Zweck: Menschen mit Behinderung und gemeinnützige Organisationen; Frühgeborene und ihre Familien",
+    "url": "https://www.infranken.de/lk/hassberge/vermoegen-der-eschenbacher-brauerei-fliesst-in-eine-stiftung-art-874416"
+   }
+  ],
+  "source_urls": [
+   "https://www.infranken.de/lk/hassberge/vermoegen-der-eschenbacher-brauerei-fliesst-in-eine-stiftung-art-874416"
+  ],
+  "confidence": "medium",
+  "notes": "Article from 2014; brewery current status/website not verified. Disability focus fits Caritas."
+ },
+ {
+  "company_name": "Fürst zu Löwenstein (Forst, Weingut, Stiftung Kleinheubach)",
+  "sector": "Forestry, winery, estate/real estate",
+  "hq_city": "Kleinheubach",
+  "lower_franconia_sites": [
+   "Kleinheubach",
+   "Hafenlohr"
+  ],
+  "landkreis": "Miltenberg",
+  "employees_estimate": null,
+  "revenue_estimate": null,
+  "ownership": "family-owned (noble family); charitable foundation owns Schloss Löwenstein since 2004",
+  "website": "https://www.loewenstein.de",
+  "csr_themes": [
+   "culture",
+   "environment",
+   "regional development"
+  ],
+  "csr_summary": "Family enterprise with forestry (PEFC), winery and a charitable foundation that has owned Schloss Löwenstein, outbuildings and park in Kleinheubach since 2004; Weltpark project in the castle gardens.",
+  "foundation": "Gemeinnützige Stiftung Schloss Löwenstein (name as described on website; exact legal name not verified)",
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "Contact details on https://www.loewenstein.de",
+  "evidence": [
+   {
+    "claim": "Charitable foundation owns Schloss Löwenstein since 2004",
+    "excerpt": "Stiftung: Schloss, Nebengebäude und Park seit 2004 im Besitz der gemeinnützigen Stiftung",
+    "url": "https://www.loewenstein.de"
+   }
+  ],
+  "source_urls": [
+   "https://www.loewenstein.de"
+  ],
+  "confidence": "low",
+  "notes": "Foundation is heritage/culture-oriented; no social donations verified. Possible event/venue partner."
+ },
+ {
+  "company_name": "Helmut Unkel GmbH & Co. KG (Helmut Unkel Stiftungen)",
+  "sector": "Switchgear cabinet construction",
+  "hq_city": "Würzburg",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": null,
+  "revenue_estimate": null,
+  "ownership": "owner-managed (Helmut Unkel)",
+  "website": null,
+  "csr_themes": [
+   "health",
+   "children & youth",
+   "elderly care",
+   "education",
+   "culture",
+   "environment"
+  ],
+  "csr_summary": "Owner Helmut Unkel founded the Helmut Unkel gemeinnützige Stiftung in 2011 (Würzburg) funding science, health care, youth and elderly care, education, culture and environment; a separate Helmut Unkel-Familienstiftung also exists.",
+  "foundation": "Helmut Unkel gemeinnützige Stiftung; Helmut Unkel-Familienstiftung",
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Unkel founded charitable foundation in 2011; foundation purposes incl. youth and elderly care",
+    "excerpt": "Stifter ist Geschäftsführer/Inhaber der Helmut Unkel GmbH & Co. KG; gegr. 2011",
+    "url": "https://wuerzburgwiki.de/wiki/Helmut_Unkel_gemeinnützige_Stiftung"
+   }
+  ],
+  "source_urls": [
+   "https://wuerzburgwiki.de/wiki/Helmut_Unkel_gemeinnützige_Stiftung",
+   "https://wuerzburgwiki.de/wiki/Kategorie:Stiftung"
+  ],
+  "confidence": "low",
+  "notes": "Single wiki source; company HQ, size and website unverified. Foundation purposes match Caritas fields."
+ },
+ {
+  "company_name": "Göbel Hochbau GmbH (Firmengruppe Göbel)",
+  "sector": "Construction",
+  "hq_city": "Rimpar",
+  "lower_franconia_sites": [
+   "Rimpar",
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Landkreis)",
+  "employees_estimate": "~350 (company website, current)",
+  "revenue_estimate": null,
+  "ownership": "family/owner-managed (not verified)",
+  "website": "https://www.firmengruppe-goebel.de/",
+  "csr_themes": [
+   "poverty",
+   "regional development"
+  ],
+  "csr_summary": "Under the banner 'G-meinsam für die Region' the company supports the Bahnhofsmission Würzburg (stated as from 1 April 2026).",
+  "foundation": null,
+  "previous_engagement": [
+   "Support of Bahnhofsmission Würzburg since 1 April 2026 (company website)"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "Contact via https://www.firmengruppe-goebel.de/",
+  "evidence": [
+   {
+    "claim": "Sponsors Bahnhofsmission Würzburg",
+    "excerpt": "Die Göbel Hochbau GmbH unterstützt seit dem 1. April 2026 ...",
+    "url": "https://www.firmengruppe-goebel.de/"
+   }
+  ],
+  "source_urls": [
+   "https://www.firmengruppe-goebel.de/"
+  ],
+  "confidence": "medium",
+  "notes": "No foundation found. Check whether Bahnhofsmission Würzburg is a Caritas/Diakonie facility before approaching."
+ },
+ {
+  "company_name": "Gebietswinzergenossenschaft Franken / Winzergemeinschaft Franken (GWF) 'Freudentrauben'",
+  "sector": "Wine cooperative",
+  "hq_city": "Kitzingen area",
+  "lower_franconia_sites": [
+   "Kitzingen"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": null,
+  "revenue_estimate": null,
+  "ownership": "cooperative (not family-owned)",
+  "website": null,
+  "csr_themes": [
+   "children & youth",
+   "poverty"
+  ],
+  "csr_summary": "Via its 'Freudentrauben' initiative with Edeka, wine sales raised about 20,300 EUR (Jan-Sep 2016), mostly for Sozialdienst Katholischer Frauen (SkF) Würzburg (16,362 EUR) plus Kinderdorf Oberschwarzach.",
+  "foundation": null,
+  "previous_engagement": [
+   "2016: 16,362 EUR to SkF Würzburg; Erich-Kästner-Kinderdorf Oberschwarzach also supported"
+  ],
+  "caritas_or_church_link": "SkF Würzburg (Catholic social organisation) recipient in 2016",
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Donation of ~20,300 EUR, most to SkF Würzburg",
+    "excerpt": "Winzergemeinschaft Franken (GWF), Freudentrauben, Oktober 2016",
+    "url": "https://www.infranken.de/lk/kitzingen/20-300-euro-fuer-guten-zweck-art-2245497"
+   }
+  ],
+  "source_urls": [
+   "https://www.infranken.de/lk/kitzingen/20-300-euro-fuer-guten-zweck-art-2245497"
+  ],
+  "confidence": "low",
+  "notes": "Not a family firm; 2016 data; legal name/HQ and current activity unverified; may overlap with an existing wine-coop entry (DIVINO is a different entity)."
+ }
+]

@@ -1,0 +1,751 @@
+[
+ {
+  "company_name": "REKA Wellpappenwerke GmbH",
+  "sector": "Packaging (corrugated cardboard)",
+  "hq_city": "Kitzingen",
+  "lower_franconia_sites": [
+   "Kitzingen"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "approx. 170 (Kitzingen site, directory figure)",
+  "revenue_estimate": null,
+  "ownership": "subsidiary of Palm Packaging (since 2019)",
+  "website": "https://www.reka-wellpappe.de",
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Corrugated board plant in Kitzingen, part of Palm group",
+    "excerpt": "Listed with 170 employees; palm.de lists REKA as a Palm packaging location",
+    "url": "https://www.palm.de/en/packaging/locations/reka-wellpappe.html"
+   },
+   {
+    "claim": "Employee figure",
+    "excerpt": "REKA Wellpappenwerke 170 employees, Kitzingen",
+    "url": "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+   }
+  ],
+  "source_urls": [
+   "https://www.palm.de/en/packaging/locations/reka-wellpappe.html",
+   "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+  ],
+  "confidence": "low",
+  "notes": "CSR/donations not researched; Palm group may publish sustainability reports. Size from directory."
+ },
+ {
+  "company_name": "Drykorn Modevertriebs GmbH & Co. KG",
+  "sector": "Fashion",
+  "hq_city": "Kitzingen",
+  "lower_franconia_sites": [
+   "Kitzingen"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "approx. 180 at Kitzingen (company career page); directory says 86",
+  "revenue_estimate": null,
+  "ownership": "private fashion label",
+  "website": "https://drykorn.com",
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Fashion label headquartered in Kitzingen",
+    "excerpt": "Career page cites 180 DRYKORN family members in Kitzingen",
+    "url": "https://drykorn.com/en-be/about-us/career/vacancies"
+   },
+   {
+    "claim": "Directory entry",
+    "excerpt": "Drykorn Modevertriebs, 86 employees",
+    "url": "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+   }
+  ],
+  "source_urls": [
+   "https://drykorn.com/en-be/about-us/career/vacancies",
+   "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR report or donations found. Headcount sources conflict."
+ },
+ {
+  "company_name": "Kräuter Mix GmbH",
+  "sector": "Food ingredients (herbs, spices)",
+  "hq_city": "Abtswind",
+  "lower_franconia_sites": [
+   "Abtswind"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "approx. 480 (2025/26 job ad)",
+  "revenue_estimate": null,
+  "ownership": "family-owned",
+  "website": "https://www.kraeuter-mix.de",
+  "csr_themes": [
+   "children & youth",
+   "environment",
+   "poverty"
+  ],
+  "csr_summary": "Family business that supports the association Mix for Kids (social projects in India, Albania and Germany) and has a sustainability team, own PV and an annual environmental statement.",
+  "foundation": null,
+  "previous_engagement": [
+   "Supporter of association 'Mix for Kids' (per ingredientsnetwork.com; amounts/dates not verified)"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Largest supporting member of association 'Mix for Kids' (social projects in India, Albania, Germany); won Bavarian Family Business of the Year sustainability category 2020",
+    "excerpt": "Per ingredientsnetwork.com sponsored content",
+    "url": "https://www.ingredientsnetwork.com/krauter-mix-is-bavarian-family-business-of-the-news084047.html"
+   },
+   {
+    "claim": "Renewable power / environmental statement",
+    "excerpt": "PV plants, 100% renewable electricity",
+    "url": "https://www.yumda.com/en/news/1161946/kraeuter-mix-is-bavarian-family-business-of-the-year.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.ingredientsnetwork.com/krauter-mix-is-bavarian-family-business-of-the-news084047.html",
+   "https://www.yumda.com/en/news/1161946/kraeuter-mix-is-bavarian-family-business-of-the-year.html"
+  ],
+  "confidence": "medium",
+  "notes": "Strong fit candidate. Verify Mix for Kids details on company site."
+ },
+ {
+  "company_name": "Klinik Kitzinger Land",
+  "sector": "Hospital (public)",
+  "hq_city": "Kitzingen",
+  "lower_franconia_sites": [
+   "Kitzingen"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "approx. 337 (directory, year unknown)",
+  "revenue_estimate": null,
+  "ownership": "Kommunalunternehmen of Landkreis Kitzingen",
+  "website": "https://www.klinik-kitzinger-land.de",
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Public hospital of Landkreis Kitzingen, 200 beds",
+    "excerpt": "Directory: 337 employees, 200 beds",
+    "url": "https://www.praktischarzt.de/kliniken/klinikkitzingerland/"
+   }
+  ],
+  "source_urls": [
+   "https://www.praktischarzt.de/kliniken/klinikkitzingerland/"
+  ],
+  "confidence": "low",
+  "notes": "Public health provider; more potential partner/peer than donor. No Caritas link verified."
+ },
+ {
+  "company_name": "Rank Bauunternehmen GmbH",
+  "sector": "Construction",
+  "hq_city": "Kitzingen",
+  "lower_franconia_sites": [
+   "Kitzingen"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "approx. 80 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Construction firm in Kitzingen",
+    "excerpt": "80 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+  ],
+  "confidence": "low",
+  "notes": "Website not verified; no CSR evidence found."
+ },
+ {
+  "company_name": "ditec Dichtungstechnik GmbH",
+  "sector": "Industrial sealing components",
+  "hq_city": "Kitzingen",
+  "lower_franconia_sites": [
+   "Kitzingen"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "approx. 80 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Manufacturer of sealing parts (O-rings) in Kitzingen",
+    "excerpt": "80 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+  ],
+  "confidence": "low",
+  "notes": "Website not verified; no CSR evidence found."
+ },
+ {
+  "company_name": "Petra Systemgastronomie KG",
+  "sector": "Restaurant operator (McDonald's franchisee, 3 locations)",
+  "hq_city": "Kitzingen",
+  "lower_franconia_sites": [
+   "Kitzingen"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "approx. 250 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private franchisee",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Operates three McDonald's restaurants",
+    "excerpt": "250 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/kitzingen/"
+  ],
+  "confidence": "low",
+  "notes": "Possible angle: Ronald McDonald-type youth/children topics unverified; no evidence found."
+ },
+ {
+  "company_name": "Hilite Germany GmbH",
+  "sector": "Automotive supplier (engine/transmission components)",
+  "hq_city": "Marktheidenfeld",
+  "lower_franconia_sites": [
+   "Marktheidenfeld"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "approx. 573 (directory)",
+  "revenue_estimate": null,
+  "ownership": "subsidiary of Hilite International group",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Automotive supplier in Marktheidenfeld",
+    "excerpt": "573 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/marktheidenfeld/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/marktheidenfeld/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR/donations found for site."
+ },
+ {
+  "company_name": "Druckhaus Mainfranken GmbH",
+  "sector": "Sheet-fed offset printing",
+  "hq_city": "Marktheidenfeld",
+  "lower_franconia_sites": [
+   "Marktheidenfeld"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "approx. 337 (directory); older listing ~100",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": "https://www.druckhaus-mainfranken.de",
+  "csr_themes": [
+   "environment"
+  ],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Large sheet-fed offset printer; invested in Scodix finishing press citing sustainability",
+    "excerpt": "Bayern International listing and directory",
+    "url": "https://www.bayern-international.de/en/company-database/company-details/druckhaus-mainfranken-gmbh-32616"
+   },
+   {
+    "claim": "Directory headcount",
+    "excerpt": "337 employees",
+    "url": "https://die-deutsche-wirtschaft.de/standort/marktheidenfeld/"
+   }
+  ],
+  "source_urls": [
+   "https://www.bayern-international.de/en/company-database/company-details/druckhaus-mainfranken-gmbh-32616",
+   "https://die-deutsche-wirtschaft.de/standort/marktheidenfeld/"
+  ],
+  "confidence": "low",
+  "notes": "Headcount sources conflict."
+ },
+ {
+  "company_name": "Gebhardt Bauzentrum GmbH & Co. KG",
+  "sector": "Building materials trade",
+  "hq_city": "Marktheidenfeld",
+  "lower_franconia_sites": [
+   "Marktheidenfeld"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "approx. 220 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private; joined BAUKING (BME group)",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Building-materials retailer, joined BAUKING",
+    "excerpt": "Konii article; directory lists 220 employees",
+    "url": "https://www.konii.de/?p=14263"
+   },
+   {
+    "claim": "Directory headcount",
+    "excerpt": "220 employees",
+    "url": "https://die-deutsche-wirtschaft.de/standort/marktheidenfeld/"
+   }
+  ],
+  "source_urls": [
+   "https://www.konii.de/?p=14263",
+   "https://die-deutsche-wirtschaft.de/standort/marktheidenfeld/"
+  ],
+  "confidence": "low",
+  "notes": "No donations found. Site list may include Hammelburg/Hoechberg branches."
+ },
+ {
+  "company_name": "Horst Bröstler GmbH",
+  "sector": "Publishing services (print, layout, production)",
+  "hq_city": "Marktheidenfeld",
+  "lower_franconia_sites": [
+   "Marktheidenfeld"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "approx. 150 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Services for publishers",
+    "excerpt": "150 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/marktheidenfeld/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/marktheidenfeld/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR evidence found."
+ },
+ {
+  "company_name": "Fritz Kohl GmbH & Co. KG",
+  "sector": "Wood / veneer production",
+  "hq_city": "Karlstadt",
+  "lower_franconia_sites": [
+   "Karlstadt"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "approx. 160 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private/family",
+  "website": null,
+  "csr_themes": [
+   "environment"
+  ],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Veneer and sawn timber producer in Karlstadt",
+    "excerpt": "160 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/karlstadt/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/karlstadt/"
+  ],
+  "confidence": "low",
+  "notes": "No donations found; website not verified."
+ },
+ {
+  "company_name": "AH Echterstraße GmbH",
+  "sector": "Car dealership",
+  "hq_city": "Karlstadt",
+  "lower_franconia_sites": [
+   "Karlstadt"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "approx. 50 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Car dealership in Karlstadt",
+    "excerpt": "50 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/karlstadt/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/karlstadt/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR evidence found; borderline size."
+ },
+ {
+  "company_name": "Klinikum Main-Spessart",
+  "sector": "Hospital (public)",
+  "hq_city": "Lohr am Main",
+  "lower_franconia_sites": [
+   "Lohr am Main",
+   "Marktheidenfeld"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "approx. 1,050 (2019 brochure); >1,000 per job ad",
+  "revenue_estimate": null,
+  "ownership": "Eigenbetrieb of Landkreis Main-Spessart (legal form per 2019 brochure)",
+  "website": "https://www.klinikum-mainspessart.de",
+  "csr_themes": [
+   "health"
+  ],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Hospital with sites Lohr and Marktheidenfeld, over 1,000 staff",
+    "excerpt": "Directory and job ads",
+    "url": "https://www.praktischarzt.de/kliniken/klinikummainspessart/"
+   }
+  ],
+  "source_urls": [
+   "https://www.praktischarzt.de/kliniken/klinikummainspessart/"
+  ],
+  "confidence": "low",
+  "notes": "Public provider; peer/collaboration angle rather than donor."
+ },
+ {
+  "company_name": "SEHO Systems GmbH",
+  "sector": "Soldering systems / machinery",
+  "hq_city": "Kreuzwertheim",
+  "lower_franconia_sites": [
+   "Kreuzwertheim"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "not verified (approx. few hundred, unconfirmed)",
+  "revenue_estimate": null,
+  "ownership": "private/group",
+  "website": "https://www.seho.de",
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Company based in Kreuzwertheim (Landkreis Main-Spessart)",
+    "excerpt": "Named as Kreuzwertheim employer in IHK/regional search; details unverified",
+    "url": "https://www.wuerzburg.ihk.de/"
+   }
+  ],
+  "source_urls": [
+   "https://www.wuerzburg.ihk.de/"
+  ],
+  "confidence": "low",
+  "notes": "Weak evidence: location/size from memory plus search; verify before use. No CSR found."
+ },
+ {
+  "company_name": "Reich GmbH (Mellrichstadt)",
+  "sector": "Automotive parts, special ball bearings",
+  "hq_city": "Mellrichstadt",
+  "lower_franconia_sites": [
+   "Mellrichstadt"
+  ],
+  "landkreis": "Rhön-Grabfeld",
+  "employees_estimate": "approx. 600 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Serial manufacturer of automotive parts and special bearings",
+    "excerpt": "600 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/mellrichstadt/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/mellrichstadt/"
+  ],
+  "confidence": "low",
+  "notes": "Landkreistag exhibition also names Reich as characteristic industry of the Landkreis. No CSR found."
+ },
+ {
+  "company_name": "Weihrauch & Weihrauch Sport GmbH + Co KG",
+  "sector": "Sporting firearms (air rifles)",
+  "hq_city": "Mellrichstadt",
+  "lower_franconia_sites": [
+   "Mellrichstadt"
+  ],
+  "landkreis": "Rhön-Grabfeld",
+  "employees_estimate": "approx. 94 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Maker of precision air rifles and pistols",
+    "excerpt": "94 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/mellrichstadt/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/mellrichstadt/"
+  ],
+  "confidence": "low",
+  "notes": "Possibly sensitive sector for Caritas; flag for review."
+ },
+ {
+  "company_name": "Gardner Denver Deutschland GmbH",
+  "sector": "Vacuum and pressure pumps",
+  "hq_city": "Bad Neustadt a.d. Saale",
+  "lower_franconia_sites": [
+   "Bad Neustadt a.d. Saale"
+  ],
+  "landkreis": "Rhön-Grabfeld",
+  "employees_estimate": "approx. 735 (directory)",
+  "revenue_estimate": null,
+  "ownership": "foreign group subsidiary",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Pump maker in Bad Neustadt",
+    "excerpt": "735 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+  ],
+  "confidence": "low",
+  "notes": "Group-level CSR exists but not verified for site."
+ },
+ {
+  "company_name": "RGT Rhönland Gesundheitstechnik GmbH & Co. KG",
+  "sector": "Building / health technology",
+  "hq_city": "Bad Neustadt a.d. Saale",
+  "lower_franconia_sites": [
+   "Bad Neustadt a.d. Saale"
+  ],
+  "landkreis": "Rhön-Grabfeld",
+  "employees_estimate": "approx. 170 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Building technology firm",
+    "excerpt": "170 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR found."
+ },
+ {
+  "company_name": "PECHT GmbH",
+  "sector": "Retail",
+  "hq_city": "Bad Neustadt a.d. Saale",
+  "lower_franconia_sites": [
+   "Bad Neustadt a.d. Saale"
+  ],
+  "landkreis": "Rhön-Grabfeld",
+  "employees_estimate": "approx. 137 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Retailer in Bad Neustadt",
+    "excerpt": "137 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR found."
+ },
+ {
+  "company_name": "Autohaus Kehm GmbH",
+  "sector": "Automotive retail",
+  "hq_city": "Bad Neustadt a.d. Saale",
+  "lower_franconia_sites": [
+   "Bad Neustadt a.d. Saale"
+  ],
+  "landkreis": "Rhön-Grabfeld",
+  "employees_estimate": "approx. 90 (directory)",
+  "revenue_estimate": null,
+  "ownership": "private",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Car dealership",
+    "excerpt": "90 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR found."
+ },
+ {
+  "company_name": "Ossig & Partner",
+  "sector": "Tax advisory / auditing",
+  "hq_city": "Bad Neustadt a.d. Saale",
+  "lower_franconia_sites": [
+   "Bad Neustadt a.d. Saale"
+  ],
+  "landkreis": "Rhön-Grabfeld",
+  "employees_estimate": "approx. 120 (directory)",
+  "revenue_estimate": null,
+  "ownership": "partnership",
+  "website": null,
+  "csr_themes": [],
+  "csr_summary": "No concrete CSR or philanthropy activity verified in this research pass.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Steuerberater/Wirtschaftsprüfer in Bad Neustadt",
+    "excerpt": "120 employees per directory",
+    "url": "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+   }
+  ],
+  "source_urls": [
+   "https://die-deutsche-wirtschaft.de/standort/bad-neustadt-a-d-saale/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR found; possible pro-bono angle."
+ }
+]

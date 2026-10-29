@@ -1,0 +1,659 @@
+[
+ {
+  "company_name": "Firmengruppe Göbel",
+  "sector": "Construction (Hochbau, Sanierung, Tiefbau)",
+  "hq_city": "Würzburg (Rimpar / Heidingsfeld)",
+  "lower_franconia_sites": [
+   "Rimpar",
+   "Würzburg-Heidingsfeld"
+  ],
+  "landkreis": "Würzburg (Stadt) / Landkreis Würzburg",
+  "employees_estimate": "ca. 350 (self-reported, total)",
+  "revenue_estimate": null,
+  "ownership": "family-owned, third generation",
+  "website": "https://www.firmengruppe-goebel.de/",
+  "csr_themes": [
+   "regional development",
+   "poverty"
+  ],
+  "csr_summary": "Family construction group that describes itself as a responsible entrepreneur and emphasises sustainable refurbishment. Runs the initiative 'G-meinsam für die Region' and supports the Bahnhofsmission Würzburg since April 2026.",
+  "foundation": null,
+  "previous_engagement": [
+   "Support of Bahnhofsmission Würzburg via 'G-meinsam für die Region' (from 1 April 2026)"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "info@firmengruppe-goebel.de",
+  "evidence": [
+   {
+    "claim": "Göbel Hochbau GmbH supports the Bahnhofsmission Würzburg since 1 April 2026 under the initiative 'G-meinsam für die Region'",
+    "excerpt": "Website states support of Bahnhofsmission Würzburg; family business with 350+ staff",
+    "url": "https://www.firmengruppe-goebel.de/"
+   }
+  ],
+  "source_urls": [
+   "https://www.firmengruppe-goebel.de/"
+  ],
+  "confidence": "medium",
+  "notes": "Already has a social-support initiative; operator of the Bahnhofsmission not verified here. Good warm-lead angle."
+ },
+ {
+  "company_name": "VS Logistics",
+  "sector": "Logistics / Spedition / warehousing",
+  "hq_city": "Würzburg area (Unterfranken)",
+  "lower_franconia_sites": [
+   "Würzburg",
+   "Rottendorf",
+   "Kürnach",
+   "Dettelbach"
+  ],
+  "landkreis": "Würzburg",
+  "employees_estimate": "ca. 120 (self-reported)",
+  "revenue_estimate": null,
+  "ownership": "not stated",
+  "website": "https://www.vs-logistics.com/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "Phone +49 9302 911-0 (website)",
+  "evidence": [
+   {
+    "claim": "Company states about 120 employees and sites in Würzburg, Rottendorf, Kürnach, Dettelbach, Dormagen",
+    "excerpt": "'120 Vollblutlogistiker'; 150,000 sqm warehouse area per search snippet",
+    "url": "https://www.vs-logistics.com/"
+   }
+  ],
+  "source_urls": [
+   "https://www.vs-logistics.com/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR info found; ownership unknown. Possible fit: employment/inclusion of warehouse staff."
+ },
+ {
+  "company_name": "Spedition Grimm",
+  "sector": "Transport / Spedition",
+  "hq_city": "Kleinrinderfeld",
+  "lower_franconia_sites": [
+   "Kleinrinderfeld"
+  ],
+  "landkreis": "Würzburg",
+  "employees_estimate": "small (about 15 drivers per website)",
+  "revenue_estimate": null,
+  "ownership": "family-owned, third generation",
+  "website": "https://spedition-grimm.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "info@spedition-grimm.de",
+  "evidence": [
+   {
+    "claim": "Family business in third generation with about 15 drivers, Kleinrinderfeld",
+    "excerpt": "Website: 'Familienbetrieb in dritter Generation'",
+    "url": "https://spedition-grimm.de/"
+   }
+  ],
+  "source_urls": [
+   "https://spedition-grimm.de/"
+  ],
+  "confidence": "low",
+  "notes": "Small firm, no CSR info. Contact page only."
+ },
+ {
+  "company_name": "Leopold Michel GmbH (Michel Logistik)",
+  "sector": "Logistics / Spedition / fulfilment",
+  "hq_city": "Dettelbach",
+  "lower_franconia_sites": [
+   "Dettelbach"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "43 (directory, may be outdated)",
+  "revenue_estimate": null,
+  "ownership": "family-owned, fourth generation",
+  "website": "https://michel-logistik.com/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Eurotransport describes Spedition Michel in Dettelbach as family business with fourth generation joining 2019",
+    "excerpt": "Fourth generation Kathrin Hegger works alongside Rainer Michel since June 2019",
+    "url": "https://www.eurotransport.de/artikel/spedition-michel-im-transformationsprozess-mittelstand-kann-auch-digital/"
+   }
+  ],
+  "source_urls": [
+   "https://www.eurotransport.de/artikel/spedition-michel-im-transformationsprozess-mittelstand-kann-auch-digital/"
+  ],
+  "confidence": "low",
+  "notes": "Company website could not be fetched; entity name Leopold Michel GmbH from directory keytobavaria.com."
+ },
+ {
+  "company_name": "Werder Logistik",
+  "sector": "Logistics / Spedition",
+  "hq_city": "Würzburg area",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://www.werder-logistik.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Advertises FTL and refrigerated transport in Würzburg and Mainfranken",
+    "excerpt": "Search result for Spedition Würzburg page",
+    "url": "https://www.werder-logistik.de/lkw-transport-deutschland/lkw-transport-sueddeutschland/spedition-wuerzburg/"
+   }
+  ],
+  "source_urls": [
+   "https://www.werder-logistik.de/lkw-transport-deutschland/lkw-transport-sueddeutschland/spedition-wuerzburg/"
+  ],
+  "confidence": "low",
+  "notes": "Website not reachable during research; HQ and size unverified."
+ },
+ {
+  "company_name": "SEMA Elektrotechnik",
+  "sector": "Electrical installation / Photovoltaic (Handwerk)",
+  "hq_city": "Schweinfurt",
+  "lower_franconia_sites": [
+   "Schweinfurt"
+  ],
+  "landkreis": "Schweinfurt (Stadt)",
+  "employees_estimate": "small, not stated",
+  "revenue_estimate": null,
+  "ownership": "UG (haftungsbeschränkt), master-electrician led",
+  "website": "https://sema-elektrotechnik.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": "info@sema-elektrotechnik.de",
+  "evidence": [
+   {
+    "claim": "Master electrician business in Schweinfurt offering PV installation, Roßbrunnstraße 11",
+    "excerpt": "Website lists address and PV service",
+    "url": "https://sema-elektrotechnik.de/"
+   }
+  ],
+  "source_urls": [
+   "https://sema-elektrotechnik.de/"
+  ],
+  "confidence": "low",
+  "notes": "Very small; limited sponsoring capacity."
+ },
+ {
+  "company_name": "FEK Fränkische Energiekonzepte",
+  "sector": "Energy installer (solar, storage, heat pumps, electrical)",
+  "hq_city": "Schweinfurt",
+  "lower_franconia_sites": [
+   "Schweinfurt"
+  ],
+  "landkreis": "Schweinfurt (Stadt)",
+  "employees_estimate": "unknown (five open positions listed)",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://fraenkische-energiekonzepte.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Full-service solar, storage, heat pump and electrical provider in Schweinfurt",
+    "excerpt": "Website describes own teams across Unterfranken",
+    "url": "https://fraenkische-energiekonzepte.de/"
+   }
+  ],
+  "source_urls": [
+   "https://fraenkische-energiekonzepte.de/"
+  ],
+  "confidence": "low",
+  "notes": "No headcount or CSR info found."
+ },
+ {
+  "company_name": "Lurz Tiefbau GmbH",
+  "sector": "Civil engineering / sewer construction",
+  "hq_city": "Würzburg-Heidingsfeld",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "200-499 (directory listing, unverified)",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://www.firmengruppe-goebel.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Lurz Tiefbau listed at Winterhäuser Str. 99, 97084 Würzburg; same address as Firmengruppe Göbel Heidingsfeld site, suggesting group affiliation (inference, unverified)",
+    "excerpt": "Directory: Tiefbau, Kanalbau at Winterhäuser Str. 99",
+    "url": "https://www.11880.com/suche/tiefbau/randersacker"
+   }
+  ],
+  "source_urls": [
+   "https://www.11880.com/suche/tiefbau/randersacker"
+  ],
+  "confidence": "low",
+  "notes": "Likely part of Firmengruppe Göbel (same address) - may overlap; verify before outreach. Website URL is Göbel group's, not confirmed as Lurz's own."
+ },
+ {
+  "company_name": "Bauunternehmung Blank",
+  "sector": "Construction",
+  "hq_city": "Helmstadt",
+  "lower_franconia_sites": [
+   "Helmstadt"
+  ],
+  "landkreis": "Würzburg",
+  "employees_estimate": "ca. 30",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://www.bauunternehmung-blank.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Small construction firm in Helmstadt, about 30 employees",
+    "excerpt": "Search result summary",
+    "url": "https://www.bauunternehmung-blank.de/"
+   }
+  ],
+  "source_urls": [
+   "https://www.bauunternehmung-blank.de/"
+  ],
+  "confidence": "low",
+  "notes": "Small."
+ },
+ {
+  "company_name": "Alexander Konrad Bauunternehmen GmbH",
+  "sector": "Construction",
+  "hq_city": "Himmelstadt",
+  "lower_franconia_sites": [
+   "Himmelstadt"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://www.infranken.de/unternehmen/alexander-konrad-bauunternehmen-gmbh-88785",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Listed as construction company in Himmelstadt",
+    "excerpt": "Directory listing only",
+    "url": "https://www.infranken.de/unternehmen/alexander-konrad-bauunternehmen-gmbh-88785"
+   }
+  ],
+  "source_urls": [
+   "https://www.infranken.de/unternehmen/alexander-konrad-bauunternehmen-gmbh-88785"
+  ],
+  "confidence": "low",
+  "notes": "Website not identified; directory listing only."
+ },
+ {
+  "company_name": "Rüttger Bedachung",
+  "sector": "Roofing (Handwerk)",
+  "hq_city": "Gerbrunn",
+  "lower_franconia_sites": [
+   "Gerbrunn"
+  ],
+  "landkreis": "Würzburg",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://wob24.net/category/wuerzburg/page/31",
+  "csr_themes": [
+   "poverty",
+   "regional development"
+  ],
+  "csr_summary": "Roofing firm that appears in local news as donor of EUR 1,000 to FortSchritt Würzburg.",
+  "foundation": null,
+  "previous_engagement": [
+   "EUR 1,000 donation to FortSchritt Würzburg (date unknown)"
+  ],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "wob24.net lists a EUR 1,000 donation from Rüttger Bedachung via Erich Beck to FortSchritt Würzburg; connection to Bahnhofsmission unverified",
+    "excerpt": "Listing: Rüttger Bedachung from Gerbrunn donates 1,000 Euro",
+    "url": "https://wob24.net/category/wuerzburg/page/31"
+   }
+  ],
+  "source_urls": [
+   "https://wob24.net/category/wuerzburg/page/31"
+  ],
+  "confidence": "low",
+  "notes": "Donation date unknown; own website not identified."
+ },
+ {
+  "company_name": "Krappmann & Hufnagel",
+  "sector": "Metal trading / scrap recycling",
+  "hq_city": "Würzburg (Hafen)",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://www.wlw.de/de/suche/speditionen/wuerzburg",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Listed in Würzburg port area for metal trade and scrap",
+    "excerpt": "Search summary of wlw.de result",
+    "url": "https://www.wlw.de/de/suche/speditionen/wuerzburg"
+   }
+  ],
+  "source_urls": [
+   "https://www.wlw.de/de/suche/speditionen/wuerzburg"
+  ],
+  "confidence": "low",
+  "notes": "Not a classic logistics firm; own website not identified."
+ },
+ {
+  "company_name": "Sunstorm PV",
+  "sector": "Photovoltaic installer (Handwerk)",
+  "hq_city": "Ochsenfurt",
+  "lower_franconia_sites": [
+   "Ochsenfurt"
+  ],
+  "landkreis": "Würzburg",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://www.sunstorm.solar/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Master-craft solar installer for PV in Würzburg and Unterfranken",
+    "excerpt": "Website title: Photovoltaik-Anlagen in Würzburg & Unterfranken",
+    "url": "https://www.sunstorm.solar/"
+   }
+  ],
+  "source_urls": [
+   "https://www.sunstorm.solar/"
+  ],
+  "confidence": "low",
+  "notes": "Small; no CSR info."
+ },
+ {
+  "company_name": "Solarfritze",
+  "sector": "Heating/sanitary and solar installer",
+  "hq_city": "Aschaffenburg",
+  "lower_franconia_sites": [
+   "Aschaffenburg"
+  ],
+  "landkreis": "Aschaffenburg",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://solarfritze.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Installer and heating construction firm in Aschaffenburg for heat pumps, PV, solar thermal",
+    "excerpt": "Website title: Installateur & Heizungsbau Aschaffenburg",
+    "url": "https://solarfritze.de/"
+   }
+  ],
+  "source_urls": [
+   "https://solarfritze.de/"
+  ],
+  "confidence": "low",
+  "notes": "No CSR info."
+ },
+ {
+  "company_name": "AS-Electronics GmbH & Co. KG (SunShare)",
+  "sector": "Electrical installation / PV and heat pumps",
+  "hq_city": "Lohr am Main",
+  "lower_franconia_sites": [
+   "Lohr am Main"
+  ],
+  "landkreis": "Main-Spessart",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "GmbH & Co. KG",
+  "website": "https://sunshare.eu/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Does planning, electrical installation and assembly of PV and heat pumps in Unterfranken",
+    "excerpt": "Site sunshare.eu, legal entity AS-Electronics GmbH & Co. KG",
+    "url": "https://sunshare.eu/"
+   }
+  ],
+  "source_urls": [
+   "https://sunshare.eu/"
+  ],
+  "confidence": "low",
+  "notes": "Headcount unknown."
+ },
+ {
+  "company_name": "BTPV Deutschland",
+  "sector": "Electrical master business, PV / storage / heat pumps",
+  "hq_city": "Bad Kissingen (location page)",
+  "lower_franconia_sites": [
+   "Bad Kissingen"
+  ],
+  "landkreis": "Bad Kissingen",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://btpv.de/photovoltaik/bad-kissingen",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Electrical master craft business offering PV, storage, heat pumps with Bad Kissingen page",
+    "excerpt": "Search result description",
+    "url": "https://btpv.de/photovoltaik/bad-kissingen"
+   }
+  ],
+  "source_urls": [
+   "https://btpv.de/photovoltaik/bad-kissingen"
+  ],
+  "confidence": "low",
+  "notes": "Describes nationwide work; HQ unverified."
+ },
+ {
+  "company_name": "Photovoltaik Zentrum Bayern",
+  "sector": "Photovoltaic installer",
+  "hq_city": "unknown",
+  "lower_franconia_sites": [
+   "Würzburg",
+   "Schweinfurt",
+   "Aschaffenburg",
+   "Bad Kissingen"
+  ],
+  "landkreis": "Würzburg",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://photovoltaik-zentrum-bayern.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Regional partner for PV systems in Würzburg, Schweinfurt, Aschaffenburg, Bad Kissingen",
+    "excerpt": "Website description per search result",
+    "url": "https://photovoltaik-zentrum-bayern.de/"
+   }
+  ],
+  "source_urls": [
+   "https://photovoltaik-zentrum-bayern.de/"
+  ],
+  "confidence": "low",
+  "notes": "HQ and size unverified."
+ },
+ {
+  "company_name": "Richard Köstner AG",
+  "sector": "Wholesale (Haustechnik, Handwerk and industry supply)",
+  "hq_city": "Neustadt an der Aisch",
+  "lower_franconia_sites": [
+   "Eibelstadt"
+  ],
+  "landkreis": "Würzburg",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://www.koestner.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Branch in Eibelstadt, Brückenstraße 1, per 2020 brochure; HQ Neustadt a.d. Aisch",
+    "excerpt": "IHK magazine reports double-digit revenue growth 2023",
+    "url": "https://www.koestner.de/fileadmin/dokumente/downloads/Imagebrosch%C3%BCre_Fachhandel_2020_V10_klein.pdf"
+   }
+  ],
+  "source_urls": [
+   "https://www.koestner.de/fileadmin/dokumente/downloads/Imagebrosch%C3%BCre_Fachhandel_2020_V10_klein.pdf"
+  ],
+  "confidence": "low",
+  "notes": "HQ is in Mittelfranken; only Eibelstadt site in Unterfranken. Info from 2020."
+ },
+ {
+  "company_name": "Die Hand-in-Hand-Werker GmbH (Kitzingen / Mainfranken)",
+  "sector": "Handwerk network / renovation",
+  "hq_city": "Kitzingen",
+  "lower_franconia_sites": [
+   "Kitzingen"
+  ],
+  "landkreis": "Kitzingen",
+  "employees_estimate": "unknown",
+  "revenue_estimate": null,
+  "ownership": "unknown",
+  "website": "https://www.infranken.de/unternehmen/die-hand-in-hand-werker-gmbh-229949",
+  "csr_themes": [],
+  "csr_summary": "No public CSR or sponsoring information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Listed as Die Hand-in-Hand-Werker GmbH in Kitzingen, offering modernisation and extension services",
+    "excerpt": "infranken.de directory entry",
+    "url": "https://www.infranken.de/unternehmen/die-hand-in-hand-werker-gmbh-229949"
+   }
+  ],
+  "source_urls": [
+   "https://www.infranken.de/unternehmen/die-hand-in-hand-werker-gmbh-229949"
+  ],
+  "confidence": "low",
+  "notes": "Registered seat not verified; own website not identified."
+ },
+ {
+  "company_name": "Rexel Germany GmbH & Co. KG (Niederlassung Würzburg)",
+  "sector": "Electrical wholesale",
+  "hq_city": "Essen",
+  "lower_franconia_sites": [
+   "Würzburg"
+  ],
+  "landkreis": "Würzburg (Stadt)",
+  "employees_estimate": null,
+  "revenue_estimate": null,
+  "ownership": "subsidiary of Rexel group",
+  "website": "https://www.rexel.de/",
+  "csr_themes": [],
+  "csr_summary": "No public CSR information found in the sources checked.",
+  "foundation": null,
+  "previous_engagement": [],
+  "caritas_or_church_link": null,
+  "csr_report_url": null,
+  "contact": null,
+  "evidence": [
+   {
+    "claim": "Rexel Germany listed as electrical wholesaler in Würzburg, HQ Essen",
+    "excerpt": "Directory listing",
+    "url": "https://www.werkenntdenbesten.de/e/107429179/elektro-grosshandel/wuerzburg/rexel-germany-gmbh-co-kg-bewertungen.html"
+   }
+  ],
+  "source_urls": [
+   "https://www.werkenntdenbesten.de/e/107429179/elektro-grosshandel/wuerzburg/rexel-germany-gmbh-co-kg-bewertungen.html"
+  ],
+  "confidence": "low",
+  "notes": "Branch of a national group; website URL is the generic corporate domain, not verified."
+ }
+]
