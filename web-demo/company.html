@@ -104,6 +104,7 @@ p.body{font-size:.92rem;color:var(--soft);overflow-wrap:anywhere}
 <main class="container" id="root"></main>
 
 <script src="data.js"></script>
+<script src="data_de.js"></script>
 <script>
 const STR = {
   en: {
@@ -152,10 +153,27 @@ const STR = {
   }
 };
 const params = new URLSearchParams(location.search);
-let LANG = params.get('lang') === 'de' ? 'de' : 'en';
+// Language: ?lang= wins, else the last choice on any Caire page (stored per browser).
+let LANG = params.get('lang') || (()=>{ try{ return localStorage.getItem('caire-lang'); }catch(e){ return null; } })();
+LANG = LANG === 'de' ? 'de' : 'en';
 const t = k => STR[LANG][k];
 const DATA = (typeof CAIRE_COMPANIES !== 'undefined') ? CAIRE_COMPANIES : [];
 const META = (typeof CAIRE_META !== 'undefined') ? CAIRE_META : {};
+/* German view: swap English data strings for their CAIRE_DE translation (data_de.js); untranslated text stays English. */
+const DE_DICT = (typeof CAIRE_DE !== 'undefined') ? CAIRE_DE : {};
+const DE_SKIP = new Set(['id','pid','name','website','source_urls','url','town','landkreis','tier_code','confidence','scope','position','matched_areas','csr_themes','agent','method']);
+const DE_CACHE = new WeakMap();
+function localize(v, key){
+  if(DE_SKIP.has(key)) return v;
+  if(typeof v === 'string') return DE_DICT[v] || v;
+  if(Array.isArray(v)) return v.map(x=>localize(x, key));
+  if(v && typeof v === 'object'){
+    if(DE_CACHE.has(v)) return DE_CACHE.get(v);
+    const o = {}; for(const k in v) o[k] = localize(v[k], k);
+    DE_CACHE.set(v, o); return o;
+  }
+  return v;
+}
 const BY_RANK = [...DATA].sort((a,b)=>(a.rank??1e9)-(b.rank??1e9));
 
 function esc(s){
@@ -193,7 +211,8 @@ function syncChrome(){
 function render(){
   syncChrome();
   const root = document.getElementById('root');
-  const c = DATA.find(x=>x.id===params.get('id'));
+  const raw = DATA.find(x=>x.id===params.get('id'));
+  const c = raw && LANG==='de' ? localize(raw) : raw;
   if(!c){
     document.title = 'Caire — ' + t('nf_title');
     root.innerHTML = `<div class="empty"><span class="eyebrow">404</span><h1>${t('nf_title')}</h1><p>${t('nf_body')}</p><a class="btn p" href="map.html${LANG==='de'?'?lang=de':''}">${t('nf_btn')}</a></div>`;
@@ -322,6 +341,7 @@ function render(){
 
 document.querySelectorAll('.lang button').forEach(b=> b.onclick = ()=>{
   LANG = b.dataset.l;
+  try{ localStorage.setItem('caire-lang', LANG); }catch(e){}
   if(LANG==='de') params.set('lang','de'); else params.delete('lang');
   history.replaceState(null, '', '?' + params.toString());
   render();

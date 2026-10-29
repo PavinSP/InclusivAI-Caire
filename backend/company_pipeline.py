@@ -32,6 +32,21 @@ from google.genai import types
 
 
 ROOT = Path(__file__).resolve().parents[1]
+WEB_ROOT = ROOT / "web-demo"
+RESULTS_DIR = ROOT / "company_research" / "results"
+
+
+def load_dotenv(path: Path = ROOT / ".env") -> None:
+    """Read KEY=value lines from the git-ignored .env file without overriding the real environment."""
+    if not path.exists():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        key, sep, value = line.strip().partition("=")
+        if sep and key and not key.startswith("#"):
+            os.environ.setdefault(key.strip(), value.strip().strip("'\""))
+
+
+load_dotenv()
 MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 MAX_EVIDENCE = 25
 
@@ -338,7 +353,49 @@ def run_pipeline(company_name: str, workers: int = 3) -> dict[str, Any]:
     }
 
 
+def cache_path(company_name: str) -> Path:
+    slug = re.sub(r"[^a-z0-9äöüß]+", "-", company_name.lower()).strip("-")[:60] or "company"
+    return RESULTS_DIR / f"{slug}.json"
+
+
+def research_cached(company_name: str) -> dict[str, Any]:
+    """Re-searching the same name returns the saved result instead of paying for a new Gemini run."""
+    path = cache_path(company_name)
+    if path.exists():
+        return load_json(path)
+    result = run_pipeline(company_name)
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return result
+
+
+CONTENT_TYPES = {".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8",
+                 ".json": "application/json; charset=utf-8", ".png": "image/png", ".jpeg": "image/jpeg", ".jpg": "image/jpeg"}
+
+
 class ResearchHandler(BaseHTTPRequestHandler):
+    def send_json(self, status: int, data: Any) -> None:
+        payload = json.dumps(data, ensure_ascii=False).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(payload)))
+        self.end_headers()
+        self.wfile.write(payload)
+
+    def do_GET(self) -> None:  # noqa: N802
+        # Serve the web demo from the same origin so the browser never needs the API key or CORS.
+        rel = self.path.split("?", 1)[0].lstrip("/") or "index.html"
+        target = (WEB_ROOT / rel).resolve()
+        if WEB_ROOT.resolve() not in target.parents or not target.is_file():
+            self.send_error(404)
+            return
+        data = target.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", CONTENT_TYPES.get(target.suffix, "application/octet-stream"))
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
     def do_POST(self) -> None:  # noqa: N802
         if self.path != "/research":
             self.send_error(404, "Use POST /research")
@@ -349,20 +406,9 @@ class ResearchHandler(BaseHTTPRequestHandler):
             company_name = str(body.get("company_name", "")).strip()
             if not company_name or len(company_name) > 200:
                 raise ValueError("company_name is required and must be at most 200 characters")
-            result = run_pipeline(company_name)
-            payload = json.dumps(result, ensure_ascii=False).encode("utf-8")
-            self.send_response(200)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
-            self.send_header("Content-Length", str(len(payload)))
-            self.end_headers()
-            self.wfile.write(payload)
+            self.send_json(200, research_cached(company_name))
         except Exception as exc:  # keep the demo API simple; production should log safely
-            payload = json.dumps({"error": str(exc)}, ensure_ascii=False).encode("utf-8")
-            self.send_response(500)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
-            self.send_header("Content-Length", str(len(payload)))
-            self.end_headers()
-            self.wfile.write(payload)
+            self.send_json(500, {"error": str(exc)})
 
     def log_message(self, fmt: str, *args: Any) -> None:
         print(fmt % args, file=sys.stderr)

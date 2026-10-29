@@ -23,6 +23,9 @@ nav .container{display:flex;align-items:center;gap:1.5rem;height:64px}
 nav .links{margin-left:auto;display:flex;gap:1.5rem;align-items:center}
 nav .links a{color:var(--soft);text-decoration:none;font-size:.9rem;font-weight:500}
 nav .links a:hover{color:var(--accent)}
+.lang{display:flex;border:1px solid var(--border);border-radius:999px;overflow:hidden}
+.lang button{border:0;background:none;color:var(--soft);font:600 .8rem Inter,sans-serif;padding:.3rem .7rem;cursor:pointer}
+.lang button.on{background:var(--accent);color:var(--on-accent)}
 nav .links a.btn{color:var(--on-accent);padding:.45rem 1rem}
 .hero{padding:5rem 0 3rem;display:grid;grid-template-columns:1.3fr .7fr;gap:3rem;align-items:center}
 .greeting{font-family:'Fira Code',monospace;color:var(--accent);margin-bottom:1rem;font-size:.95rem}
@@ -54,54 +57,44 @@ footer{padding:2rem 0;color:var(--soft);font-size:.85rem;text-align:center;borde
 <body>
 <nav><div class="container">
   <a class="brand" href="home.html"><img src="logo.png" alt="Caire"></a>
-  <div class="links"><a href="#about">About</a><a href="#how">How it works</a><a class="btn btn-p" href="map.html">Open map</a></div>
+  <div class="links"><span class="lang"><button data-l="de">DE</button><button data-l="en">EN</button></span><a class="btn btn-p map-link" href="map.html" data-i18n="open">Open map</a></div>
 </div></nav>
 
 <main class="container">
   <div class="hero">
     <div>
-      <p class="greeting">&gt; Hi, we are Caire</p>
-      <h1>Partner intelligence for Caritas Würzburg</h1>
-      <p class="sub">Find companies in Mainfranken whose values fit.</p>
-      <p class="desc">Caire maps researched companies across Lower Franconia and scores their CSR fit, so fundraising teams can start the right conversations with the right partners.</p>
-      <div class="actions"><a class="btn btn-p" href="map.html">Explore the map</a><a class="btn btn-s" href="#how">How it works</a></div>
+      <p class="greeting" data-i18n="greeting">&gt; Hi, we are Caire</p>
+      <h1 data-i18n="title">Partner intelligence for Caritas Würzburg</h1>
+      <p class="sub" data-i18n="sub">Find companies in Mainfranken whose values fit.</p>
+      <div class="actions"><a class="btn btn-p map-link" href="map.html" data-i18n="explore">Explore the map</a></div>
     </div>
     <div class="logo-wrap"><img src="logo.png" alt="Caire logo"></div>
   </div>
 </main>
 
-<section class="stats"><div class="container grid">
-  <div><b id="n-companies">224</b><span>Prospects scored &amp; mapped</span></div>
-  <div><b id="n-tier">16</b><span>A/B-tier leads to approach or nurture</span></div>
-  <div><b>10</b><span>Scoring agents per company</span></div>
-</div></section>
-
-<section id="about"><div class="container">
-  <span class="eyebrow">About</span><h2>Built for fundraising outreach</h2>
-  <div class="grid">
-    <div class="card"><h3>Discover</h3><p>Search and filter companies by district, sector and CSR topic on an interactive map.</p></div>
-    <div class="card"><h3>Match</h3><p>A lead-priority score weighs ethics, volunteering, mission fit, regional roots and more against Caritas values.</p></div>
-    <div class="card"><h3>Reach out</h3><p>Every company has its own page with the score breakdown, approach angle and sources.</p></div>
-  </div>
-</div></section>
-
-<section id="how"><div class="container">
-  <span class="eyebrow">How it works</span><h2>From research to relationship</h2>
-  <div class="grid">
-    <div class="card"><h3>1. Research</h3><p>Prospects that are not yet Caritas partners are collected per district with CSR evidence and sources.</p></div>
-    <div class="card"><h3>2. Score</h3><p>Eight scoring agents, a reputation gate and a reviewer rate each company; the result is calibrated against existing Caritas partners.</p></div>
-    <div class="card"><h3>3. Act</h3><p>Tiers A (approach now), B (nurture) and C (low priority) tell the team where to start.</p></div>
-  </div>
-</div></section>
-
-<footer>Caire · Caritas Würzburg hackathon demo</footer>
-<script src="data.js"></script>
+<footer data-i18n="footer">Caire · Caritas Würzburg hackathon demo</footer>
 <script>
-// Keep the headline numbers in step with the scored dataset.
-if(typeof CAIRE_COMPANIES !== 'undefined'){
-  document.getElementById('n-companies').textContent = CAIRE_COMPANIES.length;
-  document.getElementById('n-tier').textContent = CAIRE_COMPANIES.filter(c=> c.tier_code==='A' || c.tier_code==='B').length;
+const STR = {
+  en:{greeting:'> Hi, we are Caire', title:'Partner intelligence for Caritas Würzburg', sub:'Find companies in Mainfranken whose values fit.',
+      open:'Open map', explore:'Explore the map', footer:'Caire · Caritas Würzburg hackathon demo'},
+  de:{greeting:'> Hallo, wir sind Caire', title:'Partnersuche für die Caritas Würzburg', sub:'Unternehmen in Mainfranken finden, deren Werte passen.',
+      open:'Karte öffnen', explore:'Zur Karte', footer:'Caire · Hackathon-Demo für die Caritas Würzburg'}
+};
+// Language: ?lang= wins, else the last choice on any Caire page (stored per browser).
+function initialLang(){
+  const q = new URLSearchParams(location.search).get('lang');
+  if(q==='de' || q==='en') return q;
+  try{ return localStorage.getItem('caire-lang')==='de' ? 'de' : 'en'; }catch(e){ return 'en'; }
 }
+function setLang(l){
+  try{ localStorage.setItem('caire-lang', l); }catch(e){}
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(el=> el.textContent = STR[l][el.dataset.i18n]);
+  document.querySelectorAll('.map-link').forEach(a=> a.href = 'map.html?lang=' + l);
+  document.querySelectorAll('.lang button').forEach(b=> b.classList.toggle('on', b.dataset.l===l));
+}
+document.querySelectorAll('.lang button').forEach(b=> b.onclick = ()=> setLang(b.dataset.l));
+setLang(initialLang());
 </script>
 </body>
 </html>

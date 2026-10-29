@@ -24,7 +24,7 @@ let gone = false;
 function go(){
   if(gone) return; gone = true;
   document.body.classList.add('out');
-  setTimeout(()=> location.replace('home.html'), 450);
+  setTimeout(()=> location.replace('home.html' + location.search), 450);
 }
 setTimeout(go, 2400);
 addEventListener('click', go);

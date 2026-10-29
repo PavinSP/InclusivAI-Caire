@@ -156,10 +156,17 @@ header{
 .conf-low{background:var(--terracotta-soft); color:var(--rust-low);}
 .card-reco{font-size:12.5px; color:var(--ink-soft); margin-top:7px; line-height:1.45;}
 .area-tags{display:flex; gap:5px; flex-wrap:wrap; margin-top:8px;}
+.card-details{display:block; margin-top:10px; padding-top:8px; border-top:1px solid var(--line-soft); color:var(--terracotta); font-weight:600; font-size:12.5px; text-decoration:none;}
 .area-tag{font-size:10.5px; padding:2px 7px; border-radius:6px; background:var(--line-soft); color:var(--ink-soft); font-weight:600;}
 .empty-state{padding:40px 24px; text-align:center; color:var(--ink-soft);}
 .empty-state svg{opacity:.4; margin-bottom:10px;}
 .empty-state p{font-size:13.5px; line-height:1.5;}
+.research-box{margin:10px 12px; padding:12px 14px; border:1px dashed var(--line); border-radius:12px; font-size:13px; color:var(--ink-soft);}
+.research-box button{margin-top:8px; border:0; border-radius:8px; padding:7px 12px; background:var(--terracotta); color:#fff; font-weight:600; cursor:pointer;}
+.research-box button:disabled{opacity:.6; cursor:wait;}
+.research-box .card{margin:10px 0 0; cursor:default;}
+.research-box ul{margin:6px 0 0; padding-left:18px;}
+.research-box a{color:var(--terracotta);}
 
 /* ---------- Leaflet marker look ---------- */
 .caire-dot{
@@ -369,6 +376,7 @@ header{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
 <script src="data.js"></script>
+<script src="data_de.js"></script>
 <script>
 /* ============== i18n ============== */
 const STR = {
@@ -425,15 +433,37 @@ const STR = {
     close:"Schließen",
   }
 };
+/* Language: ?lang= wins, else the last choice on any Caire page (stored per browser). */
+function initialLang(){
+  const q = new URLSearchParams(location.search).get('lang');
+  if(q==='de' || q==='en') return q;
+  try{ return localStorage.getItem('caire-lang')==='de' ? 'de' : 'en'; }catch(e){ return 'en'; }
+}
+function saveLang(l){ try{ localStorage.setItem('caire-lang', l); }catch(e){} }
 let LANG = 'en';
 function t(k){ return STR[LANG][k]; }
 
 /* ============== State ============== */
+/* German view: swap English data strings for their CAIRE_DE translation (data_de.js); untranslated text stays English. */
+const DE_DICT = (typeof CAIRE_DE !== 'undefined') ? CAIRE_DE : {};
+const DE_SKIP = new Set(['id','pid','name','website','source_urls','url','town','landkreis','tier_code','confidence','scope','position','matched_areas','csr_themes','agent','method']);
+const DE_CACHE = new WeakMap();
+function localize(v, key){
+  if(DE_SKIP.has(key)) return v;
+  if(typeof v === 'string') return DE_DICT[v] || v;
+  if(Array.isArray(v)) return v.map(x=>localize(x, key));
+  if(v && typeof v === 'object'){
+    if(DE_CACHE.has(v)) return DE_CACHE.get(v);
+    const o = {}; for(const k in v) o[k] = localize(v[k], k);
+    DE_CACHE.set(v, o); return o;
+  }
+  return v;
+}
 const ALL_RECORDS = (typeof CAIRE_COMPANIES !== 'undefined') ? CAIRE_COMPANIES : [];
 let SCOPE = 'mainfranken';            // 'mainfranken' (default) or 'all' (whole diocese)
 let ALL = [], AREA_LIST = [], LANDKREIS_LIST = [];
 function computeScope(){
-  ALL = ALL_RECORDS.filter(c=> SCOPE==='all' || c.scope==='mainfranken');
+  ALL = ALL_RECORDS.filter(c=> SCOPE==='all' || c.scope==='mainfranken').map(c=> LANG==='de' ? localize(c) : c);
   AREA_LIST = [...new Set(ALL.flatMap(c=>c.matched_areas))].sort();
   LANDKREIS_LIST = [...new Set(ALL.map(c=>c.landkreis))].sort();
 }
@@ -720,10 +750,73 @@ function applyFilters(){
 }
 
 /* ============== Sidebar list ============== */
+/* ============== Online research (Gemini, via the local backend) ============== */
+/* Results are kept per query so re-rendering the list doesn't lose them; the backend also caches them on disk. */
+const RESEARCHED = {};
+const IS_LOCAL = ['localhost','127.0.0.1'].includes(location.hostname);
+// The scorer's decision maps onto the same colours as the map tiers.
+const DECISION_TIER = {strong_candidate:'A', promising_candidate:'B', exploratory_candidate:'C', do_not_prioritize:'X', ineligible:'X'};
+
+function researchBox(query){
+  const r = RESEARCHED[query.toLowerCase()];
+  const de = LANG==='de';
+  // GitHub Pages is static, so online research only works when the local backend serves the site.
+  if(!IS_LOCAL) return `<div class="research-box">${de ? `„${esc(query)}“ nicht dabei? Die Online-Recherche läuft nur in der lokalen Version (Backend mit Gemini-Schlüssel).` : `Not finding “${esc(query)}”? Online research only works in the local version (backend with Gemini key).`}</div>`;
+  if(!r) return `
+    <div class="research-box">
+      ${de ? `Nicht dabei? <b>„${esc(query)}“</b> online recherchieren und bewerten.` : `Not in the list? Research and score <b>“${esc(query)}”</b> online.`}
+      <br><button id="research-btn" onclick="researchOnline()">${de ? 'Online recherchieren' : 'Research online'}</button>
+    </div>`;
+  if(r.loading) return `<div class="research-box">${de ? 'Recherche läuft … das dauert etwa eine Minute.' : 'Researching… this takes about a minute.'}<br><button disabled>${de ? 'Bitte warten' : 'Please wait'}</button></div>`;
+  if(r.error) return `<div class="research-box">${de ? 'Recherche fehlgeschlagen' : 'Research failed'}: ${esc(r.error)}<br><button onclick="researchOnline(true)">${de ? 'Erneut versuchen' : 'Try again'}</button></div>`;
+  const co = r.company||{}, s = r.summary||{}, ag = r.aggregate||{};
+  const tc = {tier_code: DECISION_TIER[s.decision] || 'C'};
+  const urls = [...new Set((co.evidence||[]).map(e=>e.url).filter(u=>/^https?:\/\//.test(u||'')))].slice(0,5);
+  return `
+    <div class="research-box">
+      ${de ? 'Neu recherchiert (noch nicht geprüft)' : 'Newly researched (not yet reviewed)'}
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <div class="card-name">${esc(co.company_name||query)}</div>
+            <div class="card-sector">${esc(co.hq_city||'')} · ${esc(co.sector||'')}</div>
+          </div>
+          <div class="score-badge" style="background:${tierColor(tc)};color:${tierText(tc)};">${esc(ag.overall_fit_score ?? '–')}</div>
+        </div>
+        <div class="card-meta">
+          <span class="tier-badge" style="background:${tierColor(tc)};color:${tierText(tc)};">${esc(t('tiers')[tc.tier_code]||tc.tier_code)}</span>
+          <span class="conf-badge conf-${esc(ag.evidence_confidence)}">${t(ag.evidence_confidence)||esc(ag.evidence_confidence)}</span>
+        </div>
+        ${s.headline ? `<div class="card-name" style="margin-top:8px;font-size:13px">${esc(s.headline)}</div>` : ''}
+        <div class="card-reco">${esc(s.recommendation||'')}</div>
+        ${(s.strongest_reasons||[]).length ? `<ul class="card-reco">${s.strongest_reasons.slice(0,3).map(x=>`<li>${esc(x.text)}</li>`).join('')}</ul>` : ''}
+        ${s.outreach_angle ? `<div class="card-reco"><b>${de?'Ansatz':'Outreach angle'}:</b> ${esc(s.outreach_angle)}</div>` : ''}
+        ${urls.length ? `<div class="card-reco">${urls.map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">[${i+1}]</a>`).join(' ')}</div>` : ''}
+      </div>
+    </div>`;
+}
+
+async function researchOnline(retry){
+  const query = state.search.trim();
+  if(!query) return;
+  const key = query.toLowerCase();
+  if(RESEARCHED[key] && !RESEARCHED[key].error && !retry) return;
+  RESEARCHED[key] = {loading:true}; applyFilters();
+  try{
+    const res = await fetch('/research', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({company_name:query})});
+    const data = await res.json().catch(()=>({error:`HTTP ${res.status}`}));
+    RESEARCHED[key] = res.ok ? data : {error:data.error||`HTTP ${res.status}`};
+  }catch(err){
+    RESEARCHED[key] = {error: LANG==='de' ? 'Backend nicht erreichbar.' : 'Backend not reachable.'};
+  }
+  applyFilters();
+}
+
 function renderList(list){
   const el = document.getElementById('results');
+  const online = state.search.trim() ? researchBox(state.search.trim()) : '';
   if(!list.length){
-    el.innerHTML = `
+    el.innerHTML = online + `
       <div class="empty-state">
         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         <div style="font-weight:600; font-size:14px; color:var(--ink); margin-bottom:5px;">${t('empty_title')}</div>
@@ -731,7 +824,7 @@ function renderList(list){
       </div>`;
     return;
   }
-  el.innerHTML = list.map(c=>`
+  el.innerHTML = online + list.map(c=>`
     <div class="card" data-id="${c.id}" onclick="focusCompany('${c.id}')">
       <div class="card-top">
         <div>
@@ -745,10 +838,10 @@ function renderList(list){
         <span class="conf-badge conf-${c.confidence}">${t(c.confidence)}</span>
         <span class="dot"></span>
         <span>${c.source_urls.length} ${c.source_urls.length===1 ? (LANG==='de'?'Quelle':'source') : (LANG==='de'?'Quellen':'sources')}</span>
-        <a href="${companyUrl(c.id)}" onclick="event.stopPropagation()" style="margin-left:auto; color:var(--terracotta); font-weight:600; text-decoration:none;">${t('view_details')} →</a>
       </div>
       <div class="card-reco">${esc(reasonLine(c))}</div>
       ${c.matched_areas.length ? `<div class="area-tags">${c.matched_areas.slice(0,3).map(a=>`<span class="area-tag">${esc(a)}</span>`).join('')}</div>` : ''}
+      <a class="card-details" href="${companyUrl(c.id)}" onclick="event.stopPropagation()">${t('view_details')} →</a>
     </div>
   `).join('');
 }
@@ -879,6 +972,10 @@ function setMobileTab(tab){
 /* ============== Lang ============== */
 function setLang(l){
   LANG = l;
+  saveLang(l);
+  computeScope();
+  document.documentElement.lang = l;
+  document.querySelectorAll('a[href^="home.html"]').forEach(a=> a.href = 'home.html?lang='+l);
   document.getElementById('btn-de').classList.toggle('active', l==='de');
   document.getElementById('btn-en').classList.toggle('active', l==='en');
   document.getElementById('t-tagline').textContent = t('tagline');
@@ -917,7 +1014,7 @@ function esc(s){
 buildTownLabels();
 buildFilterControls();
 // Company pages link back with ?lang= so the language carries over.
-if(new URLSearchParams(location.search).get('lang')==='de') setLang('de'); else applyFilters();
+if(initialLang()==='de') setLang('de'); else applyFilters();
 updateScopePill();
 document.getElementById('sw-main').textContent = t('sw_main');
 document.getElementById('sw-all').textContent = t('sw_all');
