@@ -103,11 +103,8 @@ function setLang(l){
 // Spoken intro (ElevenLabs clips made by make_intro_audio.py). Browsers block autoplay, so it starts on click;
 // the button stays hidden if the clip for this language hasn't been generated yet.
 const introBtn = document.getElementById('intro-btn');
-// Local only: the live GitHub Pages site has no voice for now.
-const IS_LOCAL = ['localhost','127.0.0.1'].includes(location.hostname);
 let intro = null, introLang = 'en';
 function loadIntro(l){
-  if(!IS_LOCAL) return;
   if(intro){ intro.pause(); }
   introLang = l;
   intro = new Audio(`intro_${l}.mp3`);
