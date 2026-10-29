@@ -4,10 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caire</title>
-<link rel="icon" type="image/jpeg" href="logo.jpeg" />
+<link rel="icon" type="image/png" href="logo.png" />
 <style>
 html,body{height:100%;margin:0}
-body{background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden}
+body{background:#f7f4ef;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden}
+@media(prefers-color-scheme:dark){body{background:#120f0f}img{filter:invert(1) hue-rotate(180deg)}}
 img{width:min(560px,80vw);height:auto;animation:in 1.1s cubic-bezier(.22,1,.36,1) both}
 body.out img{animation:out .5s ease-in forwards}
 @keyframes in{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
@@ -16,7 +17,7 @@ body.out img{animation:out .5s ease-in forwards}
 </style>
 </head>
 <body>
-<img src="logo.jpeg" alt="Caire" />
+<img src="logo.png" alt="Caire" />
 <script>
 // Logo-only splash: continue to the landing page after a short pause, or on click / key press.
 let gone = false;

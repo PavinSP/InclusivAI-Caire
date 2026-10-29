@@ -18,6 +18,10 @@ This folder contains the source material and structured notes collected during t
 - `config/mainfranken_scope.json` — explicit Mainfranken cities, districts, exclusions, and filtering rules
 - `06_Architecture_and_Ideas.md` — research, scoring, evidence, aggregation, and UI architecture
 - `10_Teammate_Handoff.md` — concise onboarding brief with tasks, implementation order, and definition of done
+- `11_Agent_Scoring_Prompts.md` — shared evaluator contract, specialist prompts, aggregation rules, and synthesis prompt
+- `backend/company_pipeline.py` — Gemini-powered company research, evidence extraction, specialist scoring, aggregation, and HTTP endpoint
+- `backend/README.md` — setup and usage instructions for the backend pipeline
+- `backend/requirements.txt` — Python dependency for the official Gemini SDK
 
 ## Overall understanding
 

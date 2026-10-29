@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caire — Company profile</title>
 <meta name="description" content="Caire company profile: lead priority, agent scoring breakdown and evidence for Caritas Würzburg outreach." />
-<link rel="icon" type="image/jpeg" href="logo.jpeg" />
+<link rel="icon" type="image/png" href="logo.png" />
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f4ef;--bg2:#efeae1;--card:#fdfbf8;--text:#232028;--soft:#5c5866;--accent:#c0392f;--accent-h:#a32b23;--accent-soft:#c0392f17;--border:#e2dcd1;--shadow:0 10px 30px -18px #3c302038;--on-accent:#fff;
-  --tier-a:#5c7a5e;--tier-b:#b98a33;--tier-c:#8a8590;--tier-x:#c0392f;--bar:#e9e3d8;}
+  --tier-a:#2e9e4f;--tier-b:#e5b400;--tier-c:#d63a2f;--tier-x:#141414;--bar:#e9e3d8;}
 @media(prefers-color-scheme:dark){:root{--bg:#120f0f;--bg2:#1c1717;--card:#1d1818;--text:#f2ebe9;--soft:#b3a4a1;--accent:#ff7a6b;--accent-h:#ff9585;--accent-soft:#ff7a6b24;--border:#352c2c;--shadow:0 10px 30px -18px #000000bf;--on-accent:#120f0f;
-  --tier-a:#8fb292;--tier-b:#d7ac5f;--tier-c:#9a939f;--tier-x:#ff7a6b;--bar:#2b2424;}}
+  --tier-a:#4cc271;--tier-b:#f2c94c;--tier-c:#ff6b5e;--tier-x:#000;--bar:#2b2424;}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px}
 body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -20,8 +20,9 @@ a{color:var(--accent)}
 .container{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
 nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 nav .container{display:flex;align-items:center;gap:1rem;height:62px}
-.brand{display:flex;align-items:center;background:#fff;border-radius:999px;padding:3px 12px;border:1px solid var(--border)}
+.brand{display:flex;align-items:center}
 .brand img{height:28px;display:block}
+@media(prefers-color-scheme:dark){.brand img{filter:invert(1) hue-rotate(180deg)}}
 nav .links{margin-left:auto;display:flex;gap:1.1rem;align-items:center}
 nav .links a{color:var(--soft);text-decoration:none;font-size:.88rem;font-weight:500;white-space:nowrap}
 nav .links a:hover{color:var(--accent)}
@@ -46,7 +47,7 @@ main{padding:2.25rem 0 3rem}
 .big small{font-size:1.1rem;color:var(--soft);font-weight:600}
 .tier{display:inline-block;padding:.3rem .8rem;border-radius:999px;font-weight:700;font-size:.85rem;color:#fff}
 @media(prefers-color-scheme:dark){.tier{color:#120f0f}}
-.tier.A{background:var(--tier-a)}.tier.B{background:var(--tier-b)}.tier.C{background:var(--tier-c)}.tier.X{background:var(--tier-x)}
+.tier.A{background:var(--tier-a)}.tier.B{background:var(--tier-b)}.tier.C{background:var(--tier-c)}.tier.X{background:var(--tier-x);color:#fff;border:1px solid #fff3}.tier.B{color:#1a1a1a}
 .lead{font-size:1.02rem;margin-top:1rem}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem;margin-top:1.1rem}
 .stat{background:var(--bg2);border-radius:10px;padding:.6rem .75rem}
@@ -93,7 +94,7 @@ p.body{font-size:.92rem;color:var(--soft);overflow-wrap:anywhere}
 </head>
 <body>
 <nav><div class="container">
-  <a class="brand" id="nav-home" href="home.html" aria-label="Caire home"><img src="logo.jpeg" alt="Caire logo"></a>
+  <a class="brand" id="nav-home" href="home.html" aria-label="Caire home"><img src="logo.png" alt="Caire logo"></a>
   <div class="links">
     <a id="nav-map" href="map.html"></a>
     <a id="nav-home2" class="hide-sm" href="home.html"></a>

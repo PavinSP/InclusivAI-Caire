@@ -100,4 +100,5 @@ The scoring record should include:
 - `merge.py` dedupes the slices into `companies.json`, `.csv` and `.xlsx`.
 - `config/mainfranken_scope.json` defines the default map/filter scope: Würzburg and Schweinfurt plus the seven Mainfranken districts.
 - `values.md` is the compact ground-truth file used by the website and scoring layer; the expanded interpretation remains in `04_Caritas_Values_Summary.md`.
+- `11_Agent_Scoring_Prompts.md` contains the shared JSON contract, specialist evaluator prompts, deterministic aggregation rules, and final synthesis prompt.
 - Not yet built: scorer agents, aggregator, synthesizer, UI.

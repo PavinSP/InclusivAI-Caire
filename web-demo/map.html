@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caire</title>
-<link rel="icon" type="image/jpeg" href="logo.jpeg" />
+<link rel="icon" type="image/png" href="logo.png" />
 <meta name="description" content="Caire — Caritas Würzburg partner-discovery demo: a Mainfranken map of corporate CSR fit for fundraising outreach." />
 <link rel="stylesheet" href="leaflet-inline.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,7 @@
   --moss:#5c7a5e; --moss-soft:#e4ebe1;
   --gold:#b98a33; --gold-soft:#f3e8d2;
   --rust-low:#b5533a;
+  --tier-a:#2e9e4f; --tier-b:#e5b400; --tier-c:#d63a2f; --tier-x:#141414;
   --radius:14px; --radius-sm:9px;
   --shadow:0 1px 2px rgba(28,35,33,.06), 0 8px 24px -12px rgba(28,35,33,.18);
   font-size:16px;
@@ -291,7 +292,7 @@ header{
 
 <header>
   <div class="brand">
-    <a href="home.html" style="display:flex"><img src="logo.jpeg" alt="Caire" height="36" style="height:36px;width:auto;background:#fff;border-radius:8px;padding:2px 7px;"></a>
+    <a href="home.html" style="display:flex"><img src="logo.png" alt="Caire" height="36" style="height:36px;width:auto;"></a>
     <span class="tag" id="t-tagline">Caritas Würzburg partner intelligence</span>
   </div>
   <div class="scope-pill"><span class="scope-dot"></span><span id="t-scope">Showing companies in <b>Mainfranken</b></span></div>
@@ -627,21 +628,18 @@ const clusterGroup = L.markerClusterGroup({
 map.addLayer(clusterGroup);
 
 /* Colours follow the scorer's tiers: A ≥ 5.0, B ≥ 3.5, C below, X gate failed. */
-function scoreColor(score){
-  if(score>=5) return getCss('--moss');
-  if(score>=3.5) return getCss('--gold');
-  return getCss('--rust-low');
-}
+/* Green = approach first, yellow = worth a look, red = weak fit, black = ignore. */
 function tierColor(c){
-  return {A:getCss('--moss'), B:getCss('--gold'), C:'#8a8580', X:getCss('--rust-low')}[c.tier_code] || '#8a8580';
+  return getCss({A:'--tier-a', B:'--tier-b', X:'--tier-x'}[c.tier_code] || '--tier-c');
 }
+function tierText(c){ return c.tier_code==='B' ? '#1a1a1a' : '#fff'; }
 function fmtScore(s){ return Number(s).toFixed(1); }
 function getCss(varName){ return getComputedStyle(document.documentElement).getPropertyValue(varName).trim(); }
 
 function makeIcon(c){
-  // A single company is just a blue dot — no number on the map.
+  // A single company is a dot in its tier colour — no number on the map.
   return L.divIcon({
-    className:'', html:`<div class="caire-dot"></div>`,
+    className:'', html:`<div class="caire-dot" style="background:${tierColor(c)}"></div>`,
     iconSize:[14,14], iconAnchor:[7,7], popupAnchor:[0,-8]
   });
 }
@@ -669,9 +667,9 @@ function buildPopup(c){
         <div class="popup-name">${esc(c.name)}</div>
         <div class="popup-meta">${esc(c.town)} · ${esc(c.sector)}</div>
       </div>
-      <div class="score-badge" style="background:${scoreColor(c.score)};">${fmtScore(c.score)}</div>
+      <div class="score-badge" style="background:${tierColor(c)};color:${tierText(c)};">${fmtScore(c.score)}</div>
     </div>
-    <div style="margin-top:6px;"><span class="tier-badge" style="background:${tierColor(c)};">${esc(t('tiers')[c.tier_code]||c.tier)}</span></div>
+    <div style="margin-top:6px;"><span class="tier-badge" style="background:${tierColor(c)};color:${tierText(c)};">${esc(t('tiers')[c.tier_code]||c.tier)}</span></div>
     <div class="popup-reco">${esc(reasonLine(c))}</div>
     <div class="popup-reco" style="font-size:10.5px; opacity:.8; margin-top:5px;">${esc(t('approx_note'))}</div>
     <button class="popup-btn">${t('view_details')}</button>
@@ -706,9 +704,16 @@ function matches(c){
   return true;
 }
 
+/* Map only: keep the top 20% of red (tier C) companies; the list still shows everyone. */
+function mapSubset(sorted){
+  const reds = sorted.filter(c=>c.tier_code==='C');
+  const keep = new Set(reds.slice(0, Math.ceil(reds.length*0.2)));
+  return sorted.filter(c=>c.tier_code!=='C' || keep.has(c));
+}
+
 function applyFilters(){
   const filtered = ALL.filter(matches).sort((a,b)=>b.score-a.score);
-  renderMarkers(filtered);
+  renderMarkers(mapSubset(filtered));
   renderList(filtered);
   renderActiveChips();
   document.getElementById('result-count').textContent = filtered.length;
@@ -733,10 +738,10 @@ function renderList(list){
           <div class="card-name">${esc(c.name)}</div>
           <div class="card-sector">${esc(c.town)} · ${esc(c.sector)}</div>
         </div>
-        <div class="score-badge" style="background:${scoreColor(c.score)};">${fmtScore(c.score)}</div>
+        <div class="score-badge" style="background:${tierColor(c)};color:${tierText(c)};">${fmtScore(c.score)}</div>
       </div>
       <div class="card-meta">
-        <span class="tier-badge" style="background:${tierColor(c)};">${esc(t('tiers')[c.tier_code]||c.tier)}</span>
+        <span class="tier-badge" style="background:${tierColor(c)};color:${tierText(c)};">${esc(t('tiers')[c.tier_code]||c.tier)}</span>
         <span class="conf-badge conf-${c.confidence}">${t(c.confidence)}</span>
         <span class="dot"></span>
         <span>${c.source_urls.length} ${c.source_urls.length===1 ? (LANG==='de'?'Quelle':'source') : (LANG==='de'?'Quellen':'sources')}</span>
