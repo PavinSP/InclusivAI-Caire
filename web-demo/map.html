@@ -556,10 +556,11 @@ function buildRegion(){
   const b = outlineLayer.getBounds();
   map.setMinZoom(5);
   map.setMaxBounds(null);
-  map.fitBounds(b.pad(0.02), {animate:false});
-  map.setMaxBounds(b.pad(0.08));
-  map.options.maxBoundsViscosity = 0.9;
-  map.setMinZoom(map.getZoom());
+  map.fitBounds(b.pad(0.06), {animate:false});
+  // Loose bounds and a bit of extra zoom-out, so popups for companies near the edge can be panned fully into view.
+  map.setMaxBounds(b.pad(0.4));
+  map.options.maxBoundsViscosity = 0.6;
+  map.setMinZoom(map.getZoom() - 0.75);
   scaleBoundaryWeights();
 }
 
@@ -681,7 +682,7 @@ function renderMarkers(list){
   markerIndex = {};
   list.forEach(c=>{
     const m = L.marker([c.lat, c.lng], { icon: makeIcon(c) });
-    m.bindPopup(buildPopup(c), { closeButton:true, maxWidth:280 });
+    m.bindPopup(buildPopup(c), { closeButton:true, maxWidth:280, autoPan:true, autoPanPaddingTopLeft:[40,90], autoPanPaddingBottomRight:[40,40] });
     m.on('click', ()=>{ highlightCard(c.id); });
     markerIndex[c.id] = m;
     clusterGroup.addLayer(m);
@@ -849,7 +850,7 @@ function renderList(list){
 function focusCompany(id){
   const c = ALL.find(x=>x.id===id);
   if(!c) return;
-  map.setView([c.lat, c.lng], 13, { animate:true });
+  map.setView([c.lat, c.lng], 12, { animate:true });
   const m = markerIndex[id];
   if(m){
     clusterGroup.zoomToShowLayer(m, ()=> m.openPopup());
