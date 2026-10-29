@@ -1,0 +1,821 @@
+{
+"Abtswind": {
+"lat": 49.77,
+"lng": 10.38,
+"district": "Landkreis Kitzingen",
+"source": "manual",
+"as": "Abtswind"
+},
+"Albertshausen": {
+"lat": 50.20228,
+"lng": 10.07784,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2953424",
+"as": "Bad Kissingen"
+},
+"Alzenau": {
+"lat": 50.0888,
+"lng": 9.06455,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2956715",
+"as": "Alzenau in Unterfranken"
+},
+"Amorbach": {
+"lat": 49.6419,
+"lng": 9.2183,
+"district": "Landkreis Miltenberg",
+"source": "manual",
+"as": "Amorbach"
+},
+"Aschaffenburg": {
+"lat": 49.97704,
+"lng": 9.15214,
+"district": "Aschaffenburg (Stadt)",
+"source": "geonames:2955272",
+"as": "Aschaffenburg"
+},
+"Bad Brückenau": {
+"lat": 50.30853,
+"lng": 9.78985,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2953535",
+"as": "Bad Brückenau"
+},
+"Bad Kissingen": {
+"lat": 50.20228,
+"lng": 10.07784,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2953424",
+"as": "Bad Kissingen"
+},
+"Bad Kissingen-Albertshausen": {
+"lat": 50.20228,
+"lng": 10.07784,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2953424",
+"as": "Bad Kissingen"
+},
+"Bad Königshofen": {
+"lat": 50.30082,
+"lng": 10.46887,
+"district": "Landkreis Rhön-Grabfeld",
+"source": "geonames:2885829",
+"as": "Bad Königshofen im Grabfeld"
+},
+"Bad Neustadt a. d. Saale": {
+"lat": 50.32174,
+"lng": 10.20673,
+"district": "Landkreis Rhön-Grabfeld",
+"source": "geonames:2953389",
+"as": "Bad Neustadt an der Saale"
+},
+"Bad Neustadt a.d. Saale": {
+"lat": 50.32174,
+"lng": 10.20673,
+"district": "Landkreis Rhön-Grabfeld",
+"source": "geonames:2953389",
+"as": "Bad Neustadt an der Saale"
+},
+"Bad Neustadt an der Saale": {
+"lat": 50.32174,
+"lng": 10.20673,
+"district": "Landkreis Rhön-Grabfeld",
+"source": "geonames:2953389",
+"as": "Bad Neustadt an der Saale"
+},
+"Bessenbach": {
+"lat": 49.9833,
+"lng": 9.2667,
+"district": "Landkreis Aschaffenburg",
+"source": "manual",
+"as": "Bessenbach"
+},
+"Bürgstadt": {
+"lat": 49.71476,
+"lng": 9.26916,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2941151",
+"as": "Bürgstadt"
+},
+"Bütthard": {
+"lat": 49.59913,
+"lng": 9.87987,
+"district": "Landkreis Würzburg",
+"source": "geonames:2940534",
+"as": "Bütthard"
+},
+"Castell": {
+"lat": 49.72,
+"lng": 10.33,
+"district": "Landkreis Kitzingen",
+"source": "manual",
+"as": "Castell"
+},
+"Dettelbach": {
+"lat": 49.80295,
+"lng": 10.16519,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2937932",
+"as": "Dettelbach"
+},
+"Donnersdorf": {
+"lat": 49.96667,
+"lng": 10.41667,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2936210",
+"as": "Donnersdorf"
+},
+"Ebern": {
+"lat": 50.0997,
+"lng": 10.7958,
+"district": "Landkreis Haßberge",
+"source": "manual",
+"as": "Ebern"
+},
+"Eibelstadt": {
+"lat": 49.72392,
+"lng": 9.99962,
+"district": "Landkreis Würzburg",
+"source": "geonames:2932748",
+"as": "Eibelstadt"
+},
+"Elsenfeld": {
+"lat": 49.84289,
+"lng": 9.16355,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2930747",
+"as": "Elsenfeld"
+},
+"Eltmann": {
+"lat": 49.97148,
+"lng": 10.66712,
+"district": "Landkreis Haßberge",
+"source": "geonames:2930650",
+"as": "Eltmann"
+},
+"Eltmann-Eschenbach": {
+"lat": 49.97148,
+"lng": 10.66712,
+"district": "Landkreis Haßberge",
+"source": "geonames:2930650",
+"as": "Eltmann"
+},
+"Erlenbach": {
+"lat": 49.97857,
+"lng": 9.64459,
+"district": "Landkreis Main-Spessart",
+"source": "geonames:2929499",
+"as": "Erlenbach"
+},
+"Erlenbach am Main": {
+"lat": 49.80341,
+"lng": 9.16311,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2929484",
+"as": "Erlenbach am Main"
+},
+"Eschau": {
+"lat": 49.81889,
+"lng": 9.2592,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2929165",
+"as": "Eschau"
+},
+"Eschenbach": {
+"lat": 49.97148,
+"lng": 10.66712,
+"district": "Landkreis Haßberge",
+"source": "geonames:2930650",
+"as": "Eltmann"
+},
+"Gaukönigshofen": {
+"lat": 49.63333,
+"lng": 10,
+"district": "Landkreis Würzburg",
+"source": "geonames:2922271",
+"as": "Gaukönigshofen"
+},
+"Gerbrunn": {
+"lat": 49.77528,
+"lng": 9.99361,
+"district": "Landkreis Würzburg",
+"source": "geonames:2921165",
+"as": "Gerbrunn"
+},
+"Gerolzhofen": {
+"lat": 49.90025,
+"lng": 10.34832,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2920959",
+"as": "Gerolzhofen"
+},
+"Giebelstadt": {
+"lat": 49.65308,
+"lng": 9.94441,
+"district": "Landkreis Würzburg",
+"source": "geonames:2920652",
+"as": "Giebelstadt"
+},
+"Gochsheim": {
+"lat": 50.01667,
+"lng": 10.28333,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2919620",
+"as": "Gochsheim"
+},
+"Goldbach": {
+"lat": 49.99951,
+"lng": 9.1844,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2919438",
+"as": "Goldbach"
+},
+"Grafenrheinfeld": {
+"lat": 50,
+"lng": 10.2,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2918288",
+"as": "Grafenrheinfeld"
+},
+"Grettstadt": {
+"lat": 49.98333,
+"lng": 10.31667,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2917586",
+"as": "Grettstadt"
+},
+"Grettstadt site": {
+"lat": 49.98333,
+"lng": 10.31667,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2917586",
+"as": "Grettstadt"
+},
+"Großheubach": {
+"lat": 49.72834,
+"lng": 9.2228,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2915511",
+"as": "Großheubach"
+},
+"Großostheim": {
+"lat": 49.91985,
+"lng": 9.07596,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2915196",
+"as": "Großostheim"
+},
+"Großwallstadt": {
+"lat": 49.87936,
+"lng": 9.15338,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2914890",
+"as": "Großwallstadt"
+},
+"Hafenlohr": {
+"lat": 49.86944,
+"lng": 9.60222,
+"district": "Landkreis Main-Spessart",
+"source": "geonames:2912753",
+"as": "Hafenlohr"
+},
+"Haibach": {
+"lat": 49.96444,
+"lng": 9.20722,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2912159",
+"as": "Haibach"
+},
+"Hammelburg": {
+"lat": 50.11633,
+"lng": 9.89143,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2911214",
+"as": "Hammelburg"
+},
+"Hasloch": {
+"lat": 49.79194,
+"lng": 9.49361,
+"district": "Landkreis Main-Spessart",
+"source": "geonames:2909491",
+"as": "Hasloch"
+},
+"Haßfurt": {
+"lat": 50.03521,
+"lng": 10.5156,
+"district": "Landkreis Haßberge",
+"source": "geonames:2909335",
+"as": "Haßfurt"
+},
+"Helmstadt": {
+"lat": 49.7618,
+"lng": 9.70803,
+"district": "Landkreis Würzburg",
+"source": "geonames:2906680",
+"as": "Helmstadt"
+},
+"Herzogenaurach": {
+"lat": 49.56798,
+"lng": 10.88565,
+"district": null,
+"source": "geonames:2905457",
+"as": "Herzogenaurach"
+},
+"Himmelstadt": {
+"lat": 49.92389,
+"lng": 9.80167,
+"district": "Landkreis Main-Spessart",
+"source": "geonames:2904499",
+"as": "Himmelstadt"
+},
+"Hofheim": {
+"lat": 50.13675,
+"lng": 10.52321,
+"district": "Landkreis Haßberge",
+"source": "geonames:2902531",
+"as": "Hofheim in Unterfranken"
+},
+"Hofheim i. UFr.": {
+"lat": 50.13675,
+"lng": 10.52321,
+"district": "Landkreis Haßberge",
+"source": "geonames:2902531",
+"as": "Hofheim in Unterfranken"
+},
+"Höchberg": {
+"lat": 49.78446,
+"lng": 9.88223,
+"district": "Landkreis Würzburg",
+"source": "geonames:2903327",
+"as": "Höchberg"
+},
+"Hösbach": {
+"lat": 50.00646,
+"lng": 9.20765,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2898494",
+"as": "Hösbach"
+},
+"Iphofen": {
+"lat": 49.70239,
+"lng": 10.26037,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2895882",
+"as": "Iphofen"
+},
+"Kahl": {
+"lat": 50.06981,
+"lng": 9.00553,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2894245",
+"as": "Kahl am Main"
+},
+"Kahl am Main": {
+"lat": 50.06981,
+"lng": 9.00553,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2894245",
+"as": "Kahl am Main"
+},
+"Karlstadt": {
+"lat": 49.96034,
+"lng": 9.77239,
+"district": "Landkreis Main-Spessart",
+"source": "geonames:2892786",
+"as": "Karlstadt"
+},
+"Karlstein am Main": {
+"lat": 50.0522,
+"lng": 9.0678,
+"district": "Landkreis Aschaffenburg",
+"source": "manual",
+"as": "Karlstein am Main"
+},
+"Kitzingen": {
+"lat": 49.73973,
+"lng": 10.15072,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2890158",
+"as": "Kitzingen"
+},
+"Kitzingen area": {
+"lat": 49.73973,
+"lng": 10.15072,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2890158",
+"as": "Kitzingen"
+},
+"Kleinheubach": {
+"lat": 49.72109,
+"lng": 9.21346,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2888751",
+"as": "Kleinheubach"
+},
+"Kleinostheim": {
+"lat": 50,
+"lng": 9.06667,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2888411",
+"as": "Kleinostheim"
+},
+"Kleinrinderfeld": {
+"lat": 49.70028,
+"lng": 9.84472,
+"district": "Landkreis Würzburg",
+"source": "geonames:2888323",
+"as": "Kleinrinderfeld"
+},
+"Klingenberg am Main": {
+"lat": 49.78507,
+"lng": 9.18025,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2887736",
+"as": "Klingenberg am Main"
+},
+"Knetzgau": {
+"lat": 49.98333,
+"lng": 10.55,
+"district": "Landkreis Haßberge",
+"source": "geonames:2887194",
+"as": "Knetzgau"
+},
+"Kreuzwertheim": {
+"lat": 49.76818,
+"lng": 9.51819,
+"district": "Landkreis Main-Spessart",
+"source": "geonames:2884026",
+"as": "Kreuzwertheim"
+},
+"Königsberg": {
+"lat": 50.0797,
+"lng": 10.5761,
+"district": "Landkreis Haßberge",
+"source": "manual",
+"as": "Königsberg i. Bay."
+},
+"Königsberg i. Bay.": {
+"lat": 50.0797,
+"lng": 10.5761,
+"district": "Landkreis Haßberge",
+"source": "manual",
+"as": "Königsberg i. Bay."
+},
+"Kürnach": {
+"lat": 49.85,
+"lng": 10.03333,
+"district": "Landkreis Würzburg",
+"source": "geonames:2882347",
+"as": "Kürnach"
+},
+"Laufach": {
+"lat": 50.01667,
+"lng": 9.3,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2880146",
+"as": "Laufach"
+},
+"Lohr am Main": {
+"lat": 49.98922,
+"lng": 9.57223,
+"district": "Landkreis Main-Spessart",
+"source": "geonames:2876147",
+"as": "Lohr am Main"
+},
+"Lülsfeld": {
+"lat": 49.91,
+"lng": 10.27,
+"district": "Landkreis Schweinfurt",
+"source": "manual",
+"as": "Lülsfeld"
+},
+"Mainaschaff": {
+"lat": 49.98167,
+"lng": 9.09,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2874263",
+"as": "Mainaschaff"
+},
+"Marktheidenfeld": {
+"lat": 49.8454,
+"lng": 9.60359,
+"district": "Landkreis Main-Spessart",
+"source": "geonames:2873301",
+"as": "Marktheidenfeld"
+},
+"Marktsteft": {
+"lat": 49.69606,
+"lng": 10.13626,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2873283",
+"as": "Marktsteft"
+},
+"Maroldsweisach": {
+"lat": 50.19578,
+"lng": 10.66003,
+"district": "Landkreis Haßberge",
+"source": "geonames:2873228",
+"as": "Maroldsweisach"
+},
+"Mellrichstadt": {
+"lat": 50.42849,
+"lng": 10.30334,
+"district": "Landkreis Rhön-Grabfeld",
+"source": "geonames:2872047",
+"as": "Mellrichstadt"
+},
+"Miltenberg": {
+"lat": 49.70452,
+"lng": 9.26725,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2871079",
+"as": "Miltenberg"
+},
+"Münnerstadt": {
+"lat": 50.24636,
+"lng": 10.20187,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2867571",
+"as": "Münnerstadt"
+},
+"Neustadt an der Aisch": {
+"lat": 49.57953,
+"lng": 10.61126,
+"district": null,
+"source": "geonames:2864057",
+"as": "Neustadt an der Aisch"
+},
+"Niedernberg": {
+"lat": 49.91222,
+"lng": 9.13694,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2863088",
+"as": "Niedernberg"
+},
+"Nordheim": {
+"lat": 49.8587,
+"lng": 10.18545,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2861971",
+"as": "Nordheim"
+},
+"Nordheim am Main": {
+"lat": 49.8587,
+"lng": 10.18545,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2861971",
+"as": "Nordheim"
+},
+"Obernburg": {
+"lat": 49.83577,
+"lng": 9.13101,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2859675",
+"as": "Obernburg am Main"
+},
+"Obernburg am Main": {
+"lat": 49.83577,
+"lng": 9.13101,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2859675",
+"as": "Obernburg am Main"
+},
+"Oberthulba": {
+"lat": 50.19904,
+"lng": 9.95882,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2858787",
+"as": "Oberthulba"
+},
+"Ochsenfurt": {
+"lat": 49.66429,
+"lng": 10.06227,
+"district": "Landkreis Würzburg",
+"source": "geonames:2858333",
+"as": "Ochsenfurt"
+},
+"Ochsenfurt-Hohestadt": {
+"lat": 49.66429,
+"lng": 10.06227,
+"district": "Landkreis Würzburg",
+"source": "geonames:2858333",
+"as": "Ochsenfurt"
+},
+"Oerlenbach": {
+"lat": 50.15,
+"lng": 10.13333,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2857075",
+"as": "Oerlenbach"
+},
+"Ostheim v. d. Rhön": {
+"lat": 50.45996,
+"lng": 10.23057,
+"district": "Landkreis Rhön-Grabfeld",
+"source": "geonames:2856284",
+"as": "Ostheim vor der Rhön"
+},
+"Ostheim v.d. Rhön": {
+"lat": 50.45996,
+"lng": 10.23057,
+"district": "Landkreis Rhön-Grabfeld",
+"source": "geonames:2856284",
+"as": "Ostheim vor der Rhön"
+},
+"Prichsenstadt": {
+"lat": 49.81933,
+"lng": 10.34773,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2852129",
+"as": "Prichsenstadt"
+},
+"Rimpar": {
+"lat": 49.85692,
+"lng": 9.95705,
+"district": "Landkreis Würzburg",
+"source": "geonames:2846722",
+"as": "Rimpar"
+},
+"Rottendorf": {
+"lat": 49.7923,
+"lng": 10.02593,
+"district": "Landkreis Würzburg",
+"source": "geonames:2843724",
+"as": "Rottendorf"
+},
+"Rödelsee": {
+"lat": 49.7284,
+"lng": 10.2436,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2846084",
+"as": "Rödelsee"
+},
+"Röthlein": {
+"lat": 49.98333,
+"lng": 10.21667,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2843897",
+"as": "Röthlein"
+},
+"Salz": {
+"lat": 50.30842,
+"lng": 10.21205,
+"district": "Landkreis Rhön-Grabfeld",
+"source": "geonames:2842203",
+"as": "Salz"
+},
+"Schwebheim": {
+"lat": 49.99036,
+"lng": 10.24776,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2834651",
+"as": "Schwebheim"
+},
+"Schweinfurt": {
+"lat": 50.04937,
+"lng": 10.22175,
+"district": "Schweinfurt (Stadt)",
+"source": "geonames:2834498",
+"as": "Schweinfurt"
+},
+"Schweinfurt area": {
+"lat": 50.04937,
+"lng": 10.22175,
+"district": "Schweinfurt (Stadt)",
+"source": "geonames:2834498",
+"as": "Schweinfurt"
+},
+"Sennfeld": {
+"lat": 50.03895,
+"lng": 10.25986,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2833010",
+"as": "Sennfeld"
+},
+"Sommerach": {
+"lat": 49.82923,
+"lng": 10.20792,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2831455",
+"as": "Sommerach"
+},
+"Stockstadt": {
+"lat": 49.97005,
+"lng": 9.07153,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2826670",
+"as": "Stockstadt am Main"
+},
+"Stockstadt am Main": {
+"lat": 49.97005,
+"lng": 9.07153,
+"district": "Landkreis Aschaffenburg",
+"source": "geonames:2826670",
+"as": "Stockstadt am Main"
+},
+"Thüngersheim": {
+"lat": 49.87833,
+"lng": 9.84917,
+"district": "Landkreis Würzburg",
+"source": "geonames:2822563",
+"as": "Thüngersheim"
+},
+"Uffenheim": {
+"lat": 49.54415,
+"lng": 10.23286,
+"district": null,
+"source": "geonames:2820423",
+"as": "Uffenheim"
+},
+"Untermerzbach": {
+"lat": 50.12754,
+"lng": 10.85634,
+"district": "Landkreis Haßberge",
+"source": "geonames:2819075",
+"as": "Untermerzbach"
+},
+"Veitshöchheim": {
+"lat": 49.83278,
+"lng": 9.88167,
+"district": "Landkreis Würzburg",
+"source": "geonames:2817733",
+"as": "Veitshöchheim"
+},
+"Volkach": {
+"lat": 49.86352,
+"lng": 10.22813,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2816702",
+"as": "Volkach"
+},
+"Waldbüttelbrunn": {
+"lat": 49.78833,
+"lng": 9.84667,
+"district": "Landkreis Würzburg",
+"source": "geonames:2815127",
+"as": "Waldbüttelbrunn"
+},
+"Werneck": {
+"lat": 49.98201,
+"lng": 10.09884,
+"district": "Landkreis Schweinfurt",
+"source": "geonames:2810832",
+"as": "Werneck"
+},
+"Wiesentheid": {
+"lat": 49.79451,
+"lng": 10.34509,
+"district": "Landkreis Kitzingen",
+"source": "geonames:2809191",
+"as": "Wiesentheid"
+},
+"Wildflecken": {
+"lat": 50.37764,
+"lng": 9.91092,
+"district": "Landkreis Bad Kissingen",
+"source": "geonames:2808871",
+"as": "Wildflecken"
+},
+"Wonfurt": {
+"lat": 50.01667,
+"lng": 10.46667,
+"district": "Landkreis Haßberge",
+"source": "geonames:2806239",
+"as": "Wonfurt"
+},
+"Wörth": {
+"lat": 49.7972,
+"lng": 9.15389,
+"district": "Landkreis Miltenberg",
+"source": "geonames:2806082",
+"as": "Wörth am Main"
+},
+"Würzburg": {
+"lat": 49.79391,
+"lng": 9.95121,
+"district": "Würzburg (Stadt)",
+"source": "geonames:2805615",
+"as": "Würzburg"
+},
+"Würzburg area": {
+"lat": 49.79391,
+"lng": 9.95121,
+"district": "Würzburg (Stadt)",
+"source": "geonames:2805615",
+"as": "Würzburg"
+},
+"Würzburg-Heidingsfeld": {
+"lat": 49.79391,
+"lng": 9.95121,
+"district": "Würzburg (Stadt)",
+"source": "geonames:2805615",
+"as": "Würzburg"
+},
+"Zeil am Main": {
+"lat": 50.00986,
+"lng": 10.5947,
+"district": "Landkreis Haßberge",
+"source": "geonames:2805008",
+"as": "Zeil"
+}
+}
