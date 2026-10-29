@@ -14,9 +14,34 @@
     staticData = staticData || fetch('guide_data.json').then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); });
     return staticData.then(function(all){
       var e = all[id] || {}, text = e[language];
-      if(!text) throw new Error('no summary');
-      return {text:text, audio:e['audio_'+language] || null};
+      if(text) return {text:text, audio:e['audio_'+language] || null};
+      var made = templated(id, language);   // no pre-written summary: build one from the scoring data
+      if(!made) throw new Error('no summary');
+      return {text:made, audio:null};
     });
+  }
+
+  /* Summary for any company without a pre-recorded one, built from the stored tier and top reason (no AI call).
+     German reasons come from the CAIRE_DE translations the pages already load; the browser voice reads it. */
+  var VERDICT = {
+    en:{A:'is a strong fit: Caritas should approach this company now', B:'is a promising fit, worth nurturing but not yet a priority',
+        C:'is a weak fit for now, so low priority', X:'is not recommended, because it did not pass the reputation check'},
+    de:{A:'ist ein starker Partner: Die Caritas sollte das Unternehmen jetzt ansprechen', B:'ist ein vielversprechender Partner, den man pflegen sollte, aber noch keine Priorität',
+        C:'ist derzeit eine geringe Passung und damit niedrige Priorität', X:'wird nicht empfohlen, weil es die Reputationsprüfung nicht bestanden hat'}
+  };
+  function templated(id, language){
+    var list = window.CAIRE_COMPANIES || [];
+    var c = list.filter(function(x){ return x.id === id; })[0];
+    if(!c) return null;
+    var tier = VERDICT.en[c.tier_code] ? c.tier_code : 'C', de = language === 'de';
+    var drivers = (c.explanation && c.explanation.top_drivers) || [];
+    var why = drivers[0] && drivers[0].why ? String(drivers[0].why) : '';
+    if(de && window.CAIRE_DE && window.CAIRE_DE[why]) why = window.CAIRE_DE[why];
+    why = why.replace(/\s+/g, ' ').trim();
+    if(why.length > 150) why = why.slice(0, 150).replace(/\s+\S*$/, '') + '…';
+    var out = c.name + ' ' + VERDICT[de ? 'de' : 'en'][tier] + '.';
+    if(why && tier !== 'X') out += (de ? ' Stärkstes Signal: ' : ' Strongest signal: ') + why.replace(/[.…]*$/, '') + '.';
+    return out + (de ? ' Weitere Details finden Sie auf der Seite.' : ' Please see the page for more details.');
   }
 
   var css = document.createElement('style');
