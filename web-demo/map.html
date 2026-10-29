@@ -6,6 +6,7 @@
 <title>Caire</title>
 <meta name="color-scheme" content="light dark" />
 <script src="theme.js"></script>
+<script src="guide.js"></script>
 <link rel="icon" type="image/png" href="logo.png" />
 <meta name="description" content="Caire — Caritas Würzburg partner-discovery demo: a Mainfranken map of corporate CSR fit for fundraising outreach." />
 <link rel="stylesheet" href="leaflet-inline.css" />
@@ -870,8 +871,11 @@ function focusCompany(id){
   highlightCard(id);
   if(window.innerWidth<=860) setMobileTab('map');
 }
+/* The animated guide (localhost only) says whether a company is a good fit when you pick one. */
+let GUIDED = null;
 function highlightCard(id){
   state.activeId = id;
+  if(id !== GUIDED){ GUIDED = id; CaireGuide.show(id, LANG, {autoplay:true}); }
   document.querySelectorAll('.card').forEach(el=>el.classList.toggle('active', el.dataset.id===id));
   const card = document.querySelector(`.card[data-id="${id}"]`);
   if(card) card.scrollIntoView({block:'nearest', behavior:'smooth'});
@@ -987,6 +991,7 @@ function setLang(l){
   LANG = l;
   saveLang(l);
   computeScope();
+  if(GUIDED) CaireGuide.show(GUIDED, l);
   document.documentElement.lang = l;
   document.querySelectorAll('a[href^="home.html"]').forEach(a=> a.href = 'home.html?lang='+l);
   document.getElementById('btn-de').classList.toggle('active', l==='de');

@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="color-scheme" content="light dark" />
 <script src="theme.js"></script>
+<script src="guide.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Caire — Company profile</title>
 <meta name="description" content="Caire company profile: lead priority, agent scoring breakdown and evidence for Caritas Würzburg outreach." />
@@ -345,9 +346,11 @@ document.querySelectorAll('.lang button').forEach(b=> b.onclick = ()=>{
   try{ localStorage.setItem('caire-lang', LANG); }catch(e){}
   if(LANG==='de') params.set('lang','de'); else params.delete('lang');
   history.replaceState(null, '', '?' + params.toString());
-  render();
+  render(); guide(true);
 });
-render();
+// Localhost only: the animated guide summarises this company (autoplay only works after a click).
+function guide(autoplay){ const id = params.get('id'); if(DATA.some(x=>x.id===id)) CaireGuide.show(id, LANG, {autoplay}); }
+render(); guide(false);
 </script>
 </body>
 </html>

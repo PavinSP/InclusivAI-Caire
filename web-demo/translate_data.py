@@ -70,7 +70,7 @@ def main() -> None:
     todo = sorted(collect(load_data()) - cache.keys())
     print(f"{len(cache)} cached, {len(todo)} to translate")
     if todo:
-        client = genai.Client(api_key=cp.os.environ["GEMINI_API_KEY"])
+        client = genai.Client(api_key=cp.api_key())
         for i in range(0, len(todo), BATCH):
             chunk = todo[i:i + BATCH]
             try:

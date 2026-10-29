@@ -47,6 +47,13 @@ def load_dotenv(path: Path = ROOT / ".env") -> None:
 
 
 load_dotenv()
+
+
+def api_key() -> str:
+    """GEMINI_API_KEY, or AI_API_KEY (the name the .env uses with Google's OpenAI-compatible base URL)."""
+    return os.getenv("GEMINI_API_KEY") or os.getenv("AI_API_KEY") or ""
+
+
 MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 MAX_EVIDENCE = 25
 
@@ -327,10 +334,10 @@ Write a concise, honest recommendation. Include a decision, headline, recommenda
 
 
 def run_pipeline(company_name: str, workers: int = 3) -> dict[str, Any]:
-    if not os.getenv("GEMINI_API_KEY"):
+    if not api_key():
         raise RuntimeError("GEMINI_API_KEY is not set. Put it in the backend environment, never in frontend code.")
     values, scope = load_context()
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    client = genai.Client(api_key=api_key())
     company = research_company(client, company_name, values, scope)
     criteria = list(ROLE_PROMPTS)
     scores: list[dict[str, Any]] = []
@@ -369,8 +376,92 @@ def research_cached(company_name: str) -> dict[str, Any]:
     return result
 
 
+GUIDE_DIR = ROOT / "company_research" / "guide"
+GUIDE_VOICE_ID = os.getenv("ELEVENLABS_VOICE_ID", "EXAVITQu4vr4xnSDxMaL")  # Sarah, same voice as the intro
+_COMPANIES: dict[str, Any] = {}
+
+
+def company_by_id(company_id: str) -> dict[str, Any] | None:
+    """The scored prospects the map shows, read from web-demo/data.js."""
+    if not _COMPANIES:
+        text = (WEB_ROOT / "data.js").read_text(encoding="utf-8")
+        m = re.search(r"^const CAIRE_COMPANIES = (.*);\s*$", text, re.M)
+        _COMPANIES.update({c["id"]: c for c in json.loads(m.group(1))} if m else {})
+    return _COMPANIES.get(company_id)
+
+
+VERDICTS = {
+    "A": "a strong fit: Caritas should approach this company now",
+    "B": "a promising fit: worth nurturing, not yet a priority",
+    "C": "a weak fit for now: low priority",
+    "X": "not recommended: it failed the reputation check, so Caritas should not approach it",
+}
+
+
+def guide_text(company: dict[str, Any], lang: str) -> str:
+    """Two short spoken sentences: is it a good fit, and where to read more. Verdict comes from the stored tier."""
+    tier = company.get("tier_code", "C")
+    expl = company.get("explanation") or {}
+    facts = {
+        "name": company.get("name"), "town": company.get("town"), "sector": company.get("sector"),
+        "tier_verdict": VERDICTS.get(tier, VERDICTS["C"]),
+        "headline": expl.get("headline"),
+        "top_reasons": [d.get("why") for d in (expl.get("top_drivers") or [])[:2]],
+    }
+    language = "German (formal, 'Sie')" if lang == "de" else "English"
+    prompt = f"""You are Caire, a friendly voice guide in a tool that helps Caritas Würzburg find corporate partners.
+Write what you say out loud about this company, in {language}: at most 2 short sentences, about 35 words.
+Say whether it is a good fit for Caritas, matching tier_verdict exactly (do not upgrade or downgrade it), with at most one concrete reason from the facts. Then tell the listener to see the page for more details.
+Use only the facts below, no numbers or scores, no markdown, no emojis. Return only the spoken text.
+
+Facts:
+{json.dumps(facts, ensure_ascii=False)}"""
+    client = genai.Client(api_key=api_key())
+    response = client.models.generate_content(model=MODEL, contents=prompt, config=types.GenerateContentConfig(temperature=0.4))
+    return (response.text or "").strip().strip('"')
+
+
+def guide_audio(text: str, path: Path) -> bool:
+    """ElevenLabs voice for the guide; False (and the browser's own voice takes over) if there is no key or quota."""
+    key = os.getenv("ELEVENLABS_API_KEY")
+    if not key:
+        return False
+    import urllib.request
+    req = urllib.request.Request(
+        f"https://api.elevenlabs.io/v1/text-to-speech/{GUIDE_VOICE_ID}?output_format=mp3_44100_128",
+        data=json.dumps({"text": text, "model_id": "eleven_multilingual_v2",
+                         "voice_settings": {"stability": 0.7, "similarity_boost": 0.75, "style": 0.2, "speed": 0.9}}).encode("utf-8"),
+        headers={"xi-api-key": key, "Content-Type": "application/json", "Accept": "audio/mpeg"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            path.write_bytes(resp.read())
+        return True
+    except Exception as exc:  # voice is optional; the text still shows
+        print(f"guide voice failed: {exc}", file=sys.stderr)
+        return False
+
+
+def guide(company_id: str, lang: str) -> dict[str, Any]:
+    """Cached per company and language, so each summary costs one Gemini call and one voice clip, once."""
+    lang = "de" if lang == "de" else "en"
+    company = company_by_id(company_id)
+    if not company:
+        raise ValueError("unknown company")
+    GUIDE_DIR.mkdir(parents=True, exist_ok=True)
+    stem = re.sub(r"[^a-z0-9-]", "", company_id.lower()) + "_" + lang
+    meta, audio = GUIDE_DIR / f"{stem}.json", GUIDE_DIR / f"{stem}.mp3"
+    if meta.exists():
+        text = load_json(meta)["text"]
+    else:
+        text = guide_text(company, lang)
+        meta.write_text(json.dumps({"text": text}, ensure_ascii=False), encoding="utf-8")
+    if not audio.exists():
+        guide_audio(text, audio)
+    return {"text": text, "audio": f"/guide-audio/{stem}.mp3" if audio.exists() else None}
+
+
 CONTENT_TYPES = {".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8",
-                 ".json": "application/json; charset=utf-8", ".png": "image/png", ".jpeg": "image/jpeg", ".jpg": "image/jpeg"}
+                 ".json": "application/json; charset=utf-8", ".png": "image/png", ".mp3": "audio/mpeg", ".jpeg": "image/jpeg", ".jpg": "image/jpeg"}
 
 
 class ResearchHandler(BaseHTTPRequestHandler):
@@ -385,8 +476,12 @@ class ResearchHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:  # noqa: N802
         # Serve the web demo from the same origin so the browser never needs the API key or CORS.
         rel = self.path.split("?", 1)[0].lstrip("/") or "index.html"
-        target = (WEB_ROOT / rel).resolve()
-        if WEB_ROOT.resolve() not in target.parents or not target.is_file():
+        if rel.startswith("guide-audio/"):
+            base, rel = GUIDE_DIR, rel[len("guide-audio/"):]
+        else:
+            base = WEB_ROOT
+        target = (base / rel).resolve()
+        if base.resolve() not in target.parents or not target.is_file():
             self.send_error(404)
             return
         data = target.read_bytes()
@@ -397,12 +492,15 @@ class ResearchHandler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_POST(self) -> None:  # noqa: N802
-        if self.path != "/research":
-            self.send_error(404, "Use POST /research")
+        if self.path not in ("/research", "/guide"):
+            self.send_error(404, "Use POST /research or /guide")
             return
         try:
             length = int(self.headers.get("Content-Length", "0"))
             body = json.loads(self.rfile.read(length).decode("utf-8"))
+            if self.path == "/guide":
+                self.send_json(200, guide(str(body.get("id", "")), str(body.get("lang", "en"))))
+                return
             company_name = str(body.get("company_name", "")).strip()
             if not company_name or len(company_name) > 200:
                 raise ValueError("company_name is required and must be at most 200 characters")

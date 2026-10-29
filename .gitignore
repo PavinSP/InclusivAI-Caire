@@ -10,3 +10,4 @@ coverage/
 .pytest_cache/
 *.log
 __pycache__/
+company_research/guide/
